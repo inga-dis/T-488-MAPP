@@ -1,12 +1,11 @@
-import React from "react";
-import {View, Text, Image} from 'react-native';
-import styles from './styles';
-import logo from '../../resources/logo.png';
+import React from 'react';
+import { View, Text, Image } from 'react-native';
+import logo from '../../resources/img.png';
 
 const Main = () => {
   <View>
       <Image source={logo} />
-      <Text style={styles.text}>HELLO WORLD!</Text>
+      <Text>HELLO WORLD!</Text>
   </View> 
 };
 
