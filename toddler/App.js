@@ -1,11 +1,9 @@
-import 'react-native-gesture-handler';
 import React from 'react';
-import AppContainer from './src/routes';
-import moment from 'moment';
-moment.locale('en');
+import AppContainer from './src/views/main';
+
 
 export default function App() {
   return (
-    <AppContainer />
+    <AppContainer /> 
   );
 }
