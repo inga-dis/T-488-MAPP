@@ -1,9 +1,19 @@
 import React from 'react';
-import AppContainer from './src/views/main';
-
+import Main from './src/views/main';
 
 export default function App() {
   return (
-    <AppContainer /> 
+    <View style={styles.container}>
+      <Main/>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'blue',
+    alignItems: 'center',
+    justifyConten: 'center' 
+  },
+});

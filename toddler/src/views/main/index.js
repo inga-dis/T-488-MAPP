@@ -1,13 +1,13 @@
 import React from "react";
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import styles from './styles';
+import logo from '../../resources/logo.png';
 
-const HelloWorld = () => {
-  return (
-    <View>
+const Main = () => {
+  <View>
+      <Image source={logo} />
       <Text style={styles.text}>HELLO WORLD!</Text>
-    </View> 
-  );
-}
+  </View> 
+};
 
-export default HelloWorld;
+export default Main; 
