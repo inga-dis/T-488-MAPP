@@ -5,7 +5,7 @@ import logo from '../../resources/logo.png';
 
 const Main = () => {
   <View>
-      <Image source={logo}  />
+      <Image source={logo} />
       <Text style={styles.text}>HELLO WORLD!</Text>
   </View> 
 };
