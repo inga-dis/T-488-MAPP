@@ -1,3 +1,4 @@
+
 import React from "react";
 import {View, Text, FlatList, SafeAreaView} from 'react-native';
 import styles from './styles';
@@ -30,3 +31,4 @@ const Item = ({ name }) => (
 
 
 export default App;
+
