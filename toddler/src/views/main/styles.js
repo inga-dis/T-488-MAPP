@@ -7,7 +7,7 @@ export default StyleSheet.create({
       marginTop: StatusBar.currentHeight || 0,
     },
     item: {
-      backgroundColor: '#f9c2ff',
+      backgroundColor: '#797979',
       padding: 20,
       marginVertical: 8,
       marginHorizontal: 16,
