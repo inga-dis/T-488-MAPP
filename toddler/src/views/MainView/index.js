@@ -4,7 +4,7 @@ import styles from './styles';
 //import data from '../../resources/data.json';
 import Logo from '../../resources/logo.png'
 
-const Main = () => (
+const MainView = () => (
   <View style={styles.container}>
     <Image source={Logo} style={styles.logoStyle}/>
     <Text>Testing some more</Text>
@@ -14,7 +14,7 @@ const Main = () => (
   </View>
 );
 
-export default Main;
+export default MainView;
 
 // const word = data.boards;
 

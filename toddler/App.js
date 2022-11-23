@@ -1,12 +1,13 @@
 import React from 'react';
 //import AppContainer from './src/routes';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import Main from './src/views/Main';
-
+import MainView from './src/views/BoardsView';
+console.log('image')
 export default function App() {
   return (
     <View style={styles.container }>
-      <Main />
+      <MainView />
+      
     </View>
 
 
