@@ -1,13 +1,32 @@
 import React from "react";
-import {View, Text} from 'react-native';
+import {View, Text, FlatList, SafeAreaView} from 'react-native';
 import styles from './styles';
+import data from '../../resources/data.json';
 
-const HelloWorld = () => {
-  return (
-    <View>
-      <Text style={styles.text}>HELLO WORLD!</Text>
-    </View> 
+const word = data.boards;
+
+const Item = ({ name }) => (
+    <View style={styles.item}>
+      <Text style={styles.name}>{name}</Text>
+    </View>
   );
-}
 
-export default HelloWorld;
+  const App = () => {
+    const renderItem = ({ item }) => (
+      <Item name={item.name} />
+    );
+  
+    return (
+        <SafeAreaView style={styles.container}>
+            <FlatList
+            data={word}
+            renderItem={renderItem}
+            keyExtractor={item => item.id}
+            />
+        </SafeAreaView>
+    );
+  }
+
+
+
+export default App;
