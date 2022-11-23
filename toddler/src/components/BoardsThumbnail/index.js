@@ -1,14 +1,14 @@
 import React from "react";
-import { Image, View } from "react-native";
+import { Image, View, Text } from "react-native";
 import styles from "./styles";
 
-const BoardsThumbnail = ({ name, id, thumbnailPhoto }) => (
+const BoardsThumbnail = ({ id, name, thumbnailPhoto }) => (
     <View> 
         <Image
             style={styles.image}
             resizeMode="cover"
             source={{ uri: thumbnailPhoto}} />
-            console.log(image) 
+        <Text>{name}:{id}</Text>
     </View>
 );
 

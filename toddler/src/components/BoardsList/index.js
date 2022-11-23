@@ -1,17 +1,17 @@
 import React from "react";
-import {View, FlatList} from 'react-native';
+import {View, FlatList, Text } from 'react-native';
+import BoardsThumbnail from '../BoardsThumbnail'
 import styles from './styles';
 
 
-const BoardsList = ({ text }) => (
+const BoardsList = ({ boards }) => (
     <View style={styles.listContainer}>
         <FlatList
             numColumns={1}
-            data={text}
-            renderItem={({ board }) => (
-                <BoardName {...board} />
-            )} 
-            keyExtractor={image => image.id}
+            data={boards}
+            renderItem={({ item }) => (
+                <BoardsThumbnail {...item } /> )}
+            keyExtractor={item => item.id}
             />
     </View>
 )
