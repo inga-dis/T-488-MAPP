@@ -1,12 +1,34 @@
-import React from 'react';
-import { View, Text, Image } from 'react-native';
-import logo from '../../resources/img.png';
 
-const Main = () => {
-  <View>
-      <Image source={logo} />
-      <Text>HELLO WORLD!</Text>
-  </View> 
-};
+import React from "react";
+import {View, Text, FlatList, SafeAreaView} from 'react-native';
+import styles from './styles';
+import data from '../../resources/data.json';
 
-export default Main; 
+const word = data.boards;
+
+const Item = ({ name }) => (
+    <View style={styles.item}>
+      <Text style={styles.name}>{name}</Text>
+    </View>
+  );
+
+  const App = () => {
+    const renderItem = ({ item }) => (
+      <Item name={item.name} />
+    );
+  
+    return (
+        <SafeAreaView style={styles.container}>
+            <FlatList
+            data={word}
+            renderItem={renderItem}
+            keyExtractor={item => item.id}
+            />
+        </SafeAreaView>
+    );
+  }
+
+
+
+export default App;
+
