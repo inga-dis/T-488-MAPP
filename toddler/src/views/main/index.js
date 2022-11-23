@@ -1,3 +1,6 @@
+import React from 'react';
+import { View, Text, Image } from 'react-native';
+import logo from '../../resources/img.png';
 
 import React from "react";
 import {View, Text, FlatList, Image, TouchableHighlight} from 'react-native';
@@ -44,8 +47,6 @@ const Item = ({ name }) => (
         </View>
     );
   }
-
-
 
 
 export default App;
