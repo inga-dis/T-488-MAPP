@@ -1,15 +1,23 @@
 import React from "react";
-import { Image, View, Text } from "react-native";
+import PropTypes from 'prop-types';
+import { Image, View, Text, TouchableHighlight } from "react-native";
 import styles from "./styles";
 
 const BoardsThumbnail = ({ id, name, thumbnailPhoto }) => (
-    <View style={styles.board}> 
-        <Image
-            style={styles.image}
-            resizeMode="cover"
-            source={{ uri: thumbnailPhoto}} />
-        <Text style={styles.boardText}>{name}</Text>
-    </View>
+    <TouchableHighlight>
+        <View style={styles.board}> 
+            <Image
+                style={styles.image}
+                resizeMode="cover"
+                source={{ uri: thumbnailPhoto}} />
+            <Text style={styles.boardText}>{name}</Text>
+        </View>
+    </TouchableHighlight>
 );
-
+BoardsThumbnail.PropTypes = {
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    thumbnailPhoto: PropTypes.string.isRequired
+    }
+;
 export default BoardsThumbnail;
