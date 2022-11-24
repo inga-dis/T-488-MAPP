@@ -8,7 +8,7 @@ export default StyleSheet.create({
       padding: 20,
       backgroundColor: darkBlue,
       alignItems: 'center',
-      justifyContent: 'space-around',
+      justifyContent: 'space-around'
     },
     logoStyle: {
       width: 100.39,
