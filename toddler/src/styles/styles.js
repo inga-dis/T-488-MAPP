@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { darkBlue } from './colors';
+import { whiteSilver, darkBlue } from './colors';
 
 export default StyleSheet.create({
-    navstack: {
-        backgroundColor: darkBlue,
-
+    navStack: {
+        backgroundColor: whiteSilver,
+        borderBottomWidth: 0,
     }
 
 });
