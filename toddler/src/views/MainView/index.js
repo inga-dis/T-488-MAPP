@@ -3,6 +3,7 @@ import {View, Text, Image, TouchableHighlight } from 'react-native';
 import styles from './styles';
 import Logo from '../../resources/logo.png'
 
+
 const MainView = ({ navigation: { navigate } }) => (
   <View style={styles.container}>
         <Image source={Logo} style={styles.logoStyle} />
@@ -12,8 +13,15 @@ const MainView = ({ navigation: { navigate } }) => (
             style={styles.button}>
             <Text style={styles.butttonText}>Board</Text>
         </TouchableHighlight>
+        {/* <TouchableHighlight 
+            onPress={() => navigate('BoardSettings')}
+            style={styles.button}>
+            <Text style={styles.butttonText}>Settings</Text>
+        </TouchableHighlight> */}
   </View>
 );
+
+
 
 export default MainView;
 
