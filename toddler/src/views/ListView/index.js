@@ -7,7 +7,6 @@ const ListView = () => (
 
     <ScrollView horizontal={true}>
         <View style={styles.TaskList}>
-            <Text style={styles.TaskListName}>DUMMY DATA</Text>
             <Text style={styles.Task}>TODO</Text>
             <Text style={styles.Task}>TODOO</Text>
             <Text style={styles.Task}>TOODOO</Text>
