@@ -32,15 +32,6 @@ const Routes = () => (
                     fontSize: 20,
                 },
             }}/>
-            <Stack.Screen name="BoardSettings" component={BoardSettings} options={{
-                headerStyle: styles.navStack,
-                title: 'Boards',
-                headerTintColor: darkBlue,
-                headerTitleStyle: {
-                    fontWeight: '300',
-                    fontSize: 20,
-                },
-            }}/>
         </Stack.Navigator>
     </NavigationContainer>
 );
