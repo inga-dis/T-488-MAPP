@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 
 import MainView from '../views/MainView';
 import BoardsView from '../views/BoardsView';
-import BoardSettings from '../components/BoardSettings';
+// import BoardSettings from '../components/BoardSettings';
 
 
 const Routes = () => (

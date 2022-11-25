@@ -1,8 +1,7 @@
-import { configureStore } from "@reduxjs/toolkit"; 
-import boardReducer from './boardSlice';
+import thunkMiddleware from "redux-thunk";
+import { createStore, applyMiddleware } from "redux";
+import reducer from "./reducer";
 
-export const store = configureStore({
-    reducer: {
-        board: boardReducer,
-    },
-});
+export const store = createStore(reducer, 
+    applyMiddleware(thunkMiddleware));
+
