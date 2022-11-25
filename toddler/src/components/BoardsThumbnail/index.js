@@ -14,7 +14,7 @@ const BoardsThumbnail = ({ id, name, thumbnailPhoto }) => (
         </View>
     </TouchableHighlight>
 );
-BoardsThumbnail.PropTypes = {
+BoardsThumbnail.propTypes  = {
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     thumbnailPhoto: PropTypes.string.isRequired

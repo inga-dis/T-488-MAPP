@@ -1,11 +1,10 @@
 import React from "react";
-import PropTypes from 'prop-types';
 import {View, FlatList, Text } from 'react-native';
 import BoardsThumbnail from '../BoardsThumbnail'
 import styles from './styles';
 
 
-const BoardsList = ({ boards }) => (
+const BoardsList = ({ boards, tasks, lists }) => (
     <View style={styles.listContainer}>
         <FlatList
             numColumns={1}
@@ -15,14 +14,6 @@ const BoardsList = ({ boards }) => (
             keyExtractor={item => item.id}
             />
     </View>
-);
+)
 
-BoardsList.PropTypes = {
-    //List of all boards 
-    boards: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number,
-        name: PropTypes.string,
-        thumbnailPhoto: PropTypes.string
-    }))
-};
 export default BoardsList;

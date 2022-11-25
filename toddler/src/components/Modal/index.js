@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import NativeModal from 'react-native-modal';
 import { View, Text } from 'react-native';
 import styles from './styles'
@@ -24,14 +24,10 @@ const Modal = ({
     </NativeModal>
 );
 
-Modal.PropTypes = {
-
+Modal.propTypes  = {
     isOpen: PropTypes.bool.isRequired,
-
     closeModal: PropTypes.func.isRequired,
-
     title: PropTypes.string.isRequired,
-
     children: PropTypes.node
 }
 

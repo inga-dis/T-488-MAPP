@@ -14,7 +14,7 @@ const Navbar = ({ onAdd }) => (
         <TouchableHighlight style={styles.navbarAction}><Image source={Logo} style={styles.logoNav} /></TouchableHighlight>
     </View>
 );
-Navbar.PropTypes = {
+Navbar.propTypes  = {
     // Function to show modal
     onAdd: PropTypes.func.isRequired,
 }
