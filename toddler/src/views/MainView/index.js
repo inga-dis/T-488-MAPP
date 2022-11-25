@@ -1,20 +1,19 @@
-import React from "react";
-import {View, Text, Image, TouchableHighlight} from 'react-native';
-import styles from './styles';
-import Logo from '../../resources/logo.png'
+import {useEffect, useState} from "react";
+import Icons from "react-native-vector-icons/FontAwesome"; 
+import styles from "./styles";
+// import { CheckBox } from "react-native-elements";
+import { CheckBox } from '@rneui/base';
+import {Text, View, StyleSheet, TextInput, Alert} from 'react-native';
 
 
-const MainView = ({ navigation: { navigate } }) => (
-  <View style={styles.container}>
-        <Image source={Logo} style={styles.logoStyle} />
-        <Text>Testing some more</Text>
-        <TouchableHighlight 
-            onPress={() => navigate('BoardsView')}
-            style={styles.button}>
-            <Text style={styles.butttonText}>Board</Text>
-        </TouchableHighlight>
+ 
 
-  </View>
-);
 
-export default MainView;
+export default function App() {
+    return <View style={styles.container}>
+        <CheckBox
+            title="Reading"
+            checked={true}>
+        </CheckBox>
+    </View>
+}
