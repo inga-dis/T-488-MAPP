@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { View, Text, TouchableHighlight, Image } from 'react-native';
 import styles from './styles';
 import Logo from '../../resources/logo.png'
@@ -14,8 +13,5 @@ const Navbar = ({ onAdd }) => (
         <TouchableHighlight style={styles.navbarAction}><Image source={Logo} style={styles.logoNav} /></TouchableHighlight>
     </View>
 );
-Navbar.propTypes  = {
-    // Function to show modal
-    onAdd: PropTypes.func.isRequired,
-}
+
 export default Navbar

@@ -1,38 +1,28 @@
-import data from '../resources/data.json'
 import { createSlice } from '@reduxjs/toolkit';
+import data from '../resources/data.json'
 
+let nextBoardId = 4;
 
+const boardsSlice = createSlice({
+  name: 'boards',
+  initialState: data.boards,
+  reducers: {
+    addBoard(state, action) {
+      state.push({ id: nextBoardId++, name: action.payload.name, thumbnailImage: action.payload.thumbnailImage})
+    },
+    deleteBoard(state, action) {
 
+    },
+    editBoardName(state, action) {
 
-const initialState = {
-    boardsData: [],
-    isLoading: false,
-    // Insert here variables needed for each board for features.
-    // example: noOfLists: 3
-    // or : lists: []
-};
+    },
+    editBoardImage(state, action) {
 
-const boards = (state = initalState, action) => {
-    switch (action.type) {
-      case data.LOAD:
-        return {
-          ...state,
-          isLoading: true,
-          isError: false,
-        };
-      case USER.LOAD_SUCCESS:
-        return {
-          ...state,
-          usersData: action.usersData,
-          isLoading: false,
-        };
-      default:
-        return state;
     }
-  };
+  }
+})
 
-const boardSlice = createSlice({
-    name: 'boards', 
-    initialState
-});
-export default boardSlice.reducer
+export const { addBoard } = boardsSlice.actions
+
+export default boardsSlice.reducer
+
