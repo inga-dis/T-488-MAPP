@@ -1,7 +1,8 @@
 import React from "react";
-import {View, Text, Image, TouchableHighlight } from 'react-native';
+import {View, Text, Image, TouchableHighlight} from 'react-native';
 import styles from './styles';
 import Logo from '../../resources/logo.png'
+
 
 const MainView = ({ navigation: { navigate } }) => (
   <View style={styles.container}>
@@ -12,6 +13,7 @@ const MainView = ({ navigation: { navigate } }) => (
             style={styles.button}>
             <Text style={styles.butttonText}>Board</Text>
         </TouchableHighlight>
+
   </View>
 );
 
