@@ -6,8 +6,10 @@ import { darkBlue } from '../styles/colors';
 
 const Stack = createStackNavigator();
 
+// Views
 import MainView from '../views/MainView';
 import BoardsView from '../views/BoardsView';
+import BoardView from '../views/BoardView'
 
 
 const Routes = () => (
@@ -23,6 +25,15 @@ const Routes = () => (
                 },
             }} />
             <Stack.Screen name="BoardsView" component={BoardsView} options={{
+                headerStyle: styles.navStack,
+                title: 'Boards',
+                headerTintColor: darkBlue,
+                headerTitleStyle: {
+                    fontWeight: '300',
+                    fontSize: 20,
+                },
+            }}/>
+            <Stack.Screen name="BoardView" component={BoardView} options={{
                 headerStyle: styles.navStack,
                 title: 'Boards',
                 headerTintColor: darkBlue,

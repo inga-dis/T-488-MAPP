@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Entypo } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
 import Modal from '../Modal';
@@ -27,11 +26,5 @@ const AddModal = ({
     </Modal>
 
 );
-AddModal.propTypes  = {
-    isOpen: PropTypes.bool.isRequired,
-    closeModal: PropTypes.func.isRequired,
-    something: PropTypes.func.isRequired,
-    somethingElse: PropTypes.func.isRequired
-}
 
 export default AddModal;
