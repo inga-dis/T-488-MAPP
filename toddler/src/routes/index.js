@@ -10,7 +10,6 @@ const Stack = createStackNavigator();
 import MainView from '../views/MainView';
 import BoardsView from '../views/BoardsView';
 import BoardView from '../views/BoardView'
-// import BoardSettings from '../components/BoardSettings';
 
 
 const Routes = () => (

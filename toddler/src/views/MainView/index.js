@@ -1,71 +1,19 @@
-import React from "react";
-import {View, Text, Image, TouchableHighlight } from 'react-native';
-import styles from './styles';
-import Logo from '../../resources/logo.png'
+import {useEffect, useState} from "react";
+import Icons from "react-native-vector-icons/FontAwesome"; 
+import styles from "./styles";
+// import { CheckBox } from "react-native-elements";
+import { CheckBox } from '@rneui/base';
+import {Text, View, StyleSheet, TextInput, Alert} from 'react-native';
 
 
-const MainView = ({ navigation: { navigate } }) => (
-  <View style={styles.container}>
-        <Image source={Logo} style={styles.logoStyle} />
-        <Text>Testing some more</Text>
-        <TouchableHighlight 
-            onPress={() => navigate('BoardsView')}
-            style={styles.button}>
-            <Text style={styles.butttonText}>Board</Text>
-        </TouchableHighlight>
-        {/* <TouchableHighlight 
-            onPress={() => navigate('BoardSettings')}
-            style={styles.button}>
-            <Text style={styles.butttonText}>Settings</Text>
-        </TouchableHighlight> */}
-  </View>
-);
+ 
 
 
-
-export default MainView;
-
-// const word = data.boards;
-
-// const onPress = () => (
-//     <View>
-//         <Text>hah</Text>
-//     </View>
-    
-// );
-
-// const Item = ({ name }) => (
-//     <View style={styles.item}>
-//         <TouchableHighlight onPress={onPress}>
-//     {/* <Image source={logo} /> */}
-//       <Text style={styles.name}>{name}</Text>
-//       </TouchableHighlight>
-//     </View>
-//   );
-
-//   const App = () => {
-//     const renderItem = ({ item }) => (
-        
-//       <Item name={item.name} />
-//     );
-//     const onPress = () => setCount(count + 1);
-  
-//     return (
-//         <View>
-//                 <View style={styles.container}>
-//                     <FlatList
-//                     data={word}
-//                     renderItem={renderItem}
-//                     keyExtractor={item => item.id}
-//                     />
-                    
-//                 </View>
-           
-//         </View>
-//     );
-//   }
-
-
-// export default App;
-
-
+export default function App() {
+    return <View style={styles.container}>
+        <CheckBox
+            title="Reading"
+            checked={true}>
+        </CheckBox>
+    </View>
+}
