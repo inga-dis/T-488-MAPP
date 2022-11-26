@@ -5,14 +5,15 @@ import { addList } from '../../redux/listSlice';
 
 
 
-const AddList = () => { 
+const AddList = ( {boardidfor}) => { 
 
   const [name, setName] = useState();
   const [color, setColor] = useState();
   const dispatch = useDispatch();
+  console.log(boardidfor)
 
   function handleSubmit(){
-    dispatch(addList({ name: name, color: color, boardId: 4 }));
+    dispatch(addList({ name: name, color: color, boardId: {boardidfor} }));
     setName('');
     setColor('');
 

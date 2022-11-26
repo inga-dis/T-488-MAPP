@@ -1,5 +1,5 @@
 import React from "react";
-import {View, FlatList, Text } from 'react-native';
+import {View } from 'react-native';
 import BoardsThumbnail from '../BoardsThumbnail'
 import { useSelector } from "react-redux";
 import styles from './styles';
@@ -12,13 +12,6 @@ const BoardsList = () => {
         {boards.map((board) => (
             <BoardsThumbnail board={board} />
         ))}
-        {/* <FlatList
-            numColumns={1}
-            data={boards}
-            renderItem={({ item }) => (
-                <BoardsThumbnail {...item } /> )}
-            keyExtractor={item => item.id}
-            /> */}
     </View>
  );
 }

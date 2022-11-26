@@ -1,20 +1,20 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import {View, Text } from 'react-native';
-import Task from '../Task';
-import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
+import { View, Text, TouchableOpacity  } from "react-native";
+import styles from "./styles";
 
-const List = ( {boardid}) => {
-    const lists = useSelector((state) => state.lists);
-    const list = lists.filter((item) => item.boardId == boardid).map(({id, name, color, boardId}) => ({id, name, color, boardId}));
+
+const List = ({ list }) => {
+    const { navigate } = useNavigation();
 
     return (
-    <View style={styles.listContainer}>
-        {list.map((list) => (
-            <Text>{list.name}<Task list={list}></Task></Text>
-        ))}
-    </View>
- );
-}
-export default List;
+        <TouchableOpacity
+            onPress={() => navigate('ListView', { listName: list.name, listId: list.id, color: list.color})}>
+            <View style={styles.list}> 
+                <Text style={styles.listText}>{list.name}</Text>
+            </View>
+    </TouchableOpacity>
+    );
+};
 
+export default List;
