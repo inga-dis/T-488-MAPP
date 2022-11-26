@@ -22,4 +22,4 @@ export default Lists;
 
 
 {/* <Text>{list.name}<Task list={list}></Task></Text> */}
-
+// HALLÓ?
