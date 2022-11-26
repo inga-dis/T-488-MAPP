@@ -12,9 +12,10 @@ const Lists = ( {boardid}) => {
     return (
     <View style={styles.listContainer}>
         <AddList boardidfor={boardid}></AddList>
-            <Button title="Pressme"/>
+            
         {list.map((list) => (
-            <List Button={styles.Button} list={list} />
+            <List  list={list} />
+                
             
         ))}
     </View>
