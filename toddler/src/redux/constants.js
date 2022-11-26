@@ -1,3 +1,0 @@
-const BOARDS = {
-    LOAD: 'REQ'
-}

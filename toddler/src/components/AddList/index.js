@@ -1,0 +1,45 @@
+import React, { useState } from 'react';
+import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { addList } from '../../redux/listSlice';
+
+
+
+const AddList = () => { 
+
+  const [name, setName] = useState();
+  const [color, setColor] = useState();
+  const dispatch = useDispatch();
+
+  function handleSubmit(){
+    dispatch(addList({ name: name, color: color, boardId: 4 }));
+    setName('');
+    setColor('');
+
+  }
+
+  
+  return (
+    <View style={styles.container}>
+      <TextInput placeholder="List" value={name} onChangeText={setName} style={styles.input} />
+      <TextInput placeholder="List" value={color} onChangeText={setColor} style={styles.input} />
+      <Button title="Add" onPress={handleSubmit}/>
+    </View>
+  );
+};
+
+export default AddList;
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    margin: 2
+  },
+  input: {
+    backgroundColor: 'ghostwhite',
+    marginBottom: 8,
+    padding: 8,
+    height: 40,
+  },
+});
