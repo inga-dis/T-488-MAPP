@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, ImageBackground, Text } from 'react-native';
-import List from '../../components/List';
-import style from './styles'
-import { ListItem } from '@rneui/themed';
+import List from '../../components/Lists';
+import styles from '../../styles/styles';
 
 
 
@@ -10,11 +9,10 @@ const BoardView = ({ route }) => {
 
     const board = route.params;
 
-    return (
-        
 
+    return (
         <View >
-            <Text style={style.boardHeader}>{board.boardName}</Text>
+            <Text style={styles.header}>{board.boardName}</Text>
             <List boardid={board.boardId} ></List>
         </View>
     );

@@ -7,7 +7,7 @@ import { darkBlue } from '../styles/colors';
 const Stack = createStackNavigator();
 
 // Views
-import MainView from '../views/MainView/index';
+import MainView from '../views/MainView';
 import BoardsView from '../views/BoardsView';
 import BoardView from '../views/BoardView'
 

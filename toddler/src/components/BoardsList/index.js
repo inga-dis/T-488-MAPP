@@ -1,3 +1,4 @@
+
 import React from "react";
 import {View } from 'react-native';
 import BoardsThumbnail from '../BoardsThumbnail'
@@ -16,4 +17,3 @@ const BoardsList = () => {
  );
 }
 export default BoardsList;
-
