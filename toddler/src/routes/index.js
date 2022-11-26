@@ -35,7 +35,7 @@ const Routes = () => (
             }}/>
             <Stack.Screen name="BoardView" component={BoardView} options={{
                 headerStyle: styles.navStack,
-                title: 'Boards',
+                title: 'Board',
                 headerTintColor: darkBlue,
                 headerTitleStyle: {
                     fontWeight: '300',

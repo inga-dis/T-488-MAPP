@@ -6,7 +6,7 @@ import styles from './styles';
 const Task = ( {list}) => {
     const tasks = useSelector((state) => state.tasks);
     const currentTasks = tasks.filter((item) => item.listId == list.id).map(({id, name, listId}) => ({id, name, listId}));
-    console.log(currentTasks)
+
     return (
     <View style={styles.listContainer}>
         {currentTasks.map((currentTasks) => (

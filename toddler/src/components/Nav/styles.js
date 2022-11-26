@@ -1,7 +1,6 @@
 import { StyleSheet, Dimensions, useWindowDimensions } from 'react-native';
 import { darkBlue } from '../../styles/colors';
 const windowWidth = Dimensions.get('window').width;
-console.log(windowWidth)
 
 export default StyleSheet.create({
     navbar: {
