@@ -2,7 +2,6 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import { useSelector } from "react-redux";
 import BoardsList from '../../components/BoardsList'; // ToDolist
-// import Navbar from '../../components/Nav';
 
 import AddBoard from '../../components/AddBoard';
 

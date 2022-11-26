@@ -11,6 +11,9 @@ const boardsSlice = createSlice({
       state.push({ id: nextBoardId++, name: action.payload.name, thumbnailImage: action.payload.thumbnailImage})
     },
     deleteBoard(state, action) {
+      //action.payload.id => delete this one
+      //action = payload 
+      //payload = {id: "ehv", name= "", }
 
     },
     editBoardName(state, action) {
@@ -22,7 +25,7 @@ const boardsSlice = createSlice({
   }
 })
 
-export const { addBoard } = boardsSlice.actions
+export const { addBoard, deleteBoard } = boardsSlice.actions
 
 export default boardsSlice.reducer
 

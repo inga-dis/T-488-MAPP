@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 import MainView from '../views/MainView';
 import BoardsView from '../views/BoardsView';
 import BoardView from '../views/BoardView'
-
+import ListView from '../views/ListView'
 
 const Routes = () => (
     <NavigationContainer >
@@ -36,6 +36,15 @@ const Routes = () => (
             <Stack.Screen name="BoardView" component={BoardView} options={{
                 headerStyle: styles.navStack,
                 title: 'Board',
+                headerTintColor: darkBlue,
+                headerTitleStyle: {
+                    fontWeight: '300',
+                    fontSize: 20,
+                },
+            }}/>
+            <Stack.Screen name="ListView" component={ListView} options={{
+                headerStyle: styles.navStack,
+                title: 'List',
                 headerTintColor: darkBlue,
                 headerTitleStyle: {
                     fontWeight: '300',
