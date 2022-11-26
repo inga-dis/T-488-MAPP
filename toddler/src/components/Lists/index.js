@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import {View } from 'react-native';
+import {View, Button } from 'react-native';
 import AddList from '../AddList'
 import List from '../List'
 import styles from './styles';
@@ -12,8 +12,11 @@ const Lists = ( {boardid}) => {
     return (
     <View style={styles.listContainer}>
         <AddList boardidfor={boardid}></AddList>
+            
         {list.map((list) => (
-            <List list={list} />
+            <List  list={list} />
+                
+            
         ))}
     </View>
  );
@@ -22,4 +25,3 @@ export default Lists;
 
 
 {/* <Text>{list.name}<Task list={list}></Task></Text> */}
-

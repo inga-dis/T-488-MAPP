@@ -10,7 +10,15 @@ const listsSlice = createSlice({
     addList(state, action) {
       state.push({ id: nextListId++, name: action.payload.name, color: action.payload.color, boardId: action.payload.boardId })
     },
-    deleteList(state, action) {
+
+    deleteList: (state, action) =>  {
+      const listId = action.payload;
+      // state.listsSlice = listsSlice.filter((list) => 
+      // list.id !== listId);
+      console.log("Hallo")
+    }
+
+
     },
     editListName(state, action) {
 
@@ -21,8 +29,8 @@ const listsSlice = createSlice({
     editListList(state, action) {
         
     }    
-  }
-})
+  })
+
 
 export const { addList } = listsSlice.actions
 
