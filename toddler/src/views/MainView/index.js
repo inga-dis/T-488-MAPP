@@ -10,10 +10,23 @@ import {Text, View, StyleSheet, TextInput, Alert} from 'react-native';
 
 
 export default function App() {
-    return <View style={styles.container}>
-        <CheckBox
-            title="Reading"
-            checked={true}>
-        </CheckBox>
-    </View>
+    const [finished, setFinished] = useState(false)
+
+    const hobbies = []
+
+    const click = () => {
+        if(finished === true){
+            hobbies.push()
+        } 
+    }
+
+
+        return (<View style={styles.container}>
+            <CheckBox
+                id = "2"
+                title = "Finish this app"
+                checked={finished} 
+                onPress={() => setFinished(!finished)}/>
+            </View>
+    );
 }
