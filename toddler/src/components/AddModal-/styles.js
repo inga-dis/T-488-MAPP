@@ -5,5 +5,11 @@ export default StyleSheet.create({
         fontSize: 60, 
         marginTop: 20, 
         marginBottom: 20
-    }
+    },
+    input: {
+        backgroundColor: 'ghostwhite',
+        marginBottom: 8,
+        padding: 8,
+        height: 40,
+      }
 });
