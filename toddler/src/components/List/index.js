@@ -33,11 +33,6 @@ const List = ({ list }) => {
 
 export default List;
 
-const styles = StyleSheet.create({
-    listColor: {
-
-    }
-  });
 
 
 // const TasksList = ({ task }) => { 

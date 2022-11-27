@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { addTask } from '../../redux/taskSlice';
 import mainStyles from "../../styles/styles";
@@ -44,26 +44,7 @@ const AddTask = ({ listidfor }) => {
                 <Text style={mainStyles.buttonText}> Add </Text>
             </TouchableOpacity>
         </View>
-    // <View style={styles.container}>
-    //   <TextInput placeholder="Task" value={name} onChangeText={setName} style={styles.input} />
-    //   <TextInput placeholder="Task" value={description} onChangeText={setDescription} style={styles.input} />
-    //   <Button title="Add" onPress={handleSubmit}/>
-    // </View>
   );
 };
 
 export default AddTask;
-
-
-
-// const styles = StyleSheet.create({
-//   container: {
-//     margin: 2
-//   },
-//   input: {
-//     backgroundColor: 'ghostwhite',
-//     marginBottom: 8,
-//     padding: 8,
-//     height: 40,
-//   },
-// });

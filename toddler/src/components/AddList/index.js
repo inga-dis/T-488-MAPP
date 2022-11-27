@@ -4,9 +4,7 @@ import {
     View,
     Text,
     TextInput,
-    Pressable,
     TouchableOpacity,
-    StyleSheet,
 } from "react-native";
 import { useDispatch } from "react-redux";
 import { addList } from "../../redux/listSlice";
@@ -18,17 +16,16 @@ const AddList = ({ boardidfor }) => {
     const [color, setColor] = useState();
     const dispatch = useDispatch();
 
-    function handleSubmit() {
+    function handleSubmit(boardidfor) {
         dispatch(
             addList({ name: name, color: "#" + color, boardId: boardidfor })
         );
-        console.log('test')
         setName("");
         setColor("");
     }
 
     return (
-        <View style={styles.centeredView}>
+        <View style={mainStyles.centeredView}>
             <Modal
                 animationType="slide"
                 transparent={true}
@@ -37,8 +34,8 @@ const AddList = ({ boardidfor }) => {
                     setModalVisible(!modalVisible);
                 }}
             >
-                <View style={styles.centeredView}>
-                    <View style={styles.modalView}>
+                <View style={mainStyles.centeredView}>
+                    <View style={mainStyles.modalView}>
                         <Text style={mainStyles.header2}> Add List </Text>
                         <TextInput
                             placeholder="List name"
@@ -53,77 +50,25 @@ const AddList = ({ boardidfor }) => {
                             style={mainStyles.input}
                         />
                         <TouchableOpacity
-                            style={[styles.button, styles.buttonClose]}
+                            style={[mainStyles.buttonAdd, mainStyles.buttonAddClose]}
                             onPress={() => {
-                                handleSubmit
+                                handleSubmit(boardidfor); setModalVisible(!modalVisible)
                             }}
                         >
-                            <Text style={styles.textStyle}>Add list</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity
-                            style={[styles.button, styles.buttonClose]}
-                            onPress={() => {
-
-                                setModalVisible(!modalVisible)
-                            }}
-                        >
-                            <Text style={styles.textStyle}>Close</Text>
+                            <Text style={mainStyles.ButtonAddtextStyle}>Add list</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
             </Modal>
             <TouchableOpacity
-                style={[styles.button, styles.buttonOpen]}
+                style={[mainStyles.buttonAdd, mainStyles.buttonAddOpen]}
                 onPress={() => setModalVisible(true)}
             >
-                <Text style={styles.textStyle}>Add List</Text>
+                <Text style={mainStyles.ButtonAddtextStyle}>Add List</Text>
             </TouchableOpacity>
         </View>
     );
 };
 
 export default AddList;
-const styles = StyleSheet.create({
-    centeredView: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 22,
-    },
-    modalView: {
-        margin: 20,
-        backgroundColor: "white",
-        borderRadius: 20,
-        padding: 35,
-        alignItems: "center",
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5,
-    },
-    button: {
-        borderRadius: 20,
-        padding: 10,
-        elevation: 2,
-    },
-    buttonOpen: {
-        backgroundColor: "#F194FF",
-    },
-    buttonClose: {
-        backgroundColor: "#2196F3",
-    },
-    textStyle: {
-        color: "white",
-        fontWeight: "bold",
-        textAlign: "center",
-    },
-    modalText: {
-        marginBottom: 15,
-        textAlign: "center",
-    },
-});
+
