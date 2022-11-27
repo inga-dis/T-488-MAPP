@@ -1,18 +1,20 @@
 import React from "react";
-import {View, Text, Image, TouchableHighlight} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from './styles';
-import Logo from '../../resources/logo.png'
+import mainStyles from '../../styles/styles';
+import Logo from '../../resources/logo.png';
 
 
 const MainView = ({ navigation: { navigate } }) => (
   <View style={styles.container}>
         <Image source={Logo} style={styles.logoStyle} />
-        <Text>Testing some more</Text>
-        <TouchableHighlight 
+        <Text style={mainStyles.header}>Toodler - ehv meira</Text>
+        <TouchableOpacity 
             onPress={() => navigate('BoardsView')}
-            style={styles.button}>
-            <Text style={styles.butttonText}>Board</Text>
-        </TouchableHighlight>
+            underlayColor="white"
+            style={[mainStyles.button]}>
+            <Text style={mainStyles.buttonText}>Boards</Text>
+        </TouchableOpacity>
 
   </View>
 );

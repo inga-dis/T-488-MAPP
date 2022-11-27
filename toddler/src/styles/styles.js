@@ -1,5 +1,6 @@
-import { StyleSheet } from 'react-native';
-import { whiteSilver, darkBlue } from './colors';
+import { StyleSheet, Dimensions } from 'react-native';
+import {  darkBlue, blue, yellow, whiteSilver, darkGrey, grey } from './colors';
+const windowWidth = Dimensions.get('window').width;
 
 export default StyleSheet.create({
     navStack: {
@@ -9,14 +10,65 @@ export default StyleSheet.create({
     input: {
         backgroundColor: "ghostwhite",
         marginBottom: 8,
-        padding: 8,
+        padding: 10,
+        alignItems: 'stretch',
         height: 40,
+        width: windowWidth - 20,
+        borderRadius: 2
     },
     header: {
+        fontSize: 30,
+        color: 'white',
+        textAlign: 'center',
+    },
+    header2:{
         fontSize: 20,
-        textAlign: 'center'
-    }, 
+        textAlign: 'center',
+        color: 'white',
+
+    },
     button: {
-        textAlign: 'left'
+        marginBottom: 30,
+        alignItems: 'center',
+        backgroundColor: blue,
+        borderColor: blue,
+        borderWidth: 1,
+        borderRadius: 10,
+        width: 100,
+    }, 
+    buttonText: {
+        padding: 15,
+        textAlign: 'center',
+        color: darkBlue,
+        fontSize: 16,
+        fontWeight: '600',
+    },
+    containerAdd: {
+        paddingTop: 10,
+        paddingLeft: 20,
+        paddingRight: 20,
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        backgroundColor: grey,
+    },
+    buttonAdd: {
+        flex: 1,
+        marginBottom: 10,
+        alignItems: 'center',
+        justifyContent: 'space-around'
+    },
+    itemCard: {
+        marginVertical: 10,
+        marginHorizontal: 10,
+        backgroundColor: 'rgba(255, 178, 0, 0.7)',
+        alignItems: 'flex-end',
+        flexDirection: "row",
+        borderRadius: 10,
+    },
+    itemText: {
+        fontSize: 20,
+        paddingBottom: 35,
+        color: darkGrey,
     }
 });

@@ -1,8 +1,9 @@
 import React from "react";
 import { useNavigation } from '@react-navigation/native';
-import { View, Text, TouchableOpacity  } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet  } from "react-native";
 import { useSelector } from "react-redux";
-import styles from "./styles";
+import mainStyles from '../../styles/styles'
+
 import DeleteList from "../DeleteList";
 import BoardsThumbnail from '../BoardsThumbnail'
 
@@ -23,17 +24,24 @@ import BoardsThumbnail from '../BoardsThumbnail'
 
 const List = ({ list }) => {
     const { navigate } = useNavigation();
-    console.log(list.id, "hæ")
+    console.log(list.color)
 
     return (
         <TouchableOpacity
             onPress={() => navigate('ListView', { listName: list.name, listId: list.id, color: list.color})}>
-            <View style={styles.list}> 
-                <Text style={styles.listText}>{list.name}</Text>
+            <View style={[mainStyles.itemCard, {backgroundColor: list.color}]} > 
+                <Text style={mainStyles.itemText}>{list.name}</Text>
                 <DeleteList listid = {list.id}/>
+                
             </View>
     </TouchableOpacity>
     );
 };
 
 export default List;
+
+const styles = StyleSheet.create({
+    listColor: {
+
+    }
+  });

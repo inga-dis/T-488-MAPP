@@ -9,10 +9,8 @@ const Stack = createStackNavigator();
 // Views
 import MainView from '../views/MainView';
 import BoardsView from '../views/BoardsView';
-import BoardView from '../views/BoardView';
-import ListView from '../views/ListView';
-import BoardSettingsView from '../views/BoardSettingsView';
-
+import BoardView from '../views/BoardView'
+import ListView from '../views/ListView'
 
 const Routes = () => (
     <NavigationContainer >
@@ -38,30 +36,15 @@ const Routes = () => (
             <Stack.Screen name="BoardView" component={BoardView} options={{
                 headerStyle: styles.navStack,
                 title: 'Board',
-                options: 'Settings', 
-                headerTintColor: darkBlue,
-                headerTitleStyle: {
-                    fontWeight: '300',
-                    fontSize: 20},
-                headerLeft: () => (
-                    <Button onPress={() => alert('FUCK')}
-                        title="Settings"
-                    />
-                )
-                ,
-            }}/>
-            <Stack.Screen name="ListView" component={ListView} options={{
-                headerStyle: styles.navStack,
-                title: 'Board',
                 headerTintColor: darkBlue,
                 headerTitleStyle: {
                     fontWeight: '300',
                     fontSize: 20,
                 },
             }}/>
-            <Stack.Screen name="BoardSettingsView" component={BoardSettingsView} options={{
+            <Stack.Screen name="ListView" component={ListView} options={{
                 headerStyle: styles.navStack,
-                title: 'BoardSettingsView',
+                title: 'List',
                 headerTintColor: darkBlue,
                 headerTitleStyle: {
                     fontWeight: '300',

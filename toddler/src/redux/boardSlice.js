@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import data from '../resources/data.json'
 
+
 let nextBoardId = 4;
 
 const boardsSlice = createSlice({
@@ -11,6 +12,8 @@ const boardsSlice = createSlice({
       state.push({ id: nextBoardId++, name: action.payload.name, thumbnailImage: action.payload.thumbnailImage})
     },
     deleteBoard(state, action) {
+      return state.filter(board => board.id !== action.payload.id);
+
 
     },
     editBoardName(state, action) {
@@ -22,7 +25,7 @@ const boardsSlice = createSlice({
   }
 })
 
-export const { addBoard } = boardsSlice.actions
+export const { addBoard, deleteBoard } = boardsSlice.actions
 
 export default boardsSlice.reducer
 
