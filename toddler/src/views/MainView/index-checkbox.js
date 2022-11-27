@@ -1,12 +1,8 @@
-import {useEffect, useState} from "react";
-import Icons from "react-native-vector-icons/FontAwesome"; 
+import { useState } from "react";
 import styles from "./styles";
-// import { CheckBox } from "react-native-elements";
 import { CheckBox } from '@rneui/base';
-import {Text, View, StyleSheet, TextInput, Alert} from 'react-native';
+import { View } from 'react-native';
 
-
- 
 
 
 export default function App() {

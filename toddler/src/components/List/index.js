@@ -9,7 +9,6 @@ import DeleteList from "../DeleteList";
 
 const List = ({ list }) => {
     const { navigate } = useNavigation();
-    console.log(list.color);
 
     return (
         <TouchableOpacity
@@ -34,17 +33,3 @@ const List = ({ list }) => {
 export default List;
 
 
-
-// const TasksList = ({ task }) => { 
-//     const tasks = useSelector((state) => state.tasks);
-    
-//     return (
-//     <View style={styles.listContainer}>
-//         {tasks.map((task) => (
-//             console.log(tasks)
-//         ))}
-//     </View>
-//  );
-// }
-
-// export default TasksList;

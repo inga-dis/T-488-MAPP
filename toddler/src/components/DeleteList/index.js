@@ -11,7 +11,6 @@ const DeleteList = ({listid}) => {
   const dispatch = useDispatch();
 
   function handleSubmit(){
-    console.log(listid)
     dispatch(deleteList({ id: listid }));
 
   }

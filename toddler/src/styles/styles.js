@@ -69,6 +69,8 @@ export default StyleSheet.create({
         alignItems: 'flex-end',
         flexDirection: "row",
         borderRadius: 10,
+        paddingBottom: 10,
+        flexWrap: 'wrap',
     },
     itemText: {
         fontSize: 20,
@@ -117,6 +119,27 @@ export default StyleSheet.create({
         elevation: 5,
     },
     exitButton: {
-        marginLeft: 250
-    }
+        marginLeft: 250        
+    },
+    containerAddX: {
+        paddingTop: 10,
+        paddingLeft: 20,
+        paddingRight: 20,
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        backgroundColor: grey,
+    },
+    buttonAddX: {
+        marginBottom: 10,
+        alignItems: 'center',
+        justifyContent: 'space-around' 
+    },
+    itemDescriptionText: {
+        marginTop: -20,
+        
+        marginLeft: 80,
+        marginBottom: 10
+    },
+
+    
 });

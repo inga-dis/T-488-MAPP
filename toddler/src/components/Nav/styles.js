@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions, useWindowDimensions } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { darkBlue } from '../../styles/colors';
 const windowWidth = Dimensions.get('window').width;
 

@@ -1,16 +1,16 @@
 import React from 'react';
 import { View, Button } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { deleteBoard } from '../../redux/boardSlice';
+import { deleteTask } from '../../redux/taskSlice';
+import mainStyles from '../../styles/styles'
 
-
-const DeleteBoard = ({boardid}) => { 
+const DeleteTask = ({taskid}) => { 
 
 
   const dispatch = useDispatch();
 
   function handleSubmit(){
-    dispatch(deleteBoard({ id: boardid }));
+    dispatch(deleteTask({ id: taskid }));
 
   }
 
@@ -21,4 +21,4 @@ const DeleteBoard = ({boardid}) => {
   );
 };
 
-export default DeleteBoard;
+export default DeleteTask;

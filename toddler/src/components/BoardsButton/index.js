@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigation } from '@react-navigation/native';
-import { Image, View, Text, TouchableOpacity, Button  } from "react-native";
+import { Image, View, Text, TouchableOpacity} from "react-native";
 import styles from "./styles";
 import mainStyles from '../../styles/styles'
 import DeleteBoard from "../DeleteBoard";

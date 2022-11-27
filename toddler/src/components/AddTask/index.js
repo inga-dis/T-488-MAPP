@@ -8,8 +8,6 @@ import mainStyles from "../../styles/styles";
 
 
 const AddTask = ({ listidfor }) => { 
-    console.log(listidfor)
-    const [modalVisible, setModalVisible] = useState(false);
 
     const [name, setName] = useState();
     const [description, setDescription] = useState();
