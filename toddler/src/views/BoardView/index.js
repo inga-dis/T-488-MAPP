@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, ScrollView, Text } from 'react-native';
 import List from '../../components/Lists';
 import styles from '../../styles/styles';
+import PopModal from '../../components/Modal';
 
 
 
@@ -11,12 +12,12 @@ const BoardView = ({ route }) => {
 
 
     return (
+        <View >
+        <Text style={styles.header}>{board.boardName}</Text>
         <ScrollView>
-            <View >
-                <Text style={styles.header}>{board.boardName}</Text>
                 <List boardid={board.boardId} ></List>
-            </View>
         </ScrollView>
+        </View>  
 
     );
 }

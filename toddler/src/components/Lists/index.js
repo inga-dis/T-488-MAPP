@@ -4,6 +4,7 @@ import {View } from 'react-native';
 
 import AddList from '../AddList'
 import List from '../List'
+import PopModal from "../Modal";
 
 
 const Lists = ( {boardid}) => {
