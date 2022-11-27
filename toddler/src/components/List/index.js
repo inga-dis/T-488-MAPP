@@ -5,8 +5,6 @@ import { useSelector } from "react-redux";
 import mainStyles from '../../styles/styles'
 
 import DeleteList from "../DeleteList";
-import BoardsThumbnail from '../BoardsThumbnail'
-
 // const TasksList = ({ task }) => { 
 //     const tasks = useSelector((state) => state.tasks);
     
