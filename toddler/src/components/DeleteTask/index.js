@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Button } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { deleteTask } from '../../redux/taskSlice';
-
+import mainStyles from '../../styles/styles'
 
 const DeleteTask = ({taskid}) => { 
 

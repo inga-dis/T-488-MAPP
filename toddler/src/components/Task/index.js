@@ -30,6 +30,11 @@ const Task = ({ task }) => {
                 {/* <Text>{task.description}</Text> */}
                 <DeleteTask taskid = {task.id}/>
             </View>
+            <View > 
+
+                {/* <Text style={mainStyles.itemDescriptionText}>{task.description}</Text> */}
+                {/* <DeleteTask taskid = {task.id} /> */}
+            </View>
     </TouchableOpacity>
     );
 };
