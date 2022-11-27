@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Button } from "react-native";
+import { View, Text, TextInput, Button, TouchableOpacity } from "react-native";
 import { useDispatch } from "react-redux";
 import { editList } from "../../redux/listSlice";
 import mainStyles from "../../styles/styles";

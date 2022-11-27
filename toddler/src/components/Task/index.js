@@ -1,15 +1,17 @@
-import { React, useState } from "react";
+import { React } from "react";
 import { View, Text, TouchableOpacity  } from "react-native";
 import mainStyles from '../../styles/styles'
 import DeleteTask from "../DeleteTask";
 import { useDispatch } from "react-redux";
 import { updateTask } from '../../redux/taskSlice';
 import { CheckBox } from '@rneui/base';
+import EditTask from "../ModifyTask";
+
 
 
 
 const Task = ({ task }) => {
-    const [finished, setFinished] = useState(false)
+
     const dispatch = useDispatch();
     
     function toggleTask(){
@@ -27,6 +29,7 @@ const Task = ({ task }) => {
                 </CheckBox> 
                 <Text style={mainStyles.itemText}>{task.name}</Text>
                 <DeleteTask taskid = {task.id}/>
+                <EditTask taskid={task.id}></EditTask>
             </View> 
     </TouchableOpacity>
     );

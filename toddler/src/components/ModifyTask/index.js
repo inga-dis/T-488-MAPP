@@ -2,19 +2,26 @@ import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { useDispatch } from "react-redux";
 import NativeModal from "react-native-modal";
-import { addBoard } from "../../redux/boardSlice";
+import { editTask } from "../../redux/taskSlice";
 import mainStyles from "../../styles/styles";
 
-const AddBoard = () => {
+const EditTask = ( taskid ) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [name, setName] = useState();
-    const [thumbnailImage, setThumbnailImage] = useState();
+    const [description, setDescription] = useState();
     const dispatch = useDispatch();
 
-    function handleSubmit() {
-        dispatch(addBoard({ name: name, thumbnailImage: thumbnailImage }));
+    function handleSubmit(taskid) {
+        if (setName === "") {
+            dispatch(editTask({id: taskid, description: description}))
+        } else if (setDescription === "") {
+            dispatch(editTask({id: taskid, name: name}))
+        } else if ((setName != "") && (setDescription != "")) {
+            dispatch(editTask({id: taskid, name: name, description: description}))
+
+        }
         setName("");
-        setThumbnailImage("");
+        setDescription("");
     }
 
     return (
@@ -30,17 +37,17 @@ const AddBoard = () => {
             >
                 <View style={mainStyles.centeredView}>
                     <View style={mainStyles.modalView}>
-                        <Text style={mainStyles.header3}> Add Board </Text>
+                        <Text style={mainStyles.header3}> Modify Task, empty fields will not update</Text>
                         <TextInput
-                            placeholder="Board name"
+                            placeholder="Task name"
                             value={name}
                             onChangeText={setName}
                             style={mainStyles.input}
                         />
                         <TextInput
-                            placeholder="Board image"
-                            value={thumbnailImage}
-                            onChangeText={setThumbnailImage}
+                            placeholder="Task description"
+                            value={description}
+                            onChangeText={setDescription}
                             style={mainStyles.input}
                         />
                         <TouchableOpacity
@@ -64,10 +71,10 @@ const AddBoard = () => {
                 style={[mainStyles.buttonAdd, mainStyles.buttonAddOpen]}
                 onPress={() => setModalVisible(true)}
             >
-                <Text style={mainStyles.ButtonAddtextStyle}>Add Board</Text>
+                <Text style={mainStyles.ButtonAddtextStyle}>Edit</Text>
             </TouchableOpacity>
         </View>
     );
 };
 
-export default AddBoard;
+export default EditTask;

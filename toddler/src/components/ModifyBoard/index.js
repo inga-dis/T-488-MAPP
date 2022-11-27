@@ -2,17 +2,24 @@ import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { useDispatch } from "react-redux";
 import NativeModal from "react-native-modal";
-import { addBoard } from "../../redux/boardSlice";
+import { editBoard } from "../../redux/boardSlice";
 import mainStyles from "../../styles/styles";
 
-const AddBoard = () => {
+const EditBoard = ( {boardid} ) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [name, setName] = useState();
     const [thumbnailImage, setThumbnailImage] = useState();
     const dispatch = useDispatch();
 
     function handleSubmit() {
-        dispatch(addBoard({ name: name, thumbnailImage: thumbnailImage }));
+        if (setName === "") {
+            dispatch(editBoard({id: boardid, thumbnailImage: thumbnailImage}))
+        } else if (setThumbnailImage === "") {
+            dispatch(editBoard({id: boardid, name: name}))
+        } else if ((setName != "") && (setThumbnailImage != "")) {
+            dispatch(editBoard({id: boardid, name: name, thumbnailImage: thumbnailImage}))
+
+        }
         setName("");
         setThumbnailImage("");
     }
@@ -30,7 +37,7 @@ const AddBoard = () => {
             >
                 <View style={mainStyles.centeredView}>
                     <View style={mainStyles.modalView}>
-                        <Text style={mainStyles.header3}> Add Board </Text>
+                        <Text style={mainStyles.header3}> Modify Board, empty fields will not update</Text>
                         <TextInput
                             placeholder="Board name"
                             value={name}
@@ -64,10 +71,10 @@ const AddBoard = () => {
                 style={[mainStyles.buttonAdd, mainStyles.buttonAddOpen]}
                 onPress={() => setModalVisible(true)}
             >
-                <Text style={mainStyles.ButtonAddtextStyle}>Add Board</Text>
+                <Text style={mainStyles.ButtonAddtextStyle}>Edit</Text>
             </TouchableOpacity>
         </View>
     );
 };
 
-export default AddBoard;
+export default EditBoard;

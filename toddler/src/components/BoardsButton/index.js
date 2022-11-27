@@ -4,6 +4,7 @@ import { Image, View, Text, TouchableOpacity} from "react-native";
 import styles from "./styles";
 import mainStyles from '../../styles/styles'
 import DeleteBoard from "../DeleteBoard";
+import EditBoard from "../ModifyBoard";
 
 const BoardsButton = ({ board }) => {
     const { navigate } = useNavigation();
@@ -19,6 +20,7 @@ const BoardsButton = ({ board }) => {
                     source={{ uri: board.thumbnailPhoto}} />
                 <Text style={mainStyles.itemText}>{board.name}</Text>
                 <DeleteBoard boardid = {board.id}/>
+                <EditBoard boardid={board.id}></EditBoard>
             </View>
     </TouchableOpacity>
     );

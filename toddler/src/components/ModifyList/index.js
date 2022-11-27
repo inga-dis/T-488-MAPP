@@ -2,19 +2,25 @@ import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { useDispatch } from "react-redux";
 import NativeModal from "react-native-modal";
-import { addBoard } from "../../redux/boardSlice";
+import { editList } from "../../redux/listSlice";
 import mainStyles from "../../styles/styles";
 
-const AddBoard = () => {
+const EditList = ({ listid }) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [name, setName] = useState();
-    const [thumbnailImage, setThumbnailImage] = useState();
+    const [color, setColor] = useState();
     const dispatch = useDispatch();
 
-    function handleSubmit() {
-        dispatch(addBoard({ name: name, thumbnailImage: thumbnailImage }));
+    function handleSubmit(listid) {
+        if (setName === "") {
+            dispatch(editList({ id: listid, color: color }));
+        } else if (setThumbnailImage === "") {
+            dispatch(editList({ id: listid, name: name }));
+        } else if (setName != "" && setThumbnailImage != "") {
+            dispatch(editList({ id: listid, name: name, color: color }));
+        }
         setName("");
-        setThumbnailImage("");
+        setColor("");
     }
 
     return (
@@ -30,17 +36,19 @@ const AddBoard = () => {
             >
                 <View style={mainStyles.centeredView}>
                     <View style={mainStyles.modalView}>
-                        <Text style={mainStyles.header3}> Add Board </Text>
+                        <Text style={mainStyles.header3}>
+                            Modify list, empty fields will not update
+                        </Text>
                         <TextInput
-                            placeholder="Board name"
+                            placeholder="List name"
                             value={name}
                             onChangeText={setName}
                             style={mainStyles.input}
                         />
                         <TextInput
-                            placeholder="Board image"
-                            value={thumbnailImage}
-                            onChangeText={setThumbnailImage}
+                            placeholder="List color #"
+                            value={color}
+                            onChangeText={setColor}
                             style={mainStyles.input}
                         />
                         <TouchableOpacity
@@ -64,10 +72,9 @@ const AddBoard = () => {
                 style={[mainStyles.buttonAdd, mainStyles.buttonAddOpen]}
                 onPress={() => setModalVisible(true)}
             >
-                <Text style={mainStyles.ButtonAddtextStyle}>Add Board</Text>
+                <Text style={mainStyles.ButtonAddtextStyle}>Edit</Text>
             </TouchableOpacity>
         </View>
     );
 };
-
-export default AddBoard;
+export default EditList;

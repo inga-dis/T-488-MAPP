@@ -6,7 +6,6 @@ import mainStyles from "../../styles/styles";
 import EditList from "../EditList";
 import DeleteList from "../DeleteList";
 
-
 const List = ({ list }) => {
     const { navigate } = useNavigation();
 
@@ -31,5 +30,3 @@ const List = ({ list }) => {
 };
 
 export default List;
-
-
