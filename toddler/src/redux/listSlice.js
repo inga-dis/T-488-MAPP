@@ -27,6 +27,7 @@ const listsSlice = createSlice({
         editList(state, action) {
           const list = state.find(list => list.id === action.payload.id);
           list.action.payload.catogory = action.payload.value
+          
         }
     },
 });
