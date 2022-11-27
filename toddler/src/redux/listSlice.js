@@ -1,6 +1,4 @@
 import { createSlice, current } from "@reduxjs/toolkit";
-import { ToastAndroid } from "react-native";
-import { useSelector } from "react-redux";
 import data from "../resources/data.json";
 
 let nextListId = 9;

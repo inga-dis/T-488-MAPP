@@ -6,6 +6,7 @@ import mainStyles from "../../styles/styles";
 import EditList from "../EditList";
 import DeleteList from "../DeleteList";
 
+
 const List = ({ list }) => {
     const { navigate } = useNavigation();
     console.log(list.color);
@@ -31,3 +32,24 @@ const List = ({ list }) => {
 };
 
 export default List;
+
+const styles = StyleSheet.create({
+    listColor: {
+
+    }
+  });
+
+
+// const TasksList = ({ task }) => { 
+//     const tasks = useSelector((state) => state.tasks);
+    
+//     return (
+//     <View style={styles.listContainer}>
+//         {tasks.map((task) => (
+//             console.log(tasks)
+//         ))}
+//     </View>
+//  );
+// }
+
+// export default TasksList;

@@ -8,7 +8,12 @@ const tasksSlice = createSlice({
   initialState: data.tasks,
   reducers: {
     addTask(state, action) {
-      state.push({ id: nextTaskId++, name: action.payload.name, description: action.payload.description, isFinished: action.payload.isFinished, listId: action.payload.listId})
+      state.push({ 
+        id: nextTaskId++, 
+        name: action.payload.name, 
+        description: action.payload.description, 
+        isFinished: action.payload.isFinished, 
+        listId: action.payload.listId})
     },
     deleteTask(state, action) {
       return state.filter(task => task.id !== action.payload.id);

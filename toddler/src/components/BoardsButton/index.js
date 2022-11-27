@@ -1,8 +1,9 @@
 import React from "react";
 import { useNavigation } from '@react-navigation/native';
-import { Image, View, Text, TouchableOpacity  } from "react-native";
+import { Image, View, Text, TouchableOpacity, Button  } from "react-native";
 import styles from "./styles";
 import mainStyles from '../../styles/styles'
+import DeleteBoard from "../DeleteBoard";
 
 const BoardsButton = ({ board }) => {
     const { navigate } = useNavigation();
@@ -17,6 +18,7 @@ const BoardsButton = ({ board }) => {
                     resizeMode="cover"
                     source={{ uri: board.thumbnailPhoto}} />
                 <Text style={mainStyles.itemText}>{board.name}</Text>
+                <DeleteBoard boardid = {board.id}/>
             </View>
     </TouchableOpacity>
     );

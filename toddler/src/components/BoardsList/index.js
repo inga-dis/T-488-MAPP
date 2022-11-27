@@ -5,7 +5,7 @@ import {View } from 'react-native';
 import AddBoard from "../AddBoard";
 import BoardsButton from "../BoardsButton";
 
-const BoardsList = () => { 
+const BoardsList = ({}) => { 
     const boards = useSelector((state) => state.boards);
     
     return (

@@ -1,18 +1,19 @@
 import React from "react";
 import { View, Text, TouchableOpacity  } from "react-native";
 import styles from "./styles";
+import mainStyles from '../../styles/styles'
 
 
 
 
 const Task = ({ task }) => {
-    // console.log("jj ", task.id)
 
     return (
         <TouchableOpacity>
-            <View style={styles.task}> 
-                <Text style={styles.TaskText}>{task.name}</Text>
-                <Text>CheckBox</Text>
+            <View style={mainStyles.itemCard}> 
+                <Text style={mainStyles.itemText}>{task.name}</Text>
+                <Text>{task.description}</Text>
+                {/* <Text>CheckBox</Text> */}
             </View>
     </TouchableOpacity>
     );

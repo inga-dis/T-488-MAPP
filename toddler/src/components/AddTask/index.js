@@ -1,31 +1,54 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { addTask } from '../../redux/taskSlice';
+import mainStyles from "../../styles/styles";
 
 
 
-const AddTask = () => { 
+const AddTask = ({ listidfor }) => { 
+    console.log(listidfor)
 
-  const [name, setName] = useState();
-  const [description, setDescription] = useState();
-  const dispatch = useDispatch();
+    const [name, setName] = useState();
+    const [description, setDescription] = useState();
+    const dispatch = useDispatch();
 
   function handleSubmit(){
-    dispatch(addTask({ name: name, description: description, isFinished: false, listId: 2 }));
+    dispatch(
+        addTask({ name: name, description: description, isFinished: false, listId: listidfor })
+    );
     setName('');
     setDescription('');
-
-
   }
 
   
   return (
-    <View style={styles.container}>
-      <TextInput placeholder="Task" value={name} onChangeText={setName} style={styles.input} />
-      <TextInput placeholder="Task" value={description} onChangeText={setDescription} style={styles.input} />
-      <Button title="Add" onPress={handleSubmit}/>
-    </View>
+    <View style={mainStyles.containerAdd}>
+            <Text style={mainStyles.header2}> Add Task </Text>
+            <TextInput
+                placeholder="Task name"
+                value={name}
+                onChangeText={setName}
+                style={mainStyles.input}
+            />
+            <TextInput
+                placeholder="Task description"
+                value={description}
+                onChangeText={setDescription}
+                style={mainStyles.input}
+            />
+            <TouchableOpacity
+                style={[mainStyles.button, mainStyles.buttonAdd]}
+                onPress={handleSubmit}
+            >
+                <Text style={mainStyles.buttonText}> Add </Text>
+            </TouchableOpacity>
+        </View>
+    // <View style={styles.container}>
+    //   <TextInput placeholder="Task" value={name} onChangeText={setName} style={styles.input} />
+    //   <TextInput placeholder="Task" value={description} onChangeText={setDescription} style={styles.input} />
+    //   <Button title="Add" onPress={handleSubmit}/>
+    // </View>
   );
 };
 
@@ -33,14 +56,14 @@ export default AddTask;
 
 
 
-const styles = StyleSheet.create({
-  container: {
-    margin: 2
-  },
-  input: {
-    backgroundColor: 'ghostwhite',
-    marginBottom: 8,
-    padding: 8,
-    height: 40,
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     margin: 2
+//   },
+//   input: {
+//     backgroundColor: 'ghostwhite',
+//     marginBottom: 8,
+//     padding: 8,
+//     height: 40,
+//   },
+// });

@@ -11,8 +11,10 @@ const boardsSlice = createSlice({
     addBoard(state, action) {
       state.push({ id: nextBoardId++, name: action.payload.name, thumbnailImage: action.payload.thumbnailImage})
     },
+    
     deleteBoard(state, action) {
       return state.filter(board => board.id !== action.payload.id);
+      console.log(current(state))
 
 
     },
