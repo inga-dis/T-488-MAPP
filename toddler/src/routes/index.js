@@ -9,8 +9,9 @@ const Stack = createStackNavigator();
 // Views
 import MainView from '../views/MainView';
 import BoardsView from '../views/BoardsView';
-import BoardView from '../views/BoardView'
-import ListView from '../views/ListView'
+import BoardView from '../views/BoardView';
+import ListView from '../views/ListView';
+// import BoardSettingsView from '../views/BoardSettingsView';
 
 
 const Routes = () => (
@@ -52,6 +53,15 @@ const Routes = () => (
                     fontSize: 20,
                 },
             }}/>
+            {/* <Stack.Screen name="BoardSettingsView" component={BoardSettingsView} options={{
+                headerStyle: styles.navStack,
+                title: 'BoardSettingsView',
+                headerTintColor: darkBlue,
+                headerTitleStyle: {
+                    fontWeight: '300',
+                    fontSize: 20,
+                },
+            }}/> */}
         </Stack.Navigator>
     </NavigationContainer>
 );

@@ -19,12 +19,17 @@ const AddList = ( {boardidfor}) => {
 
   }
 
+
+  // function handleEdit(){
+  //   dispatch(editBoard{ name: })
+  // }
   
   return (
     <View style={styles.container}>
       <TextInput placeholder="List" value={name} onChangeText={setName} style={styles.input} />
       <TextInput placeholder="List" value={color} onChangeText={setColor} style={styles.input} />
       <Button title="Add" onPress={handleSubmit}/>
+      <Button title="Settings" onPress={handleSubmit}/>
     </View>
   );
 };
