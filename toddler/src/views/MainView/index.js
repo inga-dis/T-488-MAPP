@@ -8,7 +8,7 @@ import Logo from '../../resources/logo.png';
 const MainView = ({ navigation: { navigate } }) => (
   <View style={styles.container}>
         <Image source={Logo} style={styles.logoStyle} />
-        <Text style={mainStyles.header}>Toodler - ehv meira</Text>
+        <Text style={mainStyles.header}>Toodler</Text>
         <TouchableOpacity 
             onPress={() => navigate('BoardsView')}
             underlayColor="white"

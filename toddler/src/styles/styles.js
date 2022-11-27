@@ -25,7 +25,11 @@ export default StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         color: 'white',
-
+    },
+    header3:{
+        fontSize: 20,
+        textAlign: 'center',
+        color: grey,
     },
     button: {
         marginBottom: 30,
@@ -70,9 +74,52 @@ export default StyleSheet.create({
     },
     itemText: {
         fontSize: 20,
-        // paddingBottom: 35,
-        color: darkGrey, 
-        
+        paddingBottom: 35,
+        color: darkGrey,
+    }, 
+    buttonAdd: {
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2,
+    },
+    buttonAddOpen: {
+        backgroundColor: "#F194FF",
+    },
+    buttonAddClose: {
+        backgroundColor: "#2196F3",
+    },
+    ButtonAddtextStyle: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center",
+    },
+    modalText: {
+        marginBottom: 15,
+        textAlign: "center",
+    },
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22,
+    },
+    modalView: {
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 35,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5,
+    },
+    exitButton: {
+        marginLeft: 250        
     },
     containerAddX: {
         paddingTop: 10,
@@ -90,11 +137,8 @@ export default StyleSheet.create({
     itemDescriptionText: {
         marginTop: -20,
         
-        // position: 'absolute',
         marginLeft: 80,
-        // paddingRight: -20,
         marginBottom: 10
-        // flex: 1
     },
 
     

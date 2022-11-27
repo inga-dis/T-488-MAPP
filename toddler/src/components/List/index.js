@@ -1,30 +1,32 @@
 import React from "react";
-import { useNavigation } from '@react-navigation/native';
-import { View, Text, TouchableOpacity, StyleSheet  } from "react-native";
-import mainStyles from '../../styles/styles'
-import DeleteList from "../DeleteList";
+import { useNavigation } from "@react-navigation/native";
+import { View, Text, TouchableOpacity } from "react-native";
+import mainStyles from "../../styles/styles";
 
+import EditList from "../EditList";
+import DeleteList from "../DeleteList";
 
 const List = ({ list }) => {
     const { navigate } = useNavigation();
 
     return (
         <TouchableOpacity
-            onPress={() => navigate('ListView', { listName: list.name, listId: list.id, color: list.color})}>
-            <View style={[mainStyles.itemCard, {backgroundColor: list.color}]} > 
+            onPress={() =>
+                navigate("ListView", {
+                    listName: list.name,
+                    listId: list.id,
+                    color: list.color,
+                })
+            }
+        >
+            <View
+                style={[mainStyles.itemCard, { backgroundColor: list.color }]}
+            >
                 <Text style={mainStyles.itemText}>{list.name}</Text>
-                <DeleteList listid = {list.id}/>
-                
+                <DeleteList listid={list.id} />
             </View>
-    </TouchableOpacity>
+        </TouchableOpacity>
     );
 };
 
 export default List;
-
-const styles = StyleSheet.create({
-    listColor: {
-
-    }
-  });
-

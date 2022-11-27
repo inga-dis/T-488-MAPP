@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Button } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { deleteList } from '../../redux/listSlice';

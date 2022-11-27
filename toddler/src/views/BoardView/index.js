@@ -11,12 +11,12 @@ const BoardView = ({ route }) => {
 
 
     return (
+        <View >
+        <Text style={styles.header}>{board.boardName}</Text>
         <ScrollView>
-            <View >
-                <Text style={styles.header}>{board.boardName}</Text>
                 <List boardid={board.boardId} ></List>
-            </View>
         </ScrollView>
+        </View>  
 
     );
 }

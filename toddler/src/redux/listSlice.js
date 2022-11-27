@@ -22,8 +22,14 @@ const listsSlice = createSlice({
 
         },
         editList(state, action) {
-          const list = state.find(list => list.id === action.payload.id);
-          list.action.payload.catogory = action.payload.value
+            const list = state.find(list => list.id === action.payload.id);
+            if (action.payload.color) {
+                list.color = action.payload.color;
+            }
+            if (action.payload.name) {
+                list.name = action.payload.name;      
+            }
+          
         }
     },
 });
