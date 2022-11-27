@@ -11,7 +11,7 @@ import MainView from '../views/MainView';
 import BoardsView from '../views/BoardsView';
 import BoardView from '../views/BoardView';
 import ListView from '../views/ListView';
-// import BoardSettingsView from '../views/BoardSettingsView';
+import BoardSettingsView from '../views/BoardSettingsView';
 
 
 const Routes = () => (
@@ -38,11 +38,17 @@ const Routes = () => (
             <Stack.Screen name="BoardView" component={BoardView} options={{
                 headerStyle: styles.navStack,
                 title: 'Board',
+                options: 'Settings', 
                 headerTintColor: darkBlue,
                 headerTitleStyle: {
                     fontWeight: '300',
-                    fontSize: 20,
-                },
+                    fontSize: 20},
+                headerLeft: () => (
+                    <Button onPress={() => alert('FUCK')}
+                        title="Settings"
+                    />
+                )
+                ,
             }}/>
             <Stack.Screen name="ListView" component={ListView} options={{
                 headerStyle: styles.navStack,
@@ -53,7 +59,7 @@ const Routes = () => (
                     fontSize: 20,
                 },
             }}/>
-            {/* <Stack.Screen name="BoardSettingsView" component={BoardSettingsView} options={{
+            <Stack.Screen name="BoardSettingsView" component={BoardSettingsView} options={{
                 headerStyle: styles.navStack,
                 title: 'BoardSettingsView',
                 headerTintColor: darkBlue,
@@ -61,7 +67,7 @@ const Routes = () => (
                     fontWeight: '300',
                     fontSize: 20,
                 },
-            }}/> */}
+            }}/>
         </Stack.Navigator>
     </NavigationContainer>
 );

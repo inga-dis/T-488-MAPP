@@ -15,5 +15,8 @@ export default StyleSheet.create({
     header: {
         fontSize: 20,
         textAlign: 'center'
+    }, 
+    button: {
+        textAlign: 'left'
     }
 });
