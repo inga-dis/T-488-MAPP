@@ -85,7 +85,7 @@ export default StyleSheet.create({
     buttonAddX: {
         marginBottom: 10,
         alignItems: 'center',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around' 
     },
     itemDescriptionText: {
         marginTop: -20,

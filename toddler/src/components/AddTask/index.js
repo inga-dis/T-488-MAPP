@@ -22,7 +22,7 @@ const AddTask = ({ listidfor }) => {
 
   
   return (
-    <View style={mainStyles.containerAdd}>
+    <View style={mainStyles.containerAddX}>
             <Text style={mainStyles.header2}> Add Task </Text>
             <TextInput
                 placeholder="Task name"
@@ -37,7 +37,7 @@ const AddTask = ({ listidfor }) => {
                 style={mainStyles.input}
             />
             <TouchableOpacity
-                style={[mainStyles.button, mainStyles.buttonAdd]}
+                style={[mainStyles.button, mainStyles.buttonAddX]}
                 onPress={handleSubmit}
             >
                 <Text style={mainStyles.buttonText}> Add </Text>
