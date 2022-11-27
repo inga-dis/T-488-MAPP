@@ -23,6 +23,3 @@ const Lists = ( {boardid}) => {
  );
 }
 export default Lists;
-
-
-{/* <Text>{list.name}<Task list={list}></Task></Text> */}

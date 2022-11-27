@@ -13,7 +13,6 @@ const BoardsView = () => {
     return (
         <ScrollView>
             <View>
-                {/* <Navbar/> */}
                 <BoardsList />
             </View>
         </ScrollView>

@@ -6,7 +6,6 @@ import AddTask from '../AddTask'
 import Task from '../Task'
 
 const Tasks = ( {listid}) => {
-    // console.log("HÉR??!")
     const tasks = useSelector((state) => state.tasks);
     const task = tasks.filter((item) => item.listId == listid).map(({id, name,description, listid}) => ({id, name,description, listid}));
     console.log("hhaah", listid)
@@ -14,7 +13,6 @@ const Tasks = ( {listid}) => {
     <View>
         
         <AddTask listidfor={listid}></AddTask>
-        {/* <AddTask boardidfor={listid}></AddTask> */}
 
         {task.map((task) => (
             

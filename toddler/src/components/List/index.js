@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, TouchableOpacity, StyleSheet  } from "react-native";
-import { useSelector } from "react-redux";
 import mainStyles from '../../styles/styles'
 
 import DeleteList from "../DeleteList";
@@ -31,17 +30,3 @@ const styles = StyleSheet.create({
     }
   });
 
-
-// const TasksList = ({ task }) => { 
-//     const tasks = useSelector((state) => state.tasks);
-    
-//     return (
-//     <View style={styles.listContainer}>
-//         {tasks.map((task) => (
-//             console.log(tasks)
-//         ))}
-//     </View>
-//  );
-// }
-
-// export default TasksList;

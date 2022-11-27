@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import React from 'react';
+import { View, Button } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { deleteBoard } from '../../redux/boardSlice';
 
