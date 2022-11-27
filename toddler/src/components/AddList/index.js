@@ -1,12 +1,7 @@
 import React, { useState } from "react";
-import {
-    Modal,
-    View,
-    Text,
-    TextInput,
-    TouchableOpacity,
-} from "react-native";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { useDispatch } from "react-redux";
+import NativeModal from "react-native-modal";
 import { addList } from "../../redux/listSlice";
 import mainStyles from "../../styles/styles";
 
@@ -26,17 +21,18 @@ const AddList = ({ boardidfor }) => {
 
     return (
         <View style={mainStyles.centeredView}>
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={modalVisible}
+            <NativeModal
+                hasBackdrop={true}
+                isVisible={modalVisible}
+                onSwipeComplete={() => setModalVisible(false)}
+                swipeDirection={["up", "down"]}
                 onRequestClose={() => {
                     setModalVisible(!modalVisible);
                 }}
             >
                 <View style={mainStyles.centeredView}>
                     <View style={mainStyles.modalView}>
-                        <Text style={mainStyles.header2}> Add List </Text>
+                        <Text style={mainStyles.header3}> Add List </Text>
                         <TextInput
                             placeholder="List name"
                             value={name}
@@ -50,16 +46,22 @@ const AddList = ({ boardidfor }) => {
                             style={mainStyles.input}
                         />
                         <TouchableOpacity
-                            style={[mainStyles.buttonAdd, mainStyles.buttonAddClose]}
+                            style={[
+                                mainStyles.buttonAdd,
+                                mainStyles.buttonAddClose,
+                            ]}
                             onPress={() => {
-                                handleSubmit(boardidfor); setModalVisible(!modalVisible)
+                                handleSubmit(boardidfor);
+                                setModalVisible(!modalVisible);
                             }}
                         >
-                            <Text style={mainStyles.ButtonAddtextStyle}>Add list</Text>
+                            <Text style={mainStyles.ButtonAddtextStyle}>
+                                Submit
+                            </Text>
                         </TouchableOpacity>
                     </View>
                 </View>
-            </Modal>
+            </NativeModal>
             <TouchableOpacity
                 style={[mainStyles.buttonAdd, mainStyles.buttonAddOpen]}
                 onPress={() => setModalVisible(true)}
@@ -71,4 +73,3 @@ const AddList = ({ boardidfor }) => {
 };
 
 export default AddList;
-

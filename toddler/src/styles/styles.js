@@ -25,7 +25,11 @@ export default StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         color: 'white',
-
+    },
+    header3:{
+        fontSize: 20,
+        textAlign: 'center',
+        color: grey,
     },
     button: {
         marginBottom: 30,
@@ -112,4 +116,7 @@ export default StyleSheet.create({
         shadowRadius: 4,
         elevation: 5,
     },
+    exitButton: {
+        marginLeft: 250
+    }
 });

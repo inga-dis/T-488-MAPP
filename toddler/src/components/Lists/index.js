@@ -4,7 +4,6 @@ import {View } from 'react-native';
 
 import AddList from '../AddList'
 import List from '../List'
-import PopModal from "../Modal";
 
 
 const Lists = ( {boardid}) => {
@@ -25,5 +24,3 @@ const Lists = ( {boardid}) => {
 }
 export default Lists;
 
-
-{/* <Text>{list.name}<Task list={list}></Task></Text> */}
