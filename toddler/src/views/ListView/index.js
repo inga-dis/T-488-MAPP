@@ -8,7 +8,6 @@ import styles from '../../styles/styles';
 const ListView = ({ route }) => {
 
     const list = route.params;
-    console.log(list)
 
 
     return (

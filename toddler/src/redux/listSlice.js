@@ -1,38 +1,34 @@
-import { createSlice } from '@reduxjs/toolkit';
-import data from '../resources/data.json'
+import { createSlice, current } from "@reduxjs/toolkit";
+import { ToastAndroid } from "react-native";
+import { useSelector } from "react-redux";
+import data from "../resources/data.json";
 
 let nextListId = 9;
 
 const listsSlice = createSlice({
-  name: 'lists',
-  initialState: data.lists,
-  reducers: {
-    addList(state, action) {
-      state.push({ id: nextListId++, name: action.payload.name, color: action.payload.color, boardId: action.payload.boardId })
+    name: "lists",
+    initialState: data.lists,
+    reducers: {
+        addList(state, action) {
+            state.push({
+                id: nextListId++,
+                name: action.payload.name,
+                color: action.payload.color,
+                boardId: action.payload.boardId,
+            });
+        },
+        deleteList: (state, action) => {
+            return state.filter(list => list.id !== action.payload.id);
+            console.log(current(state))
+
+        },
+        editList(state, action) {
+          const list = state.find(list => list.id === action.payload.id);
+          list.action.payload.catogory = action.payload.value
+        }
     },
+});
 
-    deleteList: (state, action) =>  {
-      const listId = action.payload;
-      // state.listsSlice = listsSlice.filter((list) => 
-      // list.id !== listId);
-      console.log("Hallo")
-    }
+export const { addList, deleteList, editList } = listsSlice.actions;
 
-
-    },
-    editListName(state, action) {
-
-    },
-    editListColor(state, action) {
-        
-    },
-    editListList(state, action) {
-        
-    }    
-  })
-
-
-export const { addList } = listsSlice.actions
-
-export default listsSlice.reducer
-
+export default listsSlice.reducer;

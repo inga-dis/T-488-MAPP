@@ -1,46 +1,45 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
-import { useDispatch } from 'react-redux';
-import { addList } from '../../redux/listSlice';
+import React, { useState } from "react";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { useDispatch } from "react-redux";
+import { addList } from "../../redux/listSlice";
+import mainStyles from "../../styles/styles";
 
+const AddList = ({ boardidfor }) => {
+    const [name, setName] = useState();
+    const [color, setColor] = useState();
+    const dispatch = useDispatch();
 
+    function handleSubmit() {
+        dispatch(
+            addList({ name: name, color: color, boardId: { boardidfor } })
+        );
+        setName("");
+        setColor("");
+    }
 
-const AddList = ( {boardidfor}) => { 
-
-  const [name, setName] = useState();
-  const [color, setColor] = useState();
-  const dispatch = useDispatch();
-  // console.log(boardidfor)
-
-  function handleSubmit(){
-    dispatch(addList({ name: name, color: color, boardId: {boardidfor} }));
-    setName('');
-    setColor('');
-
-  }
-
-  
-  return (
-    <View style={styles.container}>
-      <TextInput placeholder="List" value={name} onChangeText={setName} style={styles.input} />
-      <TextInput placeholder="List" value={color} onChangeText={setColor} style={styles.input} />
-      <Button title="Add" onPress={handleSubmit}/>
-    </View>
-  );
+    return (
+        <View style={mainStyles.containerAdd}>
+            <Text style={mainStyles.header2}> Add List </Text>
+            <TextInput
+                placeholder="List name"
+                value={name}
+                onChangeText={setName}
+                style={mainStyles.input}
+            />
+            <TextInput
+                placeholder="List color"
+                value={color}
+                onChangeText={setColor}
+                style={mainStyles.input}
+            />
+            <TouchableOpacity
+                style={[mainStyles.button, mainStyles.buttonAdd]}
+                onPress={handleSubmit}
+            >
+                <Text style={mainStyles.buttonText}> Add </Text>
+            </TouchableOpacity>
+        </View>
+    );
 };
 
 export default AddList;
-
-
-
-const styles = StyleSheet.create({
-  container: {
-    margin: 2
-  },
-  input: {
-    backgroundColor: 'ghostwhite',
-    marginBottom: 8,
-    padding: 8,
-    height: 40,
-  },
-});

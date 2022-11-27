@@ -13,7 +13,6 @@ const BoardsView = () => {
     const boards = useSelector((state) => state.boards); // Sækir öll boards
     const lists = useSelector((state) => state.lists);
     const tasks = useSelector((state) => state.tasks);
-    // console.log(lists)
 
     return (
         <ScrollView>

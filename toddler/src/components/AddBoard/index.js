@@ -1,43 +1,48 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
-import { useDispatch } from 'react-redux';
-import { addBoard } from '../../redux/boardSlice';
+import React, { useState } from "react";
+import {
+    View,
+    Text,
+    TextInput,
+    TouchableOpacity,}
+from "react-native";
+import { useDispatch } from "react-redux";
+import { addBoard } from "../../redux/boardSlice";
+import mainStyles from "../../styles/styles";
 
+const AddBoard = () => {
+    const [name, setName] = useState();
+    const [thumbnailImage, setThumbnailImage] = useState();
+    const dispatch = useDispatch();
 
-const AddBoard = () => { 
+    function handleSubmit() {
+        dispatch(addBoard({ name: name, thumbnailImage: thumbnailImage }));
+        setName("");
+        setThumbnailImage("");
+    }
 
-  const [name, setName] = useState();
-  const [thumbnailImage, setThumbnailImage] = useState();
-  const dispatch = useDispatch();
-
-  function handleSubmit(){
-    dispatch(addBoard({ name: name, thumbnailImage: thumbnailImage }));
-    setName('');
-    setThumbnailImage('');
-  }
-
-
-  return (
-    <View style={styles.container}>
-      <TextInput placeholder="Board" value={name} onChangeText={setName} style={styles.input} />
-      <TextInput placeholder="Board" value={thumbnailImage} onChangeText={setThumbnailImage} style={styles.input} />
-      <Button title="Add" onPress={handleSubmit}/>
-    </View>
-  );
+    return (
+        <View style={mainStyles.containerAdd}>
+            <Text style={mainStyles.header2}> Add Board </Text>
+            <TextInput
+                placeholder="Board name"
+                value={name}
+                onChangeText={setName}
+                style={mainStyles.input}
+            />
+            <TextInput
+                placeholder="Board image"
+                value={thumbnailImage}
+                onChangeText={setThumbnailImage}
+                style={mainStyles.input}
+            />
+            <TouchableOpacity
+                style={[mainStyles.button, mainStyles.buttonAdd]}
+                onPress={handleSubmit}
+            >
+                <Text style={mainStyles.buttonText}> Add </Text>
+            </TouchableOpacity>
+        </View>
+    );
 };
 
 export default AddBoard;
-
-
-
-const styles = StyleSheet.create({
-  container: {
-    margin: 2
-  },
-  input: {
-    backgroundColor: 'ghostwhite',
-    marginBottom: 8,
-    padding: 8,
-    height: 40,
-  },
-});

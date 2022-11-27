@@ -1,7 +1,6 @@
-
 import React from "react";
 import {View } from 'react-native';
-import BoardsThumbnail from '../BoardsThumbnail'
+import BoardsButton from "../BoardsButton";
 import { useSelector } from "react-redux";
 import styles from './styles';
 
@@ -11,7 +10,7 @@ const BoardsList = () => {
     return (
     <View style={styles.listContainer}>
         {boards.map((board) => (
-            <BoardsThumbnail board={board} />
+            <BoardsButton board={board} />
         ))}
     </View>
  );
