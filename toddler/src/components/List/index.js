@@ -5,7 +5,21 @@ import { useSelector } from "react-redux";
 import mainStyles from '../../styles/styles'
 
 import DeleteList from "../DeleteList";
+import BoardsThumbnail from '../BoardsThumbnail'
 
+// const TasksList = ({ task }) => { 
+//     const tasks = useSelector((state) => state.tasks);
+    
+//     return (
+//     <View style={styles.listContainer}>
+//         {tasks.map((task) => (
+//             console.log(tasks)
+//         ))}
+//     </View>
+//  );
+// }
+
+// export default TasksList;
 
 
 const List = ({ list }) => {
