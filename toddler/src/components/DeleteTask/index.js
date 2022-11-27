@@ -10,7 +10,6 @@ const DeleteTask = ({taskid}) => {
   const dispatch = useDispatch();
 
   function handleSubmit(){
-    console.log(taskid)
     dispatch(deleteTask({ id: taskid }));
 
   }

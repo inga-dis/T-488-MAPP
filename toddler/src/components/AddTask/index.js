@@ -7,7 +7,6 @@ import mainStyles from "../../styles/styles";
 
 
 const AddTask = ({ listidfor }) => { 
-    console.log(listidfor)
 
     const [name, setName] = useState();
     const [description, setDescription] = useState();

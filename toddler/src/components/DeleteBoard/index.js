@@ -10,7 +10,6 @@ const DeleteBoard = ({boardid}) => {
   const dispatch = useDispatch();
 
   function handleSubmit(){
-    console.log(boardid)
     dispatch(deleteBoard({ id: boardid }));
 
   }
