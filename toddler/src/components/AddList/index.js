@@ -11,7 +11,7 @@ const AddList = ({ boardidfor }) => {
 
     function handleSubmit() {
         dispatch(
-            addList({ name: name, color: color, boardId: boardidfor })
+            addList({ name: name, color: "#"+color, boardId: boardidfor })
         );
         console.log(boardidfor)
         setName("");
@@ -28,7 +28,7 @@ const AddList = ({ boardidfor }) => {
                 style={mainStyles.input}
             />
             <TextInput
-                placeholder="List color"
+                placeholder="List color #"
                 value={color}
                 onChangeText={setColor}
                 style={mainStyles.input}

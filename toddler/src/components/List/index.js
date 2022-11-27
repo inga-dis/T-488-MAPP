@@ -10,11 +10,12 @@ import DeleteList from "../DeleteList";
 
 const List = ({ list }) => {
     const { navigate } = useNavigation();
+    console.log(list.color)
 
     return (
         <TouchableOpacity
             onPress={() => navigate('ListView', { listName: list.name, listId: list.id, color: list.color})}>
-            <View style={[mainStyles.itemCard, styles.listColor]} > 
+            <View style={[mainStyles.itemCard, {backgroundColor: list.color}]} > 
                 <Text style={mainStyles.itemText}>{list.name}</Text>
                 <DeleteList listid = {list.id}/>
                 
