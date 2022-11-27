@@ -71,7 +71,7 @@ export default StyleSheet.create({
     itemText: {
         fontSize: 20,
         // paddingBottom: 35,
-        color: darkGrey,
+        color: darkGrey, 
         
     },
     containerAddX: {

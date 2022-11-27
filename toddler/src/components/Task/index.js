@@ -31,7 +31,7 @@ const Task = ({ task }) => {
                 <Text>{task.description}</Text>
                 {/* <Text>CheckBox</Text> */}
                 <DeleteTask taskid = {task.id}/>
-            </View>
+            </View> 
             <View > 
 
                 {/* <Text style={mainStyles.itemDescriptionText}>{task.description}</Text> */}
