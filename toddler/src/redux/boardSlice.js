@@ -14,10 +14,8 @@ const boardsSlice = createSlice({
     
     deleteBoard(state, action) {
       return state.filter(board => board.id !== action.payload.id);
-      console.log(current(state))
-
-
     },
+    
     editBoardName(state, action) {
 
     },

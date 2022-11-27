@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, ScrollView, Text } from 'react-native';
 import List from '../../components/Lists';
 import styles from '../../styles/styles';
