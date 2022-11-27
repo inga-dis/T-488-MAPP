@@ -65,10 +65,37 @@ export default StyleSheet.create({
         alignItems: 'flex-end',
         flexDirection: "row",
         borderRadius: 10,
+        paddingBottom: 10,
+        flexWrap: 'wrap',
     },
     itemText: {
         fontSize: 20,
-        paddingBottom: 35,
+        // paddingBottom: 35,
         color: darkGrey,
-    }
+        
+    },
+    containerAddX: {
+        paddingTop: 10,
+        paddingLeft: 20,
+        paddingRight: 20,
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        backgroundColor: grey,
+    },
+    buttonAddX: {
+        marginBottom: 10,
+        alignItems: 'center',
+        justifyContent: 'space-around'
+    },
+    itemDescriptionText: {
+        marginTop: -20,
+        
+        // position: 'absolute',
+        marginLeft: 80,
+        // paddingRight: -20,
+        marginBottom: 10
+        // flex: 1
+    },
+
+    
 });

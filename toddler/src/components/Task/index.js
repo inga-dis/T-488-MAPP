@@ -21,16 +21,21 @@ const Task = ({ task }) => {
 
 
     return (
-        <TouchableOpacity>
-            <View style={mainStyles.itemCard}> 
+        <TouchableOpacity style={mainStyles.itemCard}>
+            <View > 
                 <CheckBox checked={finished} 
                 onPress={() => setFinished(!finished)}>
                 </CheckBox>
                 <Text style={mainStyles.itemText}>{task.name}</Text>
 
-                {/* <Text>{task.description}</Text> */}
+                <Text>{task.description}</Text>
                 {/* <Text>CheckBox</Text> */}
                 <DeleteTask taskid = {task.id}/>
+            </View>
+            <View > 
+
+                {/* <Text style={mainStyles.itemDescriptionText}>{task.description}</Text> */}
+                {/* <DeleteTask taskid = {task.id} /> */}
             </View>
     </TouchableOpacity>
     );
