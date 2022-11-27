@@ -1,29 +1,31 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
-import { useDispatch } from 'react-redux';
+import React, { useState } from "react";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { useDispatch } from "react-redux";
 import NativeModal from "react-native-modal";
-import { addTask } from '../../redux/taskSlice';
+import { addTask } from "../../redux/taskSlice";
 import mainStyles from "../../styles/styles";
 
-
-
-const AddTask = ({ listidfor }) => { 
-
+const AddTask = ({ listidfor }) => {
+    const [modalVisible, setModalVisible] = useState(false);
     const [name, setName] = useState();
     const [description, setDescription] = useState();
     const dispatch = useDispatch();
 
-  function handleSubmit(){
-    dispatch(
-        addTask({ name: name, description: description, isFinished: false, listId: listidfor })
-    );
-    setName('');
-    setDescription('');
-  }
+    function handleSubmit() {
+        dispatch(
+            addTask({
+                name: name,
+                description: description,
+                isFinished: false,
+                listId: listidfor,
+            })
+        );
+        setName("");
+        setDescription("");
+    }
 
-  
-  return (
-    <View style={mainStyles.centeredView}>
+    return (
+        <View style={mainStyles.centeredView}>
             <NativeModal
                 hasBackdrop={true}
                 isVisible={modalVisible}
@@ -36,25 +38,25 @@ const AddTask = ({ listidfor }) => {
                 <View style={mainStyles.centeredView}>
                     <View style={mainStyles.modalView}>
                         <Text style={mainStyles.header3}> Add Board </Text>
-            <TextInput
-                placeholder="Task name"
-                value={name}
-                onChangeText={setName}
-                style={mainStyles.input}
-            />
-            <TextInput
-                placeholder="Task description"
-                value={description}
-                onChangeText={setDescription}
-                style={mainStyles.input}
-            />
+                        <TextInput
+                            placeholder="Task name"
+                            value={name}
+                            onChangeText={setName}
+                            style={mainStyles.input}
+                        />
+                        <TextInput
+                            placeholder="Task description"
+                            value={description}
+                            onChangeText={setDescription}
+                            style={mainStyles.input}
+                        />
                         <TouchableOpacity
                             style={[
                                 mainStyles.buttonAdd,
                                 mainStyles.buttonAddClose,
                             ]}
                             onPress={() => {
-                                handleSubmit(boardidfor);
+                                handleSubmit(listidfor);
                                 setModalVisible(!modalVisible);
                             }}
                         >
@@ -69,10 +71,10 @@ const AddTask = ({ listidfor }) => {
                 style={[mainStyles.buttonAdd, mainStyles.buttonAddOpen]}
                 onPress={() => setModalVisible(true)}
             >
-                <Text style={mainStyles.ButtonAddtextStyle}>Add List</Text>
+                <Text style={mainStyles.ButtonAddtextStyle}>Add task</Text>
             </TouchableOpacity>
-        </View> 
-  );
+        </View>
+    );
 };
 
 export default AddTask;

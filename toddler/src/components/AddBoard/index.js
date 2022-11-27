@@ -49,7 +49,7 @@ const AddBoard = () => {
                                 mainStyles.buttonAddClose,
                             ]}
                             onPress={() => {
-                                handleSubmit(boardidfor);
+                                handleSubmit();
                                 setModalVisible(!modalVisible);
                             }}
                         >
