@@ -13,7 +13,6 @@ const AddList = ({ boardidfor }) => {
         dispatch(
             addList({ name: name, color: "#"+color, boardId: boardidfor })
         );
-        console.log(boardidfor)
         setName("");
         setColor("");
     }

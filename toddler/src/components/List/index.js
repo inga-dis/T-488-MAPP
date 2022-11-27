@@ -2,13 +2,11 @@ import React from "react";
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, TouchableOpacity, StyleSheet  } from "react-native";
 import mainStyles from '../../styles/styles'
-
 import DeleteList from "../DeleteList";
 
 
 const List = ({ list }) => {
     const { navigate } = useNavigation();
-    console.log(list.color)
 
     return (
         <TouchableOpacity

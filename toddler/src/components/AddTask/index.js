@@ -7,7 +7,6 @@ import mainStyles from "../../styles/styles";
 
 
 const AddTask = ({ listidfor }) => { 
-    console.log(listidfor)
 
     const [name, setName] = useState();
     const [description, setDescription] = useState();
@@ -23,7 +22,7 @@ const AddTask = ({ listidfor }) => {
 
   
   return (
-    <View style={mainStyles.containerAddX}>
+    <View style={mainStyles.containerAdd}>
             <Text style={mainStyles.header2}> Add Task </Text>
             <TextInput
                 placeholder="Task name"
@@ -38,7 +37,7 @@ const AddTask = ({ listidfor }) => {
                 style={mainStyles.input}
             />
             <TouchableOpacity
-                style={[mainStyles.button, mainStyles.buttonAddX]}
+                style={[mainStyles.button, mainStyles.buttonAdd]}
                 onPress={handleSubmit}
             >
                 <Text style={mainStyles.buttonText}> Add </Text>
