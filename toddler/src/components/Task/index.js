@@ -1,25 +1,47 @@
 import React from "react";
-import { useNavigation } from '@react-navigation/native';
 import { View, Text, TouchableOpacity  } from "react-native";
-import { useSelector } from "react-redux";
 import styles from "./styles";
 
 
 
-const List = ({ task }) => {
-    console.log(task)
+
+const Task = ({ task }) => {
+    // console.log("jj ", task.id)
 
     return (
         <TouchableOpacity>
-            <View> 
-                {/* <Text>{task.name}</Text> */}
-                <Text>VIRKAAA</Text>
+            <View style={styles.task}> 
+                <Text style={styles.TaskText}>{task.name}</Text>
+                <Text>CheckBox</Text>
             </View>
     </TouchableOpacity>
     );
 };
 
-export default List;
+export default Task;
+
+// import React from "react";
+// import { useNavigation } from '@react-navigation/native';
+// import { View, Text, TouchableOpacity  } from "react-native";
+// import { useSelector } from "react-redux";
+// import styles from "./styles";
+
+
+
+// const List = ({ task }) => {
+//     console.log(task)
+
+//     return (
+//         <TouchableOpacity>
+//             <View> 
+//                 {/* <Text>{task.name}</Text> */}
+//                 <Text>VIRKAAA</Text>
+//             </View>
+//     </TouchableOpacity>
+//     );
+// };
+
+// export default List;
 
 
 // import React from "react";
