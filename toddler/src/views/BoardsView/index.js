@@ -3,10 +3,6 @@ import { View, ScrollView } from 'react-native';
 import { useSelector } from "react-redux";
 import BoardsList from '../../components/BoardsList'; // ToDolist
 
-import AddBoard from '../../components/AddBoard';
-
-import AddList from '../../components/AddList'; // EKKI RÉTTUR STAÐUR 
-import AddTask from '../../components/AddTask'; // EKKI RÉTTUR STAÐUR 
 
 const BoardsView = () => {
     
@@ -18,7 +14,6 @@ const BoardsView = () => {
         <ScrollView>
             <View>
                 {/* <Navbar/> */}
-                <AddBoard />
                 <BoardsList />
             </View>
         </ScrollView>

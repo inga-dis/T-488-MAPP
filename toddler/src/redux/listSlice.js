@@ -16,6 +16,8 @@ const listsSlice = createSlice({
                 color: action.payload.color,
                 boardId: action.payload.boardId,
             });
+            console.log(action.payload.boardId)
+            console.log(current(state))
         },
         deleteList: (state, action) => {
             return state.filter(list => list.id !== action.payload.id);

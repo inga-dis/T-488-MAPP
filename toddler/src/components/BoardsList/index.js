@@ -1,14 +1,16 @@
 import React from "react";
-import {View } from 'react-native';
-import BoardsButton from "../BoardsButton";
 import { useSelector } from "react-redux";
-import styles from './styles';
+import {View } from 'react-native';
+
+import AddBoard from "../AddBoard";
+import BoardsButton from "../BoardsButton";
 
 const BoardsList = () => { 
     const boards = useSelector((state) => state.boards);
     
     return (
-    <View style={styles.listContainer}>
+    <View>
+        <AddBoard />
         {boards.map((board) => (
             <BoardsButton board={board} />
         ))}

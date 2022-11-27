@@ -12,6 +12,8 @@ const ListView = ({ route }) => {
 
     return (
         <View >
+            <AddList boardidfor={boardid}></AddList>
+
             <Text style={styles.header}>{list.listName}</Text>
             <List boardid={list.listId} ></List>
         </View>

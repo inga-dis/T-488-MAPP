@@ -11,8 +11,9 @@ const AddList = ({ boardidfor }) => {
 
     function handleSubmit() {
         dispatch(
-            addList({ name: name, color: color, boardId: { boardidfor } })
+            addList({ name: name, color: color, boardId: boardidfor })
         );
+        console.log(boardidfor)
         setName("");
         setColor("");
     }

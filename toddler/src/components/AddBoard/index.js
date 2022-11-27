@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { addBoard } from "../../redux/boardSlice";
 import mainStyles from "../../styles/styles";
 
-const AddBoard = () => {
+const AddBoard = ( {itemToAdd} ) => {
     const [name, setName] = useState();
     const [thumbnailImage, setThumbnailImage] = useState();
     const dispatch = useDispatch();
