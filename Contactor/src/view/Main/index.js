@@ -18,3 +18,5 @@ const Main = ({ navigation: { navigate } }) => (
 );
 
 export default Main;
+
+export default Main;

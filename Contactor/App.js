@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import { StatusBar } from 'expo-status-bar';
 // import { StyleSheet, Text, View } from 'react-native';
 
@@ -32,4 +33,14 @@ export default function App() {
       <AppContainer />
   ) 
 
+=======
+import React from 'react';
+import TestView from './src/view/Test'
+
+export default function App() {
+
+    return (
+		<TestView></TestView>
+	);
+>>>>>>> 8be5c44bf35da17da329065d03674f4d2dca4396
 };
