@@ -8,6 +8,7 @@ const Stack = createStackNavigator();
 
 // Views
 import Main from "../view/Main";
+import Contacts from "../view/Contacts";
 
 
 const Routes = () => (
@@ -22,6 +23,11 @@ const Routes = () => (
                 //     fontWeight: '300',
                 //     fontSize: 20,
                 // },
+            }} />
+            <Stack.Screen name="Contacts" component={Contacts} options={{
+                // headerStyle: styles.navStack,
+                title: 'Contacts',
+
             }} />
 
         </Stack.Navigator>
