@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
+
 const Stack = createStackNavigator();
 
 // Views
@@ -13,12 +14,16 @@ const Routes = () => (
     <NavigationContainer >
         <Stack.Navigator initialRouteName="Main">
             <Stack.Screen name="Main" component={Main} options={{
+                // headerStyle: styles.navStack,
                 title: 'Main',
-                headerTitleStyle: {
-                    fontWeight: '300',
-                    fontSize: 20,
-                },
+                
+                // headerTintColor: darkBlue,
+                // headerTitleStyle: {
+                //     fontWeight: '300',
+                //     fontSize: 20,
+                // },
             }} />
+
         </Stack.Navigator>
     </NavigationContainer>
 );
