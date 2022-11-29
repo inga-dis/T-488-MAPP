@@ -6,7 +6,7 @@ import Search from '../../components/Search'; // ToDolist
 import {lightPurple, lightBlue} from '../../styles/colors';
 
 
-const BoardsView = () => {
+const Contacts = () => {
     
 
 
@@ -21,7 +21,7 @@ const BoardsView = () => {
         </ScrollView>
     )
 };
-export default BoardsView;
+export default Contacts;
 
 const styles = StyleSheet.create({
     container: {
