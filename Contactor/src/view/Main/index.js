@@ -8,7 +8,7 @@ const Main = ({ navigation: { navigate } }) => (
   <View>
         {/* <Image source={Logo} style={styles.logoStyle} /> */}
         {/* <HeaderComponent></HeaderComponent> */}
-        <Text>This is our new phone app bitches</Text>
+        <HeaderComponent>This is our new phone app bitches</HeaderComponent>
         <TouchableOpacity 
             onPress={() => navigate('BoardsView')}
             underlayColor="white">
@@ -16,7 +16,5 @@ const Main = ({ navigation: { navigate } }) => (
 
   </View>
 );
-
-export default Main;
 
 export default Main;
