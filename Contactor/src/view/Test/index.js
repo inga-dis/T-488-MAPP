@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Button } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
 import * as fileService from "../../services/fileservice";
 
 
@@ -9,14 +9,14 @@ const TestView = () => {
     // const [loadingContacts, setLoadingContacts] = useState(true);
 
     const addContact = async (contact) => {
-		console.log(contact)
         // setLoadingImages(true);
-        // const newContact = await fileService.addContact(contact);
+        const newContact = await fileService.addContact(contact);
 
         // setContacts([...contacts, newContact]); // Þörf á þessu?
         // setIsAddModalOpen(false);
         // setLoadingContact(false);
     };
+    const testContact = {name: "Inga", phone: 22222, image: "img"}
 
     return (
         <View style={{
@@ -27,7 +27,9 @@ const TestView = () => {
             <View style={{ backgroundColor: "blue", flex: 0.3 }} />
             <View style={{ backgroundColor: "red", flex: 0.5 }} />
             <Text>Hello World!</Text>
-            <Button style={{color:'pink'}}>button</Button>
+            <TouchableOpacity style={{color:'pink'}} onPress={() => addContact(testContact)}>
+                <Text>Button</Text>
+            </TouchableOpacity>
         </View>
     );
 }
