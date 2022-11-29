@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Header from '../components/Header';
-import HeaderStyle from '../components/Header/styles'
+
 
 
 
@@ -16,19 +15,11 @@ import Contact from "../view/Contact";
 
 const Routes = () => (
     <NavigationContainer >
-        <Stack.Navigator initialRouteName="Main" >
-            <Stack.Screen name="Main" component={Main} options={{
-                // headerStyle: styles.navStack,
-                // headerStyle: () => {HeaderStyle}
-                
-                // headerTintColor: darkBlue,
-                // headerTitleStyle: {
-                //     fontWeight: '300',
-                //     fontSize: 20,
-                // },
+
+        <Stack.Navigator initialRouteName="Main" component={Main}>
+            <Stack.Screen name="main" component={Main} options={{
             }} />
             <Stack.Screen name="Contacts" component={Contacts} options={{
-                // headerStyle: styles.navStack,
                 title: 'Contacts',
             }} />
             <Stack.Screen name="Contact" component={Contact} options={{

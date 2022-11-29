@@ -4,8 +4,10 @@ import {  lightBlue, lightPurple, lightYellow, white} from '../../styles/colors'
 
 export default StyleSheet.create({
     header: {
-        backgroundColor: lightYellow,
+        backgroundColor: white,
         borderBottomWidth: 0,
-        height: 10,
+        fontSize: 100,
+        color: lightBlue,
+
     },
 });

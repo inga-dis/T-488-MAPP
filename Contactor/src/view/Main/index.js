@@ -6,23 +6,15 @@ import Logo from '../../components/Logo/telephone.png';
 
 
 
+
 const Main = ({ navigation: { navigate } }) => (
+    <Header style = {styles.header} name = "Main"></Header>,
     <View style={styles.container}>
-        <View>
-            <Text style={styles.header}>Your personal contactor!</Text>
+            <Text style={styles.header}>Your personal contactor</Text>
             <Image source={Logo} style={styles.logoStyle} />
-            <Button title="My contacts"></Button>
-    
-        {/* <Image source={Logo} style={styles.logoStyle} /> */}
-        {/* <HeaderComponent></HeaderComponent> */}
-
-        {/* <Header header={"MY MAIN"}> </Header> */}
-        {/* <TouchableOpacity 
-            // onPress={() => navigate('BoardsView')}
-            underlayColor="white">
-        </TouchableOpacity> */}
-
-        </View>
+        <TouchableOpacity onPress ={() => navigate ('Contacts')}>
+            <Text style={styles.option}>My contacts</Text> 
+        </TouchableOpacity>
     </View>
 );
 
