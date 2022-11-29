@@ -7,15 +7,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
 // Views
-import Main from "../view/Main";
+import TestView from "../view/Test";
 
 
 const Routes = () => (
     <NavigationContainer >
-        <Stack.Navigator initialRouteName="Main">
-            <Stack.Screen name="Main" component={Main} options={{
+        <Stack.Navigator initialRouteName="TestView">
+            <Stack.Screen name="TestView" component={TestView} options={{
                 // headerStyle: styles.navStack,
-                title: 'Main',
+                title: 'TestView',
                 
                 // headerTintColor: darkBlue,
                 // headerTitleStyle: {

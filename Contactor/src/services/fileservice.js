@@ -18,34 +18,42 @@
     // makeDirecotyrAsync(fileUri, options) - create new empty directory 
 
 import * as FileSystem from 'expo-file-system';
+import uuid from 'react-native-uuid'
 const contactsDirectory = `${FileSystem.documentDirectory}contacts`;
+const newUuid = uuid.v1()
+console.log(newUuid)
 
-export const copyFile = async (file, newLocation) => {
-    await FileSystem.copyAsync({
-        from: file,
-        to: newLocation
-    });
-};
+user : {
+    name: ,
+    phonenumber; ,
+    photo: ,
+}
 
-export const addContact = async contactLocation => {
-    const folderSplit = contactLocation.split('/');
-    const fileName = folderSplit[folderSplit.length-1];
 
-    await copyFile(contactLocation, `${contactDirectory}/${fileName}`);
+
+//  
+
+export const addContact = async contactInfo => {
+    const fileName = contactInfo.name + "-" + newUuid
+    await createFile(fileName); // Found some documents stating that ios can't write and create file so i create it first. 
+    // await copyFile(contactLocation, `${contactDirectory}/${fileName}`);
 
     return {
         name: fileName,
-        type: '',
-        file: await loadContact(fileName)
+        type: 'contact',
+        file: await loadContact(fileName, contactInfo)
     };
 };
 
-const loadContact = async fileName => {
-    return await FileSystem.readAsStringAsync(`${contactDirectory}/${fileName}`, {
-        encoding: FileSystem.EncodingType.UTF8 // Kannski Base64?
+const loadContact = async ({fileName, contactInfo}) => {
+    return await FileSystem.writeAsStringAsync(`${contactDirectory}/${fileName}`, contactInfo,  {
+        encoding: FileSystem.EncodingType.UTF8 
     });
 };
 
+const createFile = async fileName => {
+    
+}
 
 
 // to use: 
