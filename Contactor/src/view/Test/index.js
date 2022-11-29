@@ -21,7 +21,7 @@ const TestView = () => {
     return (
         <View style={{
             flexDirection: "row",
-            height: 100,
+            // height: 100,
             padding: 20
         }}>
             <View style={{ backgroundColor: "blue", flex: 0.3 }} />

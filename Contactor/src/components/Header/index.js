@@ -2,9 +2,11 @@ import React from 'react';
 import { View, Text } from 'react-native';
 
 
-function Header() {
+const Header = ({name}) => {
   return (
-    <View style={{ textcolor: "pink", flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    
+    <View style={{ color: "pink", flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text color="pink"> {(name)} </Text>
     </View>
   );
 }
