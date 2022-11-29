@@ -4,24 +4,22 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 
 
+
 const Stack = createStackNavigator();
 
 // Views
-import TestView from "../view/Test";
+import Main from "../view/Main";
+import Contacts from "../view/Contacts";
 
 
 const Routes = () => (
     <NavigationContainer >
-        <Stack.Navigator initialRouteName="TestView">
-            <Stack.Screen name="TestView" component={TestView} options={{
-                // headerStyle: styles.navStack,
-                title: 'TestView',
-                
-                // headerTintColor: darkBlue,
-                // headerTitleStyle: {
-                //     fontWeight: '300',
-                //     fontSize: 20,
-                // },
+        <Stack.Navigator initialRouteName="Main" component={Main}>
+            <Stack.Screen name="main" component={Main} options={{
+            }} />
+            <Stack.Screen name="Contacts" component={Contacts} options={{
+                title: 'Contacts',
+
             }} />
 
         </Stack.Navigator>

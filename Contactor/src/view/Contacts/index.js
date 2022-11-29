@@ -1,1 +1,32 @@
-39-sty-insert-colors
+import React from 'react';
+import { View, ScrollView, Text, StyleSheet } from 'react-native';
+import ContactsList from '../../components/ContactsList'; // ToDolist
+import Search from '../../components/Search'; // ToDolist
+
+import {lightPurple, lightBlue} from '../../styles/colors';
+
+
+const BoardsView = () => {
+    
+
+
+    return (
+        <ScrollView>
+            <View style={styles.container}>
+                <Search />
+                <ContactsList />
+                <Text style={styles.containerx}>ADD</Text>
+                
+            </View>
+        </ScrollView>
+    )
+};
+export default BoardsView;
+
+const styles = StyleSheet.create({
+    container: {
+      backgroundColor: lightPurple,
+      paddingBottom: 300,
+    },
+
+  });
