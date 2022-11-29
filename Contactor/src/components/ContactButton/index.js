@@ -1,22 +1,36 @@
 import React from "react";
-import {View, Text, ScrollView, StyleSheet } from 'react-native';
+import {View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import {lightPurple, lightBlue} from '../../styles/colors';
+import { useNavigation } from '@react-navigation/native';
 
 
 
-const ContactButton = ({}) => { 
+
+
+const ContactButton = () => { 
     // const boards = useSelector((state) => state.boards);
-     
+    const { navigate } = useNavigation();
     return (
-        <View style={styles.container}>
-            <View  >
-                <Text style={styles.text}>Nafn og mynd</Text>
-                <Text style={styles.text}>Nafn og mynd</Text>
-                <Text style={styles.text}>Nafn og mynd</Text>
+        <TouchableOpacity
+            onPress={() => navigate('Contact')}>
+            <View> 
+                {/* <Image
+                    style={styles.image}
+                    resizeMode="cover"
+                    source={{ uri: board.thumbnailPhoto}} /> */}
                 <Text style={styles.text}>Nafn og mynd</Text>
             </View>
+        </TouchableOpacity>
+
+        // {/* <View style={styles.container}>
+        //     <View>
+        //         <Text style={styles.text}>Nafn og mynd</Text>
+        //         <Text style={styles.text}>Nafn og mynd</Text>
+        //         <Text style={styles.text}>Nafn og mynd</Text>
+        //         <Text style={styles.text}>Nafn og mynd</Text>
+        //     </View>
             
-        </View>
+        // </View> */}
  );
 }
 export default ContactButton;

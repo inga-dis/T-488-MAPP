@@ -26,7 +26,10 @@ const Routes = () => (
 
             <Stack.Screen name="Contacts" component={Contacts} options={{
                 title: 'Contacts',
-
+            }} />
+            <Stack.Screen name="Contact" component={Contact} options={{
+                // headerStyle: styles.navStack,
+                title: 'Contact',
             }} />
         </Stack.Navigator>
     </NavigationContainer>

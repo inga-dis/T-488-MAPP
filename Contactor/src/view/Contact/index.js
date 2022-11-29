@@ -1,0 +1,29 @@
+import React from 'react';
+import { View, ScrollView, Text, StyleSheet } from 'react-native';
+import ContactProfile from '../../components/ContactProfile'
+
+
+import {lightPurple, lightBlue} from '../../styles/colors';
+
+
+const Contact = () => {
+    
+
+
+    return (
+        <ScrollView>
+            <View style={styles.container}>
+                <ContactProfile/>
+            </View>
+        </ScrollView>
+    )
+};
+export default Contact;
+
+const styles = StyleSheet.create({
+    container: {
+      backgroundColor: lightPurple,
+      paddingBottom: 300,
+    },
+
+  });
