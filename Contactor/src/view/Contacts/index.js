@@ -15,7 +15,7 @@ const Contacts = () => {
             <View style={styles.container}>
                 <Search />
                 <ContactsList />
-                <Text style={styles.containerx}>ADD</Text>
+                <Text>ADD</Text>
                 
             </View>
         </ScrollView>
