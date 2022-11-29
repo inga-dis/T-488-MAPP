@@ -1,5 +1,6 @@
 import React from "react";
 import {View, Text, ScrollView, StyleSheet } from 'react-native';
+import {lightPurple, lightBlue} from '../../styles/colors';
 
 
 
@@ -29,7 +30,9 @@ const styles = StyleSheet.create({
     },
     text: {
         marginVertical: 20,
-        backgroundColor: 'pink',
+        backgroundColor: lightBlue,
+        paddingHorizontal: 100,
+        paddingVertical: 20,
     }
   });
   
