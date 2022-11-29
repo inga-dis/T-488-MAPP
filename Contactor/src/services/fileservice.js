@@ -18,42 +18,48 @@
     // makeDirecotyrAsync(fileUri, options) - create new empty directory 
 
 import * as FileSystem from 'expo-file-system';
+const { StorageAccessFramework } = FileSystem;
 import uuid from 'react-native-uuid'
 const contactsDirectory = `${FileSystem.documentDirectory}contacts`;
 const newUuid = uuid.v1()
-console.log(newUuid)
 
-user : {
-    name: ,
-    phonenumber; ,
-    photo: ,
+
+const setupDirectory = async () => {
+    const dir = await FileSystem.getInfoAsync(contactsDirectory);
+    if (!dir.exists) {
+        await FileSystem.makeDirectoryAsync(contactsDirectory);
+    }
 }
 
-
-
-//  
 
 export const addContact = async contactInfo => {
+    await setupDirectory();
     const fileName = contactInfo.name + "-" + newUuid
-    await createFile(fileName); // Found some documents stating that ios can't write and create file so i create it first. 
-    // await copyFile(contactLocation, `${contactDirectory}/${fileName}`);
+    // await copyFile(contactLocation, `${contactsDirectory}/${fileName}`);
+    const contact = {
+            'user': [
+                {
+                    'name': contactInfo.name,
+                    'phoneNumber': contactInfo.phoneNumber,
+                    'photo':contactInfo.photo
+                }
+            ]
+        };
+    await loadContact(fileName, contact)
 
-    return {
-        name: fileName,
-        type: 'contact',
-        file: await loadContact(fileName, contactInfo)
-    };
 };
 
-const loadContact = async ({fileName, contactInfo}) => {
-    return await FileSystem.writeAsStringAsync(`${contactDirectory}/${fileName}`, contactInfo,  {
-        encoding: FileSystem.EncodingType.UTF8 
-    });
-};
+const loadContact = async (fileName, contact) => {
+    let fileUri = contactsDirectory + fileName;
+    let string = "hey"
 
-const createFile = async fileName => {
-    
-}
+    console.log(contact)
+    await StorageAccessFramework.createFileAsync(contactsDirectory, fileName, 'json');
+    await FileSystem.writeAsStringAsync(fileUri, string, { encoding: FileSystem.EncodingType.UTF8 });
+
+    console.log(await FileSystem.readAsStringAsync(fileUri))
+
+};
 
 
 // to use: 

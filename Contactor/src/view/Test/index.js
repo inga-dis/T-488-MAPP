@@ -16,7 +16,7 @@ const TestView = () => {
         // setIsAddModalOpen(false);
         // setLoadingContact(false);
     };
-    const testContact = {name: "Inga", phone: 22222, image: "img"}
+    const testContact = {name: "Inga", phoneNumber: 22222, photo: "img"}
 
     return (
         <View style={{
