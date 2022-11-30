@@ -12,7 +12,7 @@ import Main from "../view/Main";
 import Contacts from "../view/Contacts";
 import Contact from "../view/Contact";
 // testing view
-import Test from "../view/Test";
+// import Main from "../view/Test";
 
 
 const Routes = () => (
