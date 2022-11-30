@@ -14,7 +14,7 @@ const homeScreen = () => {
         },
         {
             id: 2,
-            name: 'Steinn'
+            name: 'Krissi!'
         },
         {
             id: 3,
@@ -26,7 +26,7 @@ const homeScreen = () => {
         },
         {
             id: 5,
-            name: 'Hanna'
+            name: 'Magga'
         },
         {
             id: 6,

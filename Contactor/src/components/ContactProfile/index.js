@@ -4,6 +4,7 @@ import { Text, TouchableOpacity, View } from 'react-native'
 import call from 'react-native-phone-call'
 import * as imageService from '../../services/imageService'
 import { useNavigation } from '@react-navigation/native'
+import styles from '../../view/Main/styles';
 
 const ContactProfile = () => {
     const { navigate } = useNavigation();
@@ -14,7 +15,7 @@ const ContactProfile = () => {
 
     const triggerCall = () => {
         const args = {
-            number: '7766877', // Use commas to add time between digits.
+            number: '8451466', // Use commas to add time between digits.
             prompt: false
         }
         call(args).catch(console.error)

@@ -19,7 +19,8 @@
     "react-native": "0.70.5",
     "react-native-modal": "^13.0.1",
     "react-native-phone-call": "^1.2.0",
-    "react-native-uuid": "^2.0.1"
+    "react-native-uuid": "^2.0.1",
+    "expo-image-picker": "~14.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
