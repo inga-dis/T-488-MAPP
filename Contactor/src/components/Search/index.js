@@ -32,7 +32,7 @@ const homeScreen = () => {
     }
 
     const searchName = (input)=> {
-        let data = dataFromState
+        // let data = dataFromState ÞAÐ ÞURFTI BARA AÐ KOMMENTA ÞETTA ÚT!!!
         let searchData = data.filter((item)=>{
             return item.name.toLowerCase().includes(input.toLowerCase())
         });
