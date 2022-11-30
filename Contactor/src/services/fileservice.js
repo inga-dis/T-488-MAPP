@@ -34,7 +34,7 @@ const setupDirectory = async () => {
 
 export const addContact = async contactInfo => {
     await setupDirectory();
-    const fileName = contactInfo.name + "-" + newUuid
+    const fileName = contactInfo.name + "-" + newUuid 
     // await copyFile(contactLocation, `${contactsDirectory}/${fileName}`);
     const contact = {
             'user': [
@@ -50,11 +50,11 @@ export const addContact = async contactInfo => {
 };
 
 const loadContact = async (fileName, contact) => {
-    let fileUri = contactsDirectory + fileName;
-    let string = "hey"
+    let fileUri = contactsDirectory + fileName ;
+    let string = JSON.stringify(contact);
 
-    console.log(contact)
-    await StorageAccessFramework.createFileAsync(contactsDirectory, fileName, 'json');
+
+    // await StorageAccessFramework.createFileAsync(contactsDirectory, fileName, 'json');
     await FileSystem.writeAsStringAsync(fileUri, string, { encoding: FileSystem.EncodingType.UTF8 });
 
     console.log(await FileSystem.readAsStringAsync(fileUri))
