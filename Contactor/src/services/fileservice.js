@@ -1,3 +1,43 @@
+import * as FileSystem from 'expo-file-system';
+import uuid from 'react-native-uuid'
+const contactsDirectory = `${FileSystem.documentDirectory}contacts`;
+const newUuid = uuid.v1()
+
+
+const setupDirectory = async () => {
+    const dir = await FileSystem.getInfoAsync(contactsDirectory);
+    if (!dir.exists) {
+        await FileSystem.makeDirectoryAsync(contactsDirectory);
+    }
+}
+
+
+export const addContact = async contactInfo => {
+    await setupDirectory();
+    const fileName = contactInfo.name + "-" + newUuid 
+    const contact = {
+            'user': [
+                {
+                    'name': contactInfo.name,
+                    'phoneNumber': contactInfo.phoneNumber,
+                    'image':contactInfo.image
+                }
+            ]
+        };
+    await loadContact(fileName, contact)
+
+};
+
+const loadContact = async (fileName, contact) => {
+    let fileUri = contactsDirectory + fileName ;
+    let string = JSON.stringify(contact);
+
+    await FileSystem.writeAsStringAsync(fileUri, string, { encoding: FileSystem.EncodingType.UTF8 });
+    console.log(await FileSystem.readAsStringAsync(fileUri))
+
+};
+
+
 // Notes for usage:
     // access directory for the app:
     // FileSystem.documentDirectory
@@ -16,51 +56,6 @@
     // moveAsync(options) - Move a file or directory to a new location (options contains "from" and "to")
     // copyAsync(options) - Create a copy of a file or directory (options contains "from" and "to")
     // makeDirecotyrAsync(fileUri, options) - create new empty directory 
-
-import * as FileSystem from 'expo-file-system';
-const { StorageAccessFramework } = FileSystem;
-import uuid from 'react-native-uuid'
-const contactsDirectory = `${FileSystem.documentDirectory}contacts`;
-const newUuid = uuid.v1()
-
-
-const setupDirectory = async () => {
-    const dir = await FileSystem.getInfoAsync(contactsDirectory);
-    if (!dir.exists) {
-        await FileSystem.makeDirectoryAsync(contactsDirectory);
-    }
-}
-
-
-export const addContact = async contactInfo => {
-    await setupDirectory();
-    const fileName = contactInfo.name + "-" + newUuid 
-    // await copyFile(contactLocation, `${contactsDirectory}/${fileName}`);
-    const contact = {
-            'user': [
-                {
-                    'name': contactInfo.name,
-                    'phoneNumber': contactInfo.phoneNumber,
-                    'photo':contactInfo.photo
-                }
-            ]
-        };
-    await loadContact(fileName, contact)
-
-};
-
-const loadContact = async (fileName, contact) => {
-    let fileUri = contactsDirectory + fileName ;
-    let string = JSON.stringify(contact);
-
-
-    // await StorageAccessFramework.createFileAsync(contactsDirectory, fileName, 'json');
-    await FileSystem.writeAsStringAsync(fileUri, string, { encoding: FileSystem.EncodingType.UTF8 });
-
-    console.log(await FileSystem.readAsStringAsync(fileUri))
-
-};
-
 
 // to use: 
 // import * as fileService from '../../services/fileService';

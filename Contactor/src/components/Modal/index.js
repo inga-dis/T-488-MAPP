@@ -6,15 +6,16 @@ import styles from "./styles";
 const Modal = ({ isOpen, closeModal, title, children }) => {
     return (
         <NativeModal
-            isVisible={isOpen}
+           isVisible={isOpen}
             hasBackdrop={true}
-            swipeDirection={["up", "down"]}
+            onBackButtonPress={closeModal}
             onSwipeComplete={closeModal}
+            swipeDirection={["up", "down"]}
             style={styles.modal}
-            onRequestClose={() => closeModal}
         >
             <View>
                 <Text>{title}</Text>
+                <Text>Swipe to close!</Text>
                 {children}
             </View>
         </NativeModal>
