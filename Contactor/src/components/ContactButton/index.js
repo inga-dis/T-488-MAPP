@@ -1,19 +1,15 @@
-import React from "react";
-import {View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import {lightPurple, lightBlue} from '../../styles/colors';
-import { useNavigation } from '@react-navigation/native';
+import React from 'react'
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
+import { lightPurple, lightBlue } from '../../styles/colors'
+import { useNavigation } from '@react-navigation/native'
 
-
-
-
-
-const ContactButton = () => { 
+const ContactButton = () => {
     // const boards = useSelector((state) => state.boards);
-    const { navigate } = useNavigation();
+    const { navigate } = useNavigation()
     return (
         <TouchableOpacity
             onPress={() => navigate('Contact')}>
-            <View> 
+            <View>
                 {/* <Image
                     style={styles.image}
                     resizeMode="cover"
@@ -22,31 +18,30 @@ const ContactButton = () => {
             </View>
         </TouchableOpacity>
 
-        // {/* <View style={styles.container}>
-        //     <View>
-        //         <Text style={styles.text}>Nafn og mynd</Text>
-        //         <Text style={styles.text}>Nafn og mynd</Text>
-        //         <Text style={styles.text}>Nafn og mynd</Text>
-        //         <Text style={styles.text}>Nafn og mynd</Text>
-        //     </View>
-            
-        // </View> */}
- );
+    // {/* <View style={styles.container}>
+    //     <View>
+    //         <Text style={styles.text}>Nafn og mynd</Text>
+    //         <Text style={styles.text}>Nafn og mynd</Text>
+    //         <Text style={styles.text}>Nafn og mynd</Text>
+    //         <Text style={styles.text}>Nafn og mynd</Text>
+    //     </View>
+
+    // </View> */}
+    )
 }
-export default ContactButton;
+export default ContactButton
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      
-      alignItems: 'center',
-      justifyContent: 'center',
+        flex: 1,
+
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     text: {
         marginVertical: 20,
         backgroundColor: lightBlue,
         paddingHorizontal: 100,
-        paddingVertical: 20,
+        paddingVertical: 20
     }
-  });
-  
+})

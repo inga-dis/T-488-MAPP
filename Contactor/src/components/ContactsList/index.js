@@ -1,24 +1,22 @@
-import React from "react";
-import {View, Text, StyleSheet } from 'react-native';
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
 import ContactButton from '../ContactButton'
-import {lightPurple, lightBlue} from '../../styles/colors';
+import { lightPurple, lightBlue } from '../../styles/colors'
 
+// Hér koma allir contacts:
 
-//Hér koma allir contacts:
-
-const ContactsList = ({}) => { 
-     
+const ContactsList = ({ contacts }) => {
     return (
         <ContactButton style={styles.container}/>
-        
- );
+
+    )
 }
-export default ContactsList;
+export default ContactsList
 
 const styles = StyleSheet.create({
     container: {
     //   flex: 1,
-      backgroundColor: lightPurple,
+        backgroundColor: lightPurple
     //   alignItems: 'center',
     //   justifyContent: 'center',
     },
@@ -26,6 +24,6 @@ const styles = StyleSheet.create({
         marginVertical: 20,
         backgroundColor: lightBlue,
         paddingHorizontal: 100,
-        paddingVertical: 20,
+        paddingVertical: 20
     }
-  });
+})

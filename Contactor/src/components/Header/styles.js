@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import {  lightBlue, lightPurple, lightYellow, white} from '../../styles/colors';
+import { StyleSheet } from 'react-native'
+import { lightBlue, lightPurple, lightYellow, white } from '../../styles/colors'
 // const windowWidth = Dimensions.get('window').width;
 
 export default StyleSheet.create({
@@ -7,7 +7,7 @@ export default StyleSheet.create({
         backgroundColor: white,
         borderBottomWidth: 0,
         fontSize: 100,
-        color: lightBlue,
+        color: lightBlue
 
-    },
-});
+    }
+})
