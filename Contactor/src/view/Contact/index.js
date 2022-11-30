@@ -6,13 +6,14 @@ import ContactProfile from '../../components/ContactProfile'
 import {lightPurple, lightBlue} from '../../styles/colors';
 
 
-const Contact = () => {
+const Contact = ({route}) => {
     
-
+    const conta = route.params;
 
     return (
         <ScrollView>
             <View style={styles.container}>
+                <Text style={{fontSize:34}}>{conta.name} </Text>
                 <ContactProfile/>
             </View>
         </ScrollView>
