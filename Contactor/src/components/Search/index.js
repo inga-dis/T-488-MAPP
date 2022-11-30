@@ -1,11 +1,14 @@
 import React, { useState} from "react"
-import { FlatList, TextInput, View, Text } from "react-native";
+import { FlatList, TextInput, View, Text, TouchableOpacity } from "react-native";
+import { useNavigation } from '@react-navigation/native';
+
 
 //Virkar en með smá galla, data uppfærist og það minkar þegar search er notað
 //Þarf að fara í Main til að fá allt data til baka
 
 
 const homeScreen = () => {
+    const { navigate } = useNavigation();
     const data = [
         {
             id: 1,
@@ -17,17 +20,32 @@ const homeScreen = () => {
         },
         {
             id: 3,
-            name: 'Kallli',
+            name: 'Unnar',
+        },
+        {
+            id: 4,
+            name: 'Halldór',
+        },
+        {
+            id: 5,
+            name: 'Hanna',
+        },
+        {
+            id: 6,
+            name: 'Gulla',
         },
     ];
 
     const [dataFromState, setData] = useState(data)
+    
+    const item = ( {item} )=>{
 
-    const item = ({item})=>{
         return(
-            <View style={{backgroundColor:"#CDF0EA", marginBottom: 10}}>
-                <Text style={{fontSize:34}}>{item.name}</Text>
-            </View>
+            <TouchableOpacity onPress={() => navigate('Contact', { name: item.name, id: item.id})}>
+                <View style={{backgroundColor:"#CDF0EA", marginBottom: 10}}>
+                    <Text style={{fontSize:34}}>{item.name} {item.id}</Text>
+                </View>
+            </TouchableOpacity>
         )
     }
 
