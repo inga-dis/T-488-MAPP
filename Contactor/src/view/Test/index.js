@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, View, TouchableOpacity } from "react-native";
+import Add from "../../components/Add"
 import * as fileService from "../../services/fileservice";
 
 
 
 const TestView = () => {
+    const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+    
+    
     // const [images, setImages] = useState([]);
     // const [loadingContacts, setLoadingContacts] = useState(true);
 
@@ -13,7 +17,7 @@ const TestView = () => {
         const newContact = await fileService.addContact(contact);
 
         // setContacts([...contacts, newContact]); // Þörf á þessu?
-        // setIsAddModalOpen(false);
+        setIsAddModalOpen(false);
         // setLoadingContact(false);
     };
     const testContact = {name: "Inga", phoneNumber: 22222, photo: "img"}
@@ -26,10 +30,13 @@ const TestView = () => {
         }}>
             <View style={{ backgroundColor: "blue", flex: 0.3 }} />
             <View style={{ backgroundColor: "red", flex: 0.5 }} />
-            <Text>Hello World!</Text>
             <TouchableOpacity style={{color:'pink'}} onPress={() => addContact(testContact)}>
-                <Text>Button</Text>
+                <Text>Test fileService</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={{color:'pink'}} onPress={() => setIsAddModalOpen(true)}>
+                <Text>Open modal</Text>
+            </TouchableOpacity>
+            <Add isOpen={isAddModalOpen} closeModal={() => setIsAddModalOpen(false)}></Add>
         </View>
     );
 }
