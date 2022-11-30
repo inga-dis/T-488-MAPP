@@ -24,13 +24,6 @@ const Routes = () => (
         {/* <Stack.Navigator initialRouteName="Main" component={Main}> */}
             {/* <Stack.Screen name="main" component={Main} options={{
             }} /> */}
-        <Stack.Navigator initialRouteName="Main" component={Main}>
-            {/* <Stack.Screen name="Test" component={Test} options={{
-                    title: 'Test',
-                }} /> */}
-            {/* <Stack.Navigator initialRouteName="Main" component={Main}> */}
-            <Stack.Screen name="Main" component={Main} options={{
-            }} />
 
             <Stack.Screen name="Contacts" component={Contacts} options={{
                 title: 'Contacts',
