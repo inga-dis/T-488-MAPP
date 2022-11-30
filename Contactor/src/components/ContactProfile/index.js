@@ -1,13 +1,10 @@
-import React from "react";
-import { useNavigation } from '@react-navigation/native';
-import { Image, View, Text, TouchableOpacity} from "react-native";
-
+import React from 'react'
+import { useNavigation } from '@react-navigation/native'
+import { Image, View, Text, TouchableOpacity } from 'react-native'
 
 const ContactProfile = () => {
-
-    
     return (
-        <View> 
+        <View>
             {/* <Image
                 style={styles.image}
                 resizeMode="cover"
@@ -16,7 +13,7 @@ const ContactProfile = () => {
             <Text>IMAGE</Text>
             <Text>PHONENUMBER</Text>
         </View>
-    );
-};
+    )
+}
 
-export default ContactProfile;
+export default ContactProfile

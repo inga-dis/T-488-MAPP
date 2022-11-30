@@ -1,25 +1,23 @@
-import React, { useState } from "react";
-import Modal from "../Modal";
-import {TouchableOpacity, TextInput, Text } from "react-native";
+import React, { useState } from 'react'
+import Modal from '../Modal'
+import { TouchableOpacity, TextInput, Text } from 'react-native'
 import * as fileService from '../../services/fileservice'
 
-import defaultStyles from '../../styles/styles';
+import defaultStyles from '../../styles/styles'
 
 const Add = ({
     isOpen,
-    closeModal}) => {
-    const [name, setName] = useState();
-    const [image, setImage] = useState();
-    const [phoneNumber, setPhoneNumber] = useState();
-
-
+    closeModal
+}) => {
+    const [name, setName] = useState()
+    const [image, setImage] = useState()
+    const [phoneNumber, setPhoneNumber] = useState()
 
     const handleSubmit = async () => {
-        const newContact = await fileService.addContact({ name: name, phoneNumber: phoneNumber, image: image});
-        setName("");
-        setImage("");
-        setPhoneNumber("");
-
+        const newContact = await fileService.addContact({ name, phoneNumber, image })
+        setName('')
+        setImage('')
+        setPhoneNumber('')
     }
 
     return (
@@ -45,16 +43,16 @@ const Add = ({
                 onChangeText={setImage}
                 style={defaultStyles.input}
             />
-            <TouchableOpacity 
+            <TouchableOpacity
                 style={[defaultStyles.button]}
                 onPress={() => {
-                    handleSubmit();
+                    handleSubmit()
                 }}>
                 <Text style={defaultStyles.ButtonText}>Submit</Text>
             </TouchableOpacity>
         </Modal>
 
-    );
-};
+    )
+}
 
-export default Add;
+export default Add

@@ -1,63 +1,60 @@
-import React, { useState} from "react"
-import { FlatList, TextInput, View, Text, TouchableOpacity } from "react-native";
-import { useNavigation } from '@react-navigation/native';
+import React, { useState } from 'react'
+import { FlatList, TextInput, View, Text, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
-
-//Virkar en með smá galla, data uppfærist og það minkar þegar search er notað
-//Þarf að fara í Main til að fá allt data til baka
-
+// Virkar en með smá galla, data uppfærist og það minkar þegar search er notað
+// Þarf að fara í Main til að fá allt data til baka
 
 const homeScreen = () => {
-    const { navigate } = useNavigation();
+    const { navigate } = useNavigation()
     const data = [
         {
             id: 1,
-            name: 'Sigga',
+            name: 'Sigga'
         },
         {
             id: 2,
-            name: 'Steinn',
+            name: 'Steinn'
         },
         {
             id: 3,
-            name: 'Unnar',
+            name: 'Unnar'
         },
         {
             id: 4,
-            name: 'Halldór',
+            name: 'Halldór'
         },
         {
             id: 5,
-            name: 'Hanna',
+            name: 'Hanna'
         },
         {
             id: 6,
-            name: 'Gulla',
-        },
-    ];
+            name: 'Gulla'
+        }
+    ]
 
     const [dataFromState, setData] = useState(data)
-    
-    const item = ( {item} )=>{
 
-        return(
-            <TouchableOpacity onPress={() => navigate('Contact', { name: item.name, id: item.id})}>
-                <View style={{backgroundColor:"#CDF0EA", marginBottom: 10}}>
-                    <Text style={{fontSize:34}}>{item.name} {item.id}</Text>
+    const item = ({ item }) => {
+        return (
+            <TouchableOpacity onPress={() => navigate('Contact', { name: item.name, id: item.id })}>
+                <View style={{ backgroundColor: '#CDF0EA', marginBottom: 10 }}>
+                    <Text style={{ fontSize: 34 }}>{item.name} {item.id}</Text>
                 </View>
             </TouchableOpacity>
         )
     }
 
-    const searchName = (input)=> {
+    const searchName = (input) => {
         // let data = dataFromState ÞAÐ ÞURFTI BARA AÐ KOMMENTA ÞETTA ÚT!!!
-        let searchData = data.filter((item)=>{
+        const searchData = data.filter((item) => {
             return item.name.toLowerCase().includes(input.toLowerCase())
-        });
+        })
         setData(searchData)
-        console.log("search  ", searchData)
-        console.log("input   ", input)
-        console.log("data    ", data)
+        console.log('search  ', searchData)
+        console.log('input   ', input)
+        console.log('data    ', data)
     }
 
     return (
@@ -65,35 +62,28 @@ const homeScreen = () => {
             <View>
                 <TextInput
                     placeholder="Search Name!"
-                    onChangeText={(input)=>{
+                    onChangeText={(input) => {
                         searchName(input)
                     }}
-                    style={{fontSize:35}}
+                    style={{ fontSize: 35 }}
                 />
             </View>
             <FlatList
                 data={dataFromState}
                 renderItem={item}
-                keyExtractor={(item, index)=>index.toString()}
+                keyExtractor={(item, index) => index.toString()}
             />
-        </View>  
-        
+        </View>
 
-    );
-};
+    )
+}
 
-export default homeScreen;
+export default homeScreen
 
-
-
-
-//////////////////////////////////////
-
+/// ///////////////////////////////////
 
 // import React from 'react';
 // import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, TextInput, TouchableOpacity } from 'react-native';
-
-
 
 // const Search = () => {
 //     const DATA = [
@@ -112,38 +102,37 @@ export default homeScreen;
 //     ];
 
 //     const searchData = [
-        
+
 //       ];
-    
-    
+
 //     console.log("HAHAHA   ", searchData)
 //     function handleSearch(search) {
 //         const searchData = DATA.filter((item)=>{
-            
+
 //             return item.name.toLowerCase().includes(search.toLowerCase())
-            
+
 //         });
 //         // setSearch("");
-        
+
 //         console.log("hæ?   ",DATA)
 //         console.log("hæ?   ",searchData)
-        
+
 //     }
 
 //     const Item = ({ name }) => (
-        
+
 //         <View style={styles.item}>
 //             <Text style={styles.name}>{name}</Text>
 //         </View>
-        
+
 //         );
 
 //     // const Item = ({ name }) => (
-        
+
 //     // <View style={styles.item}>
 //     //     <Text style={styles.name}>{name}</Text>
 //     // </View>
-    
+
 //     // );
 
 // //   const renderItem = ({ item }) => (
@@ -154,7 +143,7 @@ export default homeScreen;
 //     <SafeAreaView style={styles.container}>
 //         <TextInput
 //             placeholder="Name"
-            
+
 //         />
 //         <TouchableOpacity onPress={()=> {c("k")}}>
 //             <Text style={styles.text}>Presss</Text>
@@ -165,7 +154,7 @@ export default homeScreen;
 //             keyExtractor={item => item.id}
 //         /> */}
 //     </SafeAreaView>
-    
+
 //   );
 // }
 
@@ -191,15 +180,10 @@ export default homeScreen;
 
 // export default Search;
 
-
-
-
-
 // // import React, { useState } from "react";
 // // import {View, Text, StyleSheet, TextInput, TouchableOpacity, FlatList } from 'react-native';
 // // import ContactButton from '../ContactButton'
 // // import {lightPurple, lightBlue} from '../../styles/colors';
-
 
 // // const Search = () => {
 
@@ -259,7 +243,6 @@ export default homeScreen;
 // //  );
 // // }
 
-
 // // // const xxx = ({}) => {
 
 // // //     return (
@@ -276,7 +259,6 @@ export default homeScreen;
 // // //                 <Text>Add Board</Text>
 // // //             </TouchableOpacity>
 // // //         </View>
-
 
 // // //  );
 // // // }
