@@ -1,16 +1,16 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
-import { View, Text, Image, TouchableOpacity, Button } from 'react-native'
-import Header from '../../components/Header'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import styles from './styles'
-import Logo from '../../components/Logo/telephone.png'
+import defaultStyles from '../../styles/styles'
+import Logo from '../../resources/telephone.png'
 
 const Main = ({ navigation: { navigate } }) => (
-    <Header style = {styles.header} name = "Main"></Header>,
-    <View style={styles.container}>
+    <View style={[defaultStyles.container, defaultStyles.centeredView]}>
         <Text style={styles.header}>Your personal contactor</Text>
         <Image source={Logo} style={styles.logoStyle} />
-        <TouchableOpacity onPress ={() => navigate('Contacts')}>
-            <Text style={styles.option}>My contacts</Text>
+        <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress ={() => navigate('Contacts')}>
+            <Text>My contacts</Text>
         </TouchableOpacity>
     </View>
 )

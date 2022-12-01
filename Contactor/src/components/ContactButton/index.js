@@ -1,8 +1,10 @@
 import React from 'react'
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { lightPurple, lightBlue } from '../../styles/colors'
 import { useNavigation } from '@react-navigation/native'
-import styles from './styles';
+import defaultStyles from '../../styles/styles'
+import styles from './styles'
+
 
 const ContactButton = ({contact}) => {
     // const boards = useSelector((state) => state.boards);
@@ -10,7 +12,7 @@ const ContactButton = ({contact}) => {
 
     const { navigate } = useNavigation()
     return (
-        <TouchableOpacity style={styles.option}
+        <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]}
             onPress={() => navigate('Contact')}>
             <View style={styles.background}>
                 {/* <Image

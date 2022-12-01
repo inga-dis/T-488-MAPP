@@ -47,7 +47,8 @@ const Edit = ({
                 style={defaultStyles.input}
             />
             <TouchableOpacity
-                style={[defaultStyles.button]}
+                activeOpacity={0.7} 
+                style={[defaultStyles.button, defaultStyles.shadow]}
                 onPress={() => {
                     handleSubmit()
                 }}>
