@@ -4,7 +4,7 @@ import { lightPurple, lightBlue } from '../../styles/colors'
 import { useNavigation } from '@react-navigation/native'
 import defaultStyles from '../../styles/styles'
 import styles from './styles'
-
+    
 
 const ContactButton = ({contact}) => {
     // const boards = useSelector((state) => state.boards);
