@@ -14,7 +14,7 @@ const Add = ({
     const [phoneNumber, setPhoneNumber] = useState()
 
     const handleSubmit = async () => {
-        const newContact = await fileService.addContact({ name, phoneNumber, image })
+        await fileService.addContact({ name, phoneNumber, image })
         setName('')
         setImage('')
         setPhoneNumber('')
