@@ -3,7 +3,8 @@ import React, {useState} from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import call from 'react-native-phone-call'
 import * as imageService from '../../services/imageService'
-import styles from '../../view/Main/styles';
+import styles from '../../view/Main/styles'
+import defaultStyles from '../../styles/styles'
 
 const ContactProfile = () => {
 
@@ -49,17 +50,17 @@ const ContactProfile = () => {
 
     return (
         <View>
-            <TouchableOpacity onPress={triggerCall}>
+            <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress={triggerCall}>
                 {/* <Image
                     style={styles.image}
                     resizeMode="cover"
                     source={{ uri: board.thumbnailPhoto}} /> */}
                 <Text style={{ fontSize: 40 }}>HRINGJA</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress ={() => selectFromCameraRoll()}>
+            <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress ={() => selectFromCameraRoll()}>
                 <Text style={styles.option}>Upload image</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress ={() => takePhoto()}>
+            <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress ={() => takePhoto()}>
                 <Text style={styles.option}>Capture image</Text>
             </TouchableOpacity>
         </View>
