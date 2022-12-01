@@ -1,7 +1,8 @@
 import React from 'react'
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import { lightPurple, lightBlue } from '../../styles/colors'
 import { useNavigation } from '@react-navigation/native'
+import styles from './styles';
 
 const ContactButton = ({contact}) => {
     // const boards = useSelector((state) => state.boards);
@@ -9,14 +10,14 @@ const ContactButton = ({contact}) => {
 
     const { navigate } = useNavigation()
     return (
-        <TouchableOpacity
+        <TouchableOpacity style={styles.option}
             onPress={() => navigate('Contact')}>
-            <View>
+            <View style={styles.background}>
                 {/* <Image
                     style={styles.image}
                     resizeMode="cover"
                     source={{ uri: board.thumbnailPhoto}} /> */}
-                <Text style={styles.text}>{contact.name} {contact.phoneNumber}</Text>
+                <Text style={styles.text}>{contact.name}</Text>
             </View>
         </TouchableOpacity>
 
@@ -33,17 +34,17 @@ const ContactButton = ({contact}) => {
 }
 export default ContactButton
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
 
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    text: {
-        marginVertical: 20,
-        backgroundColor: lightBlue,
-        paddingHorizontal: 100,
-        paddingVertical: 20
-    }
-})
+//         alignItems: 'center',
+//         justifyContent: 'center'
+//     },
+//     text: {
+//         marginVertical: 20,
+//         backgroundColor: lightBlue,
+//         paddingHorizontal: 100,
+//         paddingVertical: 20
+//     }
+// })
