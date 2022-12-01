@@ -4,14 +4,10 @@ import { lightPurple, lightBlue } from '../../styles/colors'
 import { useNavigation } from '@react-navigation/native'
 import * as fileService from '../../services/fileservice'
 
-const ContactButton = ({contactFile}) => {
+const ContactButton = ({contact}) => {
     // const boards = useSelector((state) => state.boards);
-    const getContactInfo = async () => {
-        const fileContent = await fileService.getFileContent(contactFile);
-        console.log(await fileContent)
-    }
 
-    getContactInfo()
+
     const { navigate } = useNavigation()
     return (
         <TouchableOpacity
@@ -21,7 +17,7 @@ const ContactButton = ({contactFile}) => {
                     style={styles.image}
                     resizeMode="cover"
                     source={{ uri: board.thumbnailPhoto}} /> */}
-                <Text style={styles.text}>Nafn og mynd</Text>
+                <Text style={styles.text}>{contact.name} {contact.phoneNumber}</Text>
             </View>
         </TouchableOpacity>
 

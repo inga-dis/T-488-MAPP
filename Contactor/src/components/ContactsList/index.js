@@ -8,12 +8,12 @@ import * as fileService from '../../services/fileservice'
 // Hér koma allir contacts:
 
 const ContactsList = ({ contacts }) => {
-
+    console.log(contacts)
     return (
         /* <Search />*/
         <View>
-            {contacts.map((contactFile) => (
-                <ContactButton contactFile={contactFile.name}></ContactButton>
+            {contacts.map((contact) => (
+                <ContactButton contact={contact} key={contact.key}></ContactButton>
             ))}
         </View>
     )
