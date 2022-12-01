@@ -2,7 +2,6 @@ import React from 'react'
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
 import { lightPurple, lightBlue } from '../../styles/colors'
 import { useNavigation } from '@react-navigation/native'
-import * as fileService from '../../services/fileservice'
 
 const ContactButton = ({contact}) => {
     // const boards = useSelector((state) => state.boards);

@@ -21,7 +21,7 @@ const Contacts = () => {
     }, [])
 
     return (
-        <View style={styles.container}>°
+        <View style={styles.container}>
             <ContactsList contacts={contacts} />
             <Text>ADD</Text>
             <TouchableOpacity style={{ color: 'pink' }} onPress={() => setIsAddModalOpen(true)}>
