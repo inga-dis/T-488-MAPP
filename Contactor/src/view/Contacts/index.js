@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import ContactsList from '../../components/ContactsList'
 import Add from '../../components/Add'
 import * as fileService from '../../services/fileservice'
-
+import Search from '../../components/Search'
 import { lightPurple } from '../../styles/colors'
 
 const Contacts = () => {
@@ -22,6 +22,7 @@ const Contacts = () => {
 
     return (
         <View style={styles.container}>
+            <Search contacts={contacts}/>
             <ContactsList contacts={contacts} />
             <Text>ADD</Text>
             <TouchableOpacity style={{ color: 'pink' }} onPress={() => setIsAddModalOpen(true)}>
