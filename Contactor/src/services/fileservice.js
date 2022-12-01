@@ -10,36 +10,56 @@ const setupDirectory = async () => {
     }
 }
 
+export const cleanDirectory = async () => {
+    await FileSystem.deleteAsync(contactsDirectory)
+}
+
+const onException = (cb, errorHandler) => {
+    try {
+        return cb()
+    } catch (err) {
+        if (errorHandler) {
+            return errorHandler(err)
+        }
+        console.error(err)
+    }
+}
+
+export const getFileContent = async (filename) => {
+    await setupDirectory()
+    const result = await onException(() => FileSystem.readAsStringAsync(
+        contactsDirectory + '/' + filename, { encoding: FileSystem.EncodingType.UTF8 }))
+    const resultObj = await JSON.parse(result)
+    return await resultObj
+}
+
 export const addContact = async contactInfo => {
     await setupDirectory()
     const fileName = contactInfo.name + '-' + newUuid
     const contact = {
-        user: [
-            {
-                name: contactInfo.name,
-                phoneNumber: contactInfo.phoneNumber,
-                image: contactInfo.image
-            }
-        ]
+        name: contactInfo.name,
+        phoneNumber: contactInfo.phoneNumber,
+        image: contactInfo.image
     }
+
     await loadContact(fileName, contact)
 }
 
 const loadContact = async (fileName, contact) => {
-    const fileUri = contactsDirectory + fileName
     const string = JSON.stringify(contact)
 
-    await FileSystem.writeAsStringAsync(fileUri, string, { encoding: FileSystem.EncodingType.UTF8 })
-    console.log(await FileSystem.readAsStringAsync(fileUri))
+    await FileSystem.writeAsStringAsync(contactsDirectory + '/' + fileName, string, { encoding: FileSystem.EncodingType.UTF8 })
 }
+
 export const getAllContacts = async () => {
     // Check if directory exists
     await setupDirectory()
-
-    // const result = await onException(() => FileSystem.readDirectoryAsync(contactsDirectory));
-    // return Promise.all(result.map(async fileName => {
-    //     console.log(fileName)
-    // }));
+    const result = await onException(() => FileSystem.readDirectoryAsync(contactsDirectory))
+    return Promise.all(result.map(async fileName => {
+        return {
+            name: fileName
+        }
+    }))
 }
 
 // Notes for usage:
