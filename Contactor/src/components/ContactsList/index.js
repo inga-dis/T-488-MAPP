@@ -12,9 +12,11 @@ const ContactsList = ({ contacts }) => {
     console.log(contacts)
     return (
         <View>
+            
             {contacts.map((contact) => (
                 <ContactButton contact={contact} key={contact.key}></ContactButton>
             ))}
+            <Search contacts={contacts}/>
             <ImportContacts/>
         </View>
     )

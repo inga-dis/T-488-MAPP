@@ -5,16 +5,11 @@ import { useNavigation } from '@react-navigation/native'
 // Virkar en með smá galla, data uppfærist og það minkar þegar search er notað
 // Þarf að fara í Main til að fá allt data til baka
 
-const homeScreen = ({ contacts }) => {
+const Search = ({ contacts }) => {
     console.log("  ")
     console.log("HALLÓ? ",contacts)
     const { navigate } = useNavigation()
-    // const data = [
-    //     {
-    //         id: 1,
-    //         name: 'Sigga'
-    //     }
-    // ]
+
 
     const [dataFromState, setData] = useState(contacts)
 
@@ -60,4 +55,4 @@ const homeScreen = ({ contacts }) => {
     )
 }
 
-export default homeScreen
+export default Search

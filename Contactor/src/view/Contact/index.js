@@ -4,13 +4,14 @@ import ContactProfile from '../../components/ContactProfile'
 
 import { lightPurple, lightBlue } from '../../styles/colors'
 
-const Contact = ({ route }) => {
-    const conta = route.params
+const Contact = ({ contact }) => {
+    // const conta = contact.params
+    console.log("conts: ", contact)
 
     return (
         <ScrollView>
             <View style={styles.container}>
-                <Text style={{ fontSize: 34 }}>{conta.name} </Text>
+                <Text style={{ fontSize: 34 }}>hæ</Text>
                 <ContactProfile/>
             </View>
         </ScrollView>
