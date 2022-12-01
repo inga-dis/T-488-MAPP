@@ -15,13 +15,13 @@ const Contacts = () => {
     // Load all contacts in the application directory
     useEffect(() => {
         (async () => {
-            const contacts2 = await fileService.getAllContacts()
-            setContacts(contacts2)
+            const contact = await fileService.getAllContacts()
+            setContacts(contact)
         })()
     }, [])
 
     return (
-        <View style={styles.container}>
+        <View style={styles.container}>°
             <ContactsList contacts={contacts} />
             <Text>ADD</Text>
             <TouchableOpacity style={{ color: 'pink' }} onPress={() => setIsAddModalOpen(true)}>

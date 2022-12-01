@@ -56,8 +56,12 @@ export const getAllContacts = async () => {
     await setupDirectory()
     const result = await onException(() => FileSystem.readDirectoryAsync(contactsDirectory))
     return Promise.all(result.map(async fileName => {
+        const contact = await getFileContent(fileName)
         return {
-            name: fileName
+            key: fileName,
+            name: contact.name,
+            phoneNumber: contact.phoneNumber,
+            image: contact.image
         }
     }))
 }
