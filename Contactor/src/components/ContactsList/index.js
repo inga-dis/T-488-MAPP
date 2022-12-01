@@ -9,7 +9,6 @@ import ImportContacts from '../ImportContacts'
 // Hér koma allir contacts:
 
 const ContactsList = ({ contacts }) => {
-    console.log(contacts)
     return (
         <View>
             {contacts.map((contact) => (

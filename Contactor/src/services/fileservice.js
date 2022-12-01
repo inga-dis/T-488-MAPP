@@ -75,7 +75,7 @@ export const editContactName = async (contact, newName) => {
 }
 
 // Add contact into file system
-export const addContact = async (contactInfo) => {
+export const addContact = async ({contactInfo}) => {
     const fileName = contactInfo.name + '-' + newUuid
     const contact = {
         name: contactInfo.name,

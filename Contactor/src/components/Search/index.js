@@ -6,8 +6,7 @@ import { useNavigation } from '@react-navigation/native'
 // Þarf að fara í Main til að fá allt data til baka
 
 const Search = ({ contacts }) => {
-    console.log("  ")
-    console.log("HALLÓ? ",contacts)
+
     const { navigate } = useNavigation()
 
 
@@ -29,9 +28,6 @@ const Search = ({ contacts }) => {
             return item.name.toLowerCase().includes(input.toLowerCase())
         })
         setData(searchData)
-        // console.log('search  ', searchData)
-        // console.log('input   ', input)
-        // console.log('data    ', contacts)
     }
 
     return (

@@ -6,7 +6,6 @@ import { lightPurple, lightBlue } from '../../styles/colors'
 
 const Contact = ({ contact }) => {
     // const conta = contact.params
-    console.log("conts: ", contact)
 
     return (
         <ScrollView>
