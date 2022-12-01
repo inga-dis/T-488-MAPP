@@ -9,7 +9,7 @@ import Contact from '../view/Contact'
 
 const Stack = createStackNavigator()
 // testing view
-import Test from "../view/Test";
+// import Test from "../view/Test";
 
 const Routes = () => (
     <NavigationContainer >
