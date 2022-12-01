@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
-import { View, Text, Image, TouchableOpacity, Button } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import Header from '../../components/Header'
 import styles from './styles'
+import defaultStyles from '../../styles/styles'
 import Logo from '../../components/Logo/telephone.png'
 
 const Main = ({ navigation: { navigate } }) => (
@@ -9,8 +11,8 @@ const Main = ({ navigation: { navigate } }) => (
     <View style={styles.container}>
         <Text style={styles.header}>Your personal contactor</Text>
         <Image source={Logo} style={styles.logoStyle} />
-        <TouchableOpacity onPress ={() => navigate('Contacts')}>
-            <Text style={styles.option}>My contacts</Text>
+        <TouchableOpacity activeOpacity={0.7} onPress ={() => navigate('Contacts')}>
+            <Text style={[defaultStyles.button, defaultStyles.shadow]}>My contacts</Text>
         </TouchableOpacity>
     </View>
 )

@@ -8,7 +8,20 @@ export default StyleSheet.create({
     },
 
     button: {
+        borderRadius: 3,
+        backgroundColor: white,
+        padding: 10
+    },
 
+    shadow: {
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 3
+        },
+        shadowOpacity: 0.75,
+        shadowRadius: 5,
+        elevation: 20
     },
 
     buttonText: {
