@@ -1,17 +1,43 @@
-import React from 'react'
+import React, {useState} from 'react'
 // import { useNavigation } from '@react-navigation/native'
 import { Text, TouchableOpacity, View } from 'react-native'
 import call from 'react-native-phone-call'
 import * as imageService from '../../services/imageService'
-import { useNavigation } from '@react-navigation/native'
 import styles from '../../view/Main/styles';
 
 const ContactProfile = () => {
-    const { navigate } = useNavigation();
+
+    const [images, setImages] = useState([]);
+    // All selected images
+    // const [selectedImages, setSelectedImages] = useState([]);
+    // A boolean flag to indicate whether the images are being loaded or not
+    // const [loadingImages, setLoadingImages] = useState(true);
+    // A boolean flag to indicate whether the modal to add an image is open or not
+    // const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+
+    const addImage = async image => {
+        setLoadingImages(true);
+
+        const newImage = await fileService.addImage(image);
+
+        setImages([...images, newImage]);
+        // setIsAddModalOpen(false);
+        setLoadingImages(false);
+    };
+
     const takePhoto = async () => {
         const photo = await imageService.takePhoto();
         console.log(photo)
     };
+
+    const selectFromCameraRoll = async () => {
+        const imageLocation = await imageService.selectFromCameraRoll();
+        if (imageLocation.length > 0) {await addImage (imageLocation)}
+
+    };
+    
+
+    
 
     const triggerCall = () => {
         const args = {
@@ -30,7 +56,7 @@ const ContactProfile = () => {
                     source={{ uri: board.thumbnailPhoto}} /> */}
                 <Text style={{ fontSize: 40 }}>HRINGJA</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress ={() => navigate ('Contacts')}>
+            <TouchableOpacity onPress ={() => selectFromCameraRoll()}>
                 <Text style={styles.option}>Upload image</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress ={() => takePhoto()}>
