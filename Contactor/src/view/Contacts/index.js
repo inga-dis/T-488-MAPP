@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import ContactsList from '../../components/ContactsList'
 import Add from '../../components/Add'
 import * as fileService from '../../services/fileservice'
 
+import defaultStyles from '../../styles/styles'
 import { lightPurple } from '../../styles/colors'
 
 const Contacts = () => {
@@ -21,11 +22,10 @@ const Contacts = () => {
     }, [])
 
     return (
-        <View style={styles.container}>
+        <View style={defaultStyles.container}>
             <ContactsList contacts={contacts} />
-            <Text>ADD</Text>
-            <TouchableOpacity style={{ color: 'pink' }} onPress={() => setIsAddModalOpen(true)}>
-                <Text>Open modal</Text>
+            <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress={() => setIsAddModalOpen(true)}>
+                <Text>Add contact</Text>
             </TouchableOpacity>
             <Add isOpen={isAddModalOpen}
                 closeModal={() => setIsAddModalOpen(false)}>
@@ -34,11 +34,3 @@ const Contacts = () => {
     )
 }
 export default Contacts
-
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: lightPurple,
-        paddingBottom: 300
-    }
-
-})

@@ -10,7 +10,7 @@ const Contact = ({ route }) => {
     return (
         <ScrollView>
             <View style={styles.container}>
-                <Text style={{ fontSize: 34 }}>{conta.name} </Text>
+                <Text style={{ fontSize: 34 }}>{contact.name} </Text>
                 <ContactProfile/>
             </View>
         </ScrollView>
