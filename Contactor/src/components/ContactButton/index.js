@@ -2,9 +2,16 @@ import React from 'react'
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
 import { lightPurple, lightBlue } from '../../styles/colors'
 import { useNavigation } from '@react-navigation/native'
+import * as fileService from '../../services/fileservice'
 
-const ContactButton = () => {
+const ContactButton = ({contactFile}) => {
     // const boards = useSelector((state) => state.boards);
+    const getContactInfo = async () => {
+        const fileContent = await fileService.getFileContent(contactFile);
+        console.log(await fileContent)
+    }
+
+    getContactInfo()
     const { navigate } = useNavigation()
     return (
         <TouchableOpacity

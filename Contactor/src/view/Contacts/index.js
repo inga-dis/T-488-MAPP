@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import ContactsList from '../../components/ContactsList'
-import Search from '../../components/Search'
 import Add from '../../components/Add'
 import * as fileService from '../../services/fileservice'
 
@@ -16,14 +15,13 @@ const Contacts = () => {
     // Load all contacts in the application directory
     useEffect(() => {
         (async () => {
-            const contacts = await fileService.getAllContacts()
-            setContacts(contacts)
+            const contacts2 = await fileService.getAllContacts()
+            setContacts(contacts2)
         })()
     }, [])
 
     return (
         <View style={styles.container}>
-            <Search />
             <ContactsList contacts={contacts} />
             <Text>ADD</Text>
             <TouchableOpacity style={{ color: 'pink' }} onPress={() => setIsAddModalOpen(true)}>
