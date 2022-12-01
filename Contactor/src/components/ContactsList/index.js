@@ -1,14 +1,21 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import ContactButton from '../ContactButton'
+import Search from '../Search'
 import { lightPurple, lightBlue } from '../../styles/colors'
+import * as fileService from '../../services/fileservice'
 
 // Hér koma allir contacts:
 
 const ContactsList = ({ contacts }) => {
-    return (
-        <ContactButton style={styles.container}/>
 
+    return (
+        /* <Search />*/
+        <View>
+            {contacts.map((contactFile) => (
+                <ContactButton contactFile={contactFile.name}></ContactButton>
+            ))}
+        </View>
     )
 }
 export default ContactsList
