@@ -7,9 +7,10 @@ import { SafeAreaView, Text, View, FlatList, TextInput } from 'react-native'
 import ContactButton from '../ContactButton'
 
 const Search = ({ contacts }) => {
-    const [search, setSearch] = useState('')
-    const [filteredDataSource, setFilteredDataSource] = useState([])
-    const [masterDataSource, setMasterDataSource] = useState([])
+    // const [search, setSearch] = useState('')
+    const [data, setData] = useState([]);
+    // const [filteredDataSource, setFilteredDataSource] = useState([])
+    // const [masterDataSource, setMasterDataSource] = useState([])
 
     useEffect(() => {
         setMasterDataSource(contacts)
