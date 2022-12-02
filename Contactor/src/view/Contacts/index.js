@@ -14,6 +14,7 @@ const Contacts = () => {
     // Controls if add modal is open
     const [isAddModalOpen, setIsAddModalOpen] = useState(false)
 
+    // Function to import contacts from device into user device.
     const ImportContacts = async () => {
         await ContactsService.requestPermissionsAsync()
         if ((await ContactsService.getPermissionsAsync()).granted) {
@@ -37,6 +38,7 @@ const Contacts = () => {
             }
         }
     }
+
     // Load all contacts in the application directory
     useEffect(() => {
         (async () => {
@@ -46,8 +48,7 @@ const Contacts = () => {
     }, [])
 
     return (
-        <View style={defaultStyles.container}>
-
+        <ScrollView style={defaultStyles.container}>
             <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress={() => setIsAddModalOpen(true)}>
                 <Text>Add contact</Text>
             </TouchableOpacity>
@@ -58,8 +59,7 @@ const Contacts = () => {
                 closeModal={() => setIsAddModalOpen(false)}>
             </Add>
             <ContactsList contacts={contacts} />
-
-        </View>
+        </ScrollView>
 
     )
 }

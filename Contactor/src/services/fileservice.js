@@ -12,6 +12,7 @@ const setupDirectory = async () => {
 }
 
 // Clean directory if needed, used for debugging purposes
+// eslint-disable-next-line no-unused-vars
 const cleanDirectory = async () => {
     await FileSystem.deleteAsync(contactsDirectory)
 }

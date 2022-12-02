@@ -10,7 +10,7 @@ const ContactButton = ({ contact }) => {
 
     return (
         <TouchableOpacity style={styles.option}
-            onPress={() => navigate('BoardView', { contact })}>
+            onPress={() => navigate('Contact', { contact })}>
             <View style={styles.background}>
                 {/* <Image
                     style={styles.image}
