@@ -41,6 +41,8 @@ const Contacts = () => {
                         }
                         return await fileService.addContact(contactInfo)
                     }
+                    console.log(contactInfo)
+                    return fileService.addContact(contactInfo)
                 })
             }
         }

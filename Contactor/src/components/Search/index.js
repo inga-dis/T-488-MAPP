@@ -3,7 +3,15 @@
 /* eslint-disable array-callback-return */
 import React, { useState, useEffect } from 'react'
 // import all the components we are going to use
-import { SafeAreaView, Text, View, FlatList, TextInput } from 'react-native'
+import {
+    RefreshControl,
+    SafeAreaView,
+    Text,
+    StyleSheet,
+    View,
+    FlatList,
+    TextInput
+} from 'react-native'
 import ContactButton from '../ContactButton'
 import defaultStyles from '../../styles/styles'
 import styles from './styles'
@@ -14,9 +22,21 @@ const Search = ({ contacts }) => {
     const [masterDataSource, setMasterDataSource] = useState([])
 
     useEffect(() => {
-        setMasterDataSource(contacts)
-        setFilteredDataSource(contacts)
-    })
+        // declare the data fetching function
+        const fetchData = async () => {
+            setFilteredDataSource(contacts)
+            setMasterDataSource(contacts)
+        }
+        // call the function
+        fetchData()
+        // make sure to catch any error
+            .catch(console.error)
+    }, [])
+
+    const strAscending = [...filteredDataSource].sort((a, b) =>
+        a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1
+    )
+
     const searchFilterFunction = (text) => {
         if (text) {
             const newData = masterDataSource.filter(function (item) {
@@ -26,7 +46,6 @@ const Search = ({ contacts }) => {
                 const textData = text.toUpperCase()
                 return itemData.indexOf(textData) > -1
             })
-            console.log(newData)
             setFilteredDataSource(newData)
             setSearch(text)
         } else {
@@ -37,22 +56,7 @@ const Search = ({ contacts }) => {
 
     const ItemView = ({ item }) => {
         return (
-            <ContactButton contact={item}>
-                <Text></Text>
-            </ContactButton>
-        )
-    }
-
-    const ItemSeparatorView = () => {
-        return (
-        // Flat List Item Separator
-            <View
-                style={{
-                    height: 0.5,
-                    width: '100%',
-                    backgroundColor: '#C8C8C8'
-                }}
-            />
+            <ContactButton contact={item}></ContactButton>
         )
     }
     return (
@@ -61,17 +65,31 @@ const Search = ({ contacts }) => {
                 <TextInput style={[defaultStyles.input, styles.input]}
                     onChangeText={(text) => searchFilterFunction(text)}
                     value={search}
+                    underlineColorAndroid="transparent"
                     placeholder="Search Here"
                 />
                 <FlatList
-                    data={filteredDataSource}
+                    data={strAscending}
                     keyExtractor={(item, index) => index.toString()}
-                    ItemSeparatorComponent={ItemSeparatorView}
                     renderItem={ItemView}
                 />
             </View>
         </SafeAreaView>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: 'white'
+    },
+    textInputStyle: {
+        height: 40,
+        borderWidth: 1,
+        paddingLeft: 20,
+        margin: 5,
+        borderColor: '#009688',
+        backgroundColor: '#FFFFFF'
+    }
+})
 
 export default Search
