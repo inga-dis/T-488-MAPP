@@ -4,8 +4,7 @@ import ContactsList from '../../components/ContactsList'
 import Add from '../../components/Add'
 import * as fileService from '../../services/fileservice'
 import defaultStyles from '../../styles/styles'
-import { lightPurple } from '../../styles/colors'
-
+import styles from './styles'
 import * as ContactsService from 'expo-contacts'
 
 const Contacts = () => {
@@ -26,14 +25,22 @@ const Contacts = () => {
             })
             if (contactsFromUser.total > 0) {
                 const contactsLIST = contactsFromUser.data
-                contactsLIST.map((contact) => {
-                    const contactInfo = {
-                        name: contact.firstName + ' ' + contact.lastName,
-                        phoneNumber: contact.phoneNumbers[0].number,
-                        image: contact.image.uri
+                contactsLIST.map(async (contact) => {
+                    if (contact.imageAvailable) {
+                        const contactInfo = {
+                            name: contact.firstName + ' ' + contact.lastName,
+                            phoneNumber: contact.phoneNumbers[0].number,
+                            image: contact.image.uri
+                        }
+                        return await fileService.addContact(contactInfo)
+                    } else {
+                        const contactInfo = {
+                            name: contact.firstName + ' ' + contact.lastName,
+                            phoneNumber: contact.phoneNumbers[0].number,
+                            image: 'https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png'
+                        }
+                        return await fileService.addContact(contactInfo)
                     }
-                    console.log(contactInfo)
-                    return fileService.addContact(contactInfo)
                 })
             }
         }
@@ -46,20 +53,22 @@ const Contacts = () => {
             setContacts(contact)
         })()
     }, [])
-
     return (
-        <ScrollView style={defaultStyles.container}>
-            <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress={() => setIsAddModalOpen(true)}>
-                <Text>Add contact</Text>
-            </TouchableOpacity>
-            <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress={() => ImportContacts()}>
-                <Text>Import </Text>
-            </TouchableOpacity>
-            <Add isOpen={isAddModalOpen}
-                closeModal={() => setIsAddModalOpen(false)}>
-            </Add>
-            <ContactsList contacts={contacts} />
-        </ScrollView>
+            <ScrollView style={defaultStyles.container}>
+                <Add isOpen={isAddModalOpen}
+                    closeModal={() => setIsAddModalOpen(false)}>
+                </Add>
+                <ContactsList contacts={contacts} />
+            
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.shadow, defaultStyles.button]} onPress={() => setIsAddModalOpen(true)}>
+                    <Text>Add contact</Text>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.shadow, defaultStyles.button]} onPress={() => ImportContacts()}>
+                    <Text>Import </Text>
+                </TouchableOpacity>
+                </View>
+            </ScrollView>
 
     )
 }

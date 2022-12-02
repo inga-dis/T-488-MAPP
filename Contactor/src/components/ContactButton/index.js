@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
-import { lightPurple, lightBlue } from '../../styles/colors'
 import { useNavigation } from '@react-navigation/native'
 // import defaultStyles from '../../styles/styles'
 import styles from './styles'

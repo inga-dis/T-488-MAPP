@@ -6,18 +6,17 @@ export default StyleSheet.create({
 
     option: {
         backgroundcolor: lightPurple,
-        backgroundColor: lightPurple,
-        width: windowWidth,
-        margin: 2,
+        width: windowWidth - 4,
+        margin: 2
     },
 
     text: {
         fontWeight: 'bold',
-        fontSize: 50,
+        fontSize: 30,
         color: lightYellow,
-        left: 80,
+        textAlign: 'left',
         border: 20,
-        padding: 20, 
+        padding: 20
     },
 
     button: {

@@ -5,6 +5,8 @@ import React, { useState, useEffect } from 'react'
 // import all the components we are going to use
 import { SafeAreaView, Text, View, FlatList, TextInput } from 'react-native'
 import ContactButton from '../ContactButton'
+import defaultStyles from '../../styles/styles'
+import styles from './styles'
 
 const Search = ({ contacts }) => {
     const [search, setSearch] = useState('')
@@ -53,12 +55,10 @@ const Search = ({ contacts }) => {
             />
         )
     }
-
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <Text>Test</Text>
             <View>
-                <TextInput
+                <TextInput style={[defaultStyles.input, styles.input]}
                     onChangeText={(text) => searchFilterFunction(text)}
                     value={search}
                     placeholder="Search Here"
@@ -69,7 +69,6 @@ const Search = ({ contacts }) => {
                     ItemSeparatorComponent={ItemSeparatorView}
                     renderItem={ItemView}
                 />
-                <Text>Test</Text>
             </View>
         </SafeAreaView>
     )
