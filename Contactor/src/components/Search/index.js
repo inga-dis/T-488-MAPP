@@ -26,16 +26,16 @@ const Search = ({ contacts }) => {
     }
 
 
-    // const searchName = (input) => {
-    //     // let data = dataFromState ÞAÐ ÞURFTI BARA AÐ KOMMENTA ÞETTA ÚT!!!
-    //     const searchData = contacts.filter((item) => {
-    //         return item.name.toLowerCase().includes(input.toLowerCase())
-    //     })
-    //     setData(searchData)
-    //     // console.log('search  ', searchData)
-    //     // console.log('input   ', input)
-    //     // console.log('data    ', contacts)
-    // }
+    const searchName = (input) => {
+        // let data = dataFromState ÞAÐ ÞURFTI BARA AÐ KOMMENTA ÞETTA ÚT!!!
+        const searchData = contacts.filter((item) => {
+            return item.name.toLowerCase().includes(input.toLowerCase())
+        })
+        setData(searchData)
+        // console.log('search  ', searchData)
+        // console.log('input   ', input)
+        // console.log('data    ', contacts)
+    }
 
     return (
         <View >
