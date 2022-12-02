@@ -13,9 +13,6 @@ export default function App() {
 
                 if (data.length > 0) {
                     const contact = data;
-                    console.log(contact);
-                    console.log(contact[45].firstName);
-                    console.log(contact[45].phoneNumbers[0].number);
                 }
             }
         })();
