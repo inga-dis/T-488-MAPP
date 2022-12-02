@@ -1,5 +1,5 @@
 import React from 'react'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import Search from '../Search'
 
 import { lightPurple, lightBlue } from '../../styles/colors' 
@@ -13,6 +13,7 @@ const ContactsList = ({ contacts }) => {
     return (
         <View>
             <Search contacts={contacts}/>
+            <Text>Test</Text>
             <ImportContacts/>
         </View>
     )

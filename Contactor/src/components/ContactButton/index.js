@@ -1,21 +1,16 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { lightPurple, lightBlue } from '../../styles/colors'
 import { useNavigation } from '@react-navigation/native'
 // import defaultStyles from '../../styles/styles'
 import styles from './styles'
-    
-
-const ContactButton = ({contact}) => {
+const ContactButton = ({ contact }) => {
+    const { navigate } = useNavigation();
     // const boards = useSelector((state) => state.boards);
 
-
-    const { navigate } = useNavigation()
     return (
-
         <TouchableOpacity style={styles.option}
-
-            onPress={() => navigate('Contact')}>
+            onPress={() => navigate('BoardView', { contact })}>
             <View style={styles.background}>
                 {/* <Image
                     style={styles.image}
@@ -24,16 +19,6 @@ const ContactButton = ({contact}) => {
                 <Text style={styles.text}>{contact.name}</Text>
             </View>
         </TouchableOpacity>
-
-    // {/* <View style={styles.container}>
-    //     <View>
-    //         <Text style={styles.text}>Nafn og mynd</Text>
-    //         <Text style={styles.text}>Nafn og mynd</Text>
-    //         <Text style={styles.text}>Nafn og mynd</Text>
-    //         <Text style={styles.text}>Nafn og mynd</Text>
-    //     </View>
-
-    // </View> */}
     )
 }
 export default ContactButton

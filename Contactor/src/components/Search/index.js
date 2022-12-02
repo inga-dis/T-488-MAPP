@@ -7,7 +7,6 @@ import { SafeAreaView, Text, View, FlatList, TextInput } from 'react-native'
 import ContactButton from '../ContactButton'
 
 const Search = ({ contacts }) => {
-
     const [search, setSearch] = useState('')
     const [filteredDataSource, setFilteredDataSource] = useState([])
     const [masterDataSource, setMasterDataSource] = useState([])
@@ -42,7 +41,6 @@ const Search = ({ contacts }) => {
         )
     }
 
-
     const ItemSeparatorView = () => {
         return (
         // Flat List Item Separator
@@ -57,8 +55,8 @@ const Search = ({ contacts }) => {
     }
 
     return (
-
         <SafeAreaView style={{ flex: 1 }}>
+            <Text>Test</Text>
             <View>
                 <TextInput
                     onChangeText={(text) => searchFilterFunction(text)}
@@ -71,6 +69,7 @@ const Search = ({ contacts }) => {
                     ItemSeparatorComponent={ItemSeparatorView}
                     renderItem={ItemView}
                 />
+                <Text>Test</Text>
             </View>
         </SafeAreaView>
     )
