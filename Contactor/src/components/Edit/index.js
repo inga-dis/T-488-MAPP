@@ -14,7 +14,6 @@ const Edit = ({
     const [selectedEditField, setSelectedEditField] = useState()
 
     const handleSubmit = async () => {
-        console.log(newValue, selectedEditField)
         if (selectedEditField === 'Name') {
             await fileService.editContactName(contact, newValue)
         }
