@@ -31,7 +31,6 @@ const ContactProfile = () => {
 
     const takePhoto = async () => {
         const photo = await imageService.takePhoto();
-        console.log(photo)
     };
 
     const selectFromCameraRoll = async () => {

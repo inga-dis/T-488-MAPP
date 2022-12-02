@@ -13,7 +13,6 @@ const Contact = ({ route }) => {
     
     
     const conta = route.params
-    // console.log("conta", conta.phoneNumber)
 
     return (
         <ScrollView>
