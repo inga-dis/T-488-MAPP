@@ -6,9 +6,12 @@ import * as imageService from '../../services/imageService'
 import styles from '../../view/Main/styles'
 import defaultStyles from '../../styles/styles'
 
+
 const ContactProfile = () => {
 
     const [images, setImages] = useState([]);
+
+    
     // All selected images
     // const [selectedImages, setSelectedImages] = useState([]);
     // A boolean flag to indicate whether the images are being loaded or not
