@@ -31,6 +31,10 @@ const Search = ({ contacts }) => {
             .catch(console.error)
     }, [])
 
+    const strAscending = [...filteredDataSource].sort((a, b) =>
+        a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1
+    )
+
     const searchFilterFunction = (text) => {
         if (text) {
             const newData = masterDataSource.filter(function (item) {
@@ -65,7 +69,7 @@ const Search = ({ contacts }) => {
                     placeholder="Search Here"
                 />
                 <FlatList
-                    data={filteredDataSource}
+                    data={strAscending}
                     keyExtractor={(item, index) => index.toString()}
                     renderItem={ItemView}
                 />
