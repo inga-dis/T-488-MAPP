@@ -5,8 +5,6 @@ import Search from '../Search'
 import { lightPurple, lightBlue } from '../../styles/colors' 
 
 
-import ImportContacts from '../ImportContacts'
-
 // Hér koma allir contacts:
 
 const ContactsList = ({ contacts }) => {
@@ -14,7 +12,6 @@ const ContactsList = ({ contacts }) => {
         <View>
             <Search contacts={contacts}/>
             <Text>Test</Text>
-            <ImportContacts/>
         </View>
     )
 }
