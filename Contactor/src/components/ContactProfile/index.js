@@ -8,6 +8,7 @@ import defaultStyles from '../../styles/styles'
 
 const ContactProfile = ({contact}) => {
     const [images, setImages] = useState([])
+
     // All selected images
     // const [selectedImages, setSelectedImages] = useState([]);
     // A boolean flag to indicate whether the images are being loaded or not
