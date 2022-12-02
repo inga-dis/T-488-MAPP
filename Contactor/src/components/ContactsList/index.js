@@ -2,8 +2,7 @@ import React from 'react'
 import { View } from 'react-native'
 import ContactButton from '../ContactButton'
 import Search from '../Search'
-import { lightPurple, lightBlue } from '../../styles/colors'
-import * as fileService from '../../services/fileservice'
+import { lightPurple, lightBlue } from '../../styles/colors' 
 import ImportContacts from '../ImportContacts'
 
 // Hér koma allir contacts:

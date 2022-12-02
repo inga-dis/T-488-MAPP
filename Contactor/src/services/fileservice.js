@@ -75,7 +75,7 @@ export const editContactName = async (contact, newName) => {
 }
 
 // Add contact into file system
-export const addContact = async ({contactInfo}) => {
+export const addContact = async (contactInfo) => {
     const fileName = contactInfo.name + '-' + newUuid
     const contact = {
         name: contactInfo.name,
@@ -99,6 +99,8 @@ const getFileContent = async (filename) => {
 
 // Get all contacts in directory and return as jason object.
 export const getAllContacts = async () => {
+    // Clean directory if needed. Comment out when using app normally
+    // cleanDirectory()
     // Check if directory exists
     await setupDirectory()
     const result = await onException(() =>

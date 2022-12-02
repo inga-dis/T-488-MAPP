@@ -17,17 +17,27 @@ const Contacts = () => {
 
     const ImportContacts = async () => {
         await ContactsService.requestPermissionsAsync()
-        if (ContactsService.getPermissionsAsync()) {
-            const { data } = await ContactsService.getContactsAsync({
-                fields: [ContactsService.PHONE_NUMBERS]
+        if ((await ContactsService.getPermissionsAsync()).granted) {
+            const contactsFromUser = await ContactsService.getContactsAsync({
+                fields: [
+                    ContactsService.IMAGE,
+                    ContactsService.PHONE_NUMBERS
+                ]
             })
-            if (data.length > 0) {
-                const contactsFromUser = data
-                contactsFromUser.map((contact) => fileService.addContact({ contactInfo: { name: contact.firstName + ' ' + contact.lastName, phoneNumber: contactsFromUser[0].phoneNumbers[0].number, image: '' } }))
+            if (contactsFromUser.total > 0) {
+                const contactsLIST = contactsFromUser.data
+                contactsLIST.map((contact) => {
+                    const contactInfo = {
+                        name: contact.firstName + ' ' + contact.lastName,
+                        phoneNumber: contact.phoneNumbers[0].number,
+                        image: contact.image.uri
+                    }
+                    console.log(contactInfo)
+                    return fileService.addContact(contactInfo)
+                })
             }
         }
     }
-
     // Load all contacts in the application directory
     useEffect(() => {
         (async () => {
@@ -47,11 +57,10 @@ const Contacts = () => {
             <Add isOpen={isAddModalOpen}
                 closeModal={() => setIsAddModalOpen(false)}>
             </Add>
-            <ScrollView>
-                <ContactsList contacts={contacts} />
-            </ScrollView>
+            <ContactsList contacts={contacts} />
 
         </View>
     )
 }
+
 export default Contacts

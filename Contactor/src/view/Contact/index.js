@@ -11,7 +11,7 @@ const Contact = ({ contact }) => {
         <ScrollView>
             <View style={styles.container}>
                 <Text style={{ fontSize: 34 }}>hæ</Text>
-                <ContactProfile/>
+                <ContactProfile contact={contact}/>
             </View>
         </ScrollView>
     )
