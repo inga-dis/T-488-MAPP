@@ -7,11 +7,13 @@ import { lightPurple, lightBlue } from '../../styles/colors'
 const Contact = ({ contact }) => {
     // const conta = contact.params
 
+
     return (
         <ScrollView>
             <View style={styles.container}>
                 <Text style={{ fontSize: 34 }}>hæ</Text>
                 <ContactProfile contact={contact}/>
+
             </View>
         </ScrollView>
     )

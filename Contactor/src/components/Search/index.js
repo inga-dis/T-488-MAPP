@@ -1,53 +1,78 @@
-import React, { useState } from 'react'
-import { FlatList, TextInput, View, Text, TouchableOpacity } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
-
-// Virkar en með smá galla, data uppfærist og það minkar þegar search er notað
-// Þarf að fara í Main til að fá allt data til baka
+/* eslint-disable react/jsx-key */
+/* eslint-disable react/prop-types */
+/* eslint-disable array-callback-return */
+import React, { useState, useEffect } from 'react'
+// import all the components we are going to use
+import { SafeAreaView, Text, View, FlatList, TextInput } from 'react-native'
+import ContactButton from '../ContactButton'
 
 const Search = ({ contacts }) => {
 
-    const { navigate } = useNavigation()
+    const [search, setSearch] = useState('')
+    const [filteredDataSource, setFilteredDataSource] = useState([])
+    const [masterDataSource, setMasterDataSource] = useState([])
 
+    useEffect(() => {
+        setMasterDataSource(contacts)
+        setFilteredDataSource(contacts)
+    })
+    const searchFilterFunction = (text) => {
+        if (text) {
+            const newData = masterDataSource.filter(function (item) {
+                const itemData = item.name
+                    ? item.name.toUpperCase()
+                    : ''.toUpperCase()
+                const textData = text.toUpperCase()
+                return itemData.indexOf(textData) > -1
+            })
+            console.log(newData)
+            setFilteredDataSource(newData)
+            setSearch(text)
+        } else {
+            setFilteredDataSource(masterDataSource)
+            setSearch(text)
+        }
+    }
 
-    const [dataFromState, setData] = useState(contacts)
-
-    const item = ({ item }) => {
+    const ItemView = ({ item }) => {
         return (
-            <TouchableOpacity onPress={() => navigate('Contact', { name: item.name, id: item.id })}>
-                <View style={{ backgroundColor: '#CDF0EA', marginBottom: 10 }}>
-                    <Text style={{ fontSize: 34 }}>{item.name} {item.id}</Text>
-                </View>
-            </TouchableOpacity>
+            <ContactButton contact={item}>
+                <Text></Text>
+            </ContactButton>
         )
     }
 
-    const searchName = (input) => {
-        // let data = dataFromState ÞAÐ ÞURFTI BARA AÐ KOMMENTA ÞETTA ÚT!!!
-        const searchData = contacts.filter((item) => {
-            return item.name.toLowerCase().includes(input.toLowerCase())
-        })
-        setData(searchData)
+
+    const ItemSeparatorView = () => {
+        return (
+        // Flat List Item Separator
+            <View
+                style={{
+                    height: 0.5,
+                    width: '100%',
+                    backgroundColor: '#C8C8C8'
+                }}
+            />
+        )
     }
 
     return (
-        <View >
+
+        <SafeAreaView style={{ flex: 1 }}>
             <View>
                 <TextInput
-                    placeholder="Search Name!"
-                    onChangeText={(input) => {
-                        searchName(input)
-                    }}
-                    style={{ fontSize: 35 }}
+                    onChangeText={(text) => searchFilterFunction(text)}
+                    value={search}
+                    placeholder="Search Here"
+                />
+                <FlatList
+                    data={filteredDataSource}
+                    keyExtractor={(item, index) => index.toString()}
+                    ItemSeparatorComponent={ItemSeparatorView}
+                    renderItem={ItemView}
                 />
             </View>
-            <FlatList
-                data={dataFromState}
-                renderItem={item}
-                keyExtractor={(item, index) => index.toString()}
-            />
-        </View>
-
+        </SafeAreaView>
     )
 }
 
