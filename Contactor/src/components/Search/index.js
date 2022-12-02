@@ -12,16 +12,19 @@ const Search = ({ contacts }) => {
 
 
     const [dataFromState, setData] = useState(contacts)
+    console.log("contcts!!!!!: ",contacts)
+
 
     const item = ({ item }) => {
         return (
-            <TouchableOpacity onPress={() => navigate('Contact', { name: item.name, id: item.id })}>
+            <TouchableOpacity onPress={() => navigate('Contact', { name: item.name, phoneNumber: item.phoneNumber, image: item.image })}>
                 <View style={{ backgroundColor: '#CDF0EA', marginBottom: 10 }}>
                     <Text style={{ fontSize: 34 }}>{item.name} {item.id}</Text>
                 </View>
             </TouchableOpacity>
         )
     }
+
 
     const searchName = (input) => {
         // let data = dataFromState ÞAÐ ÞURFTI BARA AÐ KOMMENTA ÞETTA ÚT!!!

@@ -4,14 +4,16 @@ import ContactProfile from '../../components/ContactProfile'
 
 import { lightPurple, lightBlue } from '../../styles/colors'
 
-const Contact = ({ contact }) => {
-    // const conta = contact.params
-    console.log("conts: ", contact)
+const Contact = ({ route }) => {
+    const conta = route.params
+    console.log("conta", conta.phoneNumber)
 
     return (
         <ScrollView>
             <View style={styles.container}>
-                <Text style={{ fontSize: 34 }}>hæ</Text>
+                {/* IMAGE VANTAR */}
+                <Text style={{ fontSize: 34 }}>{conta.name}  </Text>
+                <Text style={{ fontSize: 34 }}>{conta.phoneNumber} </Text>
                 <ContactProfile/>
             </View>
         </ScrollView>

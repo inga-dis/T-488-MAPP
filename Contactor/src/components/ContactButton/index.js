@@ -12,7 +12,9 @@ const ContactButton = ({contact}) => {
 
     const { navigate } = useNavigation()
     return (
+
         <TouchableOpacity style={styles.option}
+
             onPress={() => navigate('Contact')}>
             <View style={styles.background}>
                 {/* <Image
