@@ -5,8 +5,8 @@ const windowWidth = Dimensions.get('window').width
 export default StyleSheet.create({
 
     option: {
-        backgroundcolor: lightBlue,
-        backgroundColor: lightBlue,
+        backgroundcolor: lightPurple,
+        backgroundColor: lightPurple,
         width: windowWidth,
         margin: 2,
     },
@@ -14,7 +14,7 @@ export default StyleSheet.create({
     text: {
         fontWeight: 'bold',
         fontSize: 50,
-        color: white,
+        color: lightYellow,
         left: 80,
         border: 20,
         padding: 20, 
