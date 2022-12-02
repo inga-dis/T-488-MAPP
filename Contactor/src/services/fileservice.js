@@ -12,6 +12,7 @@ const setupDirectory = async () => {
 }
 
 // Clean directory if needed, used for debugging purposes
+// eslint-disable-next-line no-unused-vars
 const cleanDirectory = async () => {
     await FileSystem.deleteAsync(contactsDirectory)
 }
@@ -99,6 +100,8 @@ const getFileContent = async (filename) => {
 
 // Get all contacts in directory and return as jason object.
 export const getAllContacts = async () => {
+    // Clean directory if needed. Comment out when using app normally
+    // cleanDirectory()
     // Check if directory exists
     await setupDirectory()
     const result = await onException(() =>

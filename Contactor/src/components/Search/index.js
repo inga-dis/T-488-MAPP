@@ -55,8 +55,8 @@ const Search = ({ contacts }) => {
     }
 
     return (
-
         <SafeAreaView style={{ flex: 1 }}>
+            <Text>Test</Text>
             <View>
                 <TextInput
                     onChangeText={(text) => searchFilterFunction(text)}
@@ -69,6 +69,7 @@ const Search = ({ contacts }) => {
                     ItemSeparatorComponent={ItemSeparatorView}
                     renderItem={ItemView}
                 />
+                <Text>Test</Text>
             </View>
         </SafeAreaView>
     )
