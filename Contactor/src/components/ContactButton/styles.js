@@ -29,7 +29,6 @@ export default StyleSheet.create({
     photo: {
         width: 50,
         height: 50,
-        backgroundColor: 'blue',
         top: 45
     }
 })
