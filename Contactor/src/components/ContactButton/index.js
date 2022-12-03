@@ -14,7 +14,7 @@ const ContactButton = ({ contact }) => {
                 <Image
                     style={styles.photo}
                     resizeMode="cover"
-                    source={{ uri: contact.image}} />
+                    source={{ uri: contact.image }} />
                 <Text style={styles.text}>{contact.name} </Text>
             </View>
         </TouchableOpacity>
