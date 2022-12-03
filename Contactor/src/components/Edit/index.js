@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, TextInput, TouchableOpacity } from 'react-native'
+import { Text, TextInput, TouchableOpacity, Alert } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
 import * as fileService from '../../services/fileservice'
 import defaultStyles from '../../styles/styles'
@@ -11,19 +11,34 @@ const Edit = ({
     contact
 }) => {
     const [newValue, setNewValue] = useState()
-    const [selectedEditField, setSelectedEditField] = useState()
+    const [selectedEditField, setSelectedEditField] = useState('Name')
 
     const handleSubmit = async () => {
-        if (selectedEditField === 'Name') {
-            await fileService.editContactName(contact, newValue)
+        if (!newValue) {
+            inputNeededAlert()
+        } else {
+            if (selectedEditField === 'Name') {
+                await fileService.editContactName(contact, newValue)
+            }
+            if (selectedEditField === 'Photo') {
+                await fileService.editContactImage(contact, newValue)
+            }
+            if (selectedEditField === 'phoneNumber') {
+                await fileService.editContactPhone(contact, newValue)
+            }
+            setNewValue('')
         }
-        if (selectedEditField === 'Photo') {
-            await fileService.editContactImage(contact, newValue)
-        }
-        if (selectedEditField === 'phoneNumber') {
-            await fileService.editContactPhone(contact, newValue)
-        }
-        setNewValue('')
+    }
+    const inputNeededAlert = () => {
+        Alert.alert(
+            'Input needed!',
+            'To edit contact you must insert new value',
+            [
+                {
+                    text: 'Close'
+                }
+            ]
+        )
     }
 
     return (
@@ -33,7 +48,7 @@ const Edit = ({
             title={'Edit Contact'}>
             <Picker
                 selectedValue={selectedEditField}
-                onValueChange={(itemValue, itemIndex) =>
+                onValueChange={(itemValue) =>
                     setSelectedEditField(itemValue)
                 }>
                 <Picker.Item label="Name" value="Name"/>
