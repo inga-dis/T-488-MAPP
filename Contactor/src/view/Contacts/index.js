@@ -42,8 +42,6 @@ const Contacts = () => {
                         }
                         return await fileService.addContact(contactInfo)
                     }
-                    console.log(contactInfo)
-                    return fileService.addContact(contactInfo)
                 })
             }
         }
@@ -57,12 +55,10 @@ const Contacts = () => {
         })()
     }, [])
     return (
-            <ScrollView style={defaultStyles.container}>
-                <Add isOpen={isAddModalOpen}
-                    closeModal={() => setIsAddModalOpen(false)}>
-                </Add>
-                <ContactsList contacts={contacts} />
-            
+        <ScrollView style={defaultStyles.container}>
+            <Add isOpen={isAddModalOpen}
+                closeModal={() => setIsAddModalOpen(false)}>
+            </Add>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.shadow, defaultStyles.button]} onPress={() => setIsAddModalOpen(true)}>
                     <Text>Add contact</Text>
@@ -70,8 +66,9 @@ const Contacts = () => {
                 <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.shadow, defaultStyles.button]} onPress={() => ImportContacts()}>
                     <Text>Import </Text>
                 </TouchableOpacity>
-                </View>
-            </ScrollView>
+            </View>
+            <ContactsList contacts={contacts} />
+        </ScrollView>
 
     )
 }

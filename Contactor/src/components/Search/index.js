@@ -4,10 +4,7 @@
 import React, { useState, useEffect } from 'react'
 // import all the components we are going to use
 import {
-    RefreshControl,
     SafeAreaView,
-    Text,
-    StyleSheet,
     View,
     FlatList,
     TextInput
@@ -77,19 +74,5 @@ const Search = ({ contacts }) => {
         </SafeAreaView>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: 'white'
-    },
-    textInputStyle: {
-        height: 40,
-        borderWidth: 1,
-        paddingLeft: 20,
-        margin: 5,
-        borderColor: '#009688',
-        backgroundColor: '#FFFFFF'
-    }
-})
 
 export default Search

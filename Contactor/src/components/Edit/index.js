@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Text, TextInput, TouchableOpacity } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
 import * as fileService from '../../services/fileservice'
@@ -46,7 +46,7 @@ const Edit = ({
                 style={defaultStyles.input}
             />
             <TouchableOpacity
-                activeOpacity={0.7} 
+                activeOpacity={0.7}
                 style={[defaultStyles.button, defaultStyles.shadow]}
                 onPress={() => {
                     handleSubmit()

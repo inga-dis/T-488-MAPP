@@ -3,8 +3,6 @@ import uuid from 'react-native-uuid'
 const contactsDirectory = `${FileSystem.documentDirectory}contacts`
 const newUuid = uuid.v1()
 
-const replaceSpecialCharacters = require('replace-special-characters')
-
 // Set up directory if directory does not exist
 const setupDirectory = async () => {
     const dir = await FileSystem.getInfoAsync(contactsDirectory)
@@ -79,8 +77,7 @@ export const editContactName = async (contact, newName) => {
 
 // Add contact into file system
 export const addContact = async (contactInfo) => {
-    const file = contactInfo.name + '-' + newUuid
-    const fileName = replaceSpecialCharacters(file);
+    const fileName = contactInfo.name + '-' + newUuid
     const contact = {
         name: contactInfo.name,
         phoneNumber: contactInfo.phoneNumber,
@@ -103,7 +100,7 @@ const getFileContent = async (filename) => {
 // Get all contacts in directory and return as jason object.
 export const getAllContacts = async () => {
     // Clean directory if needed. Comment out when using app normally
-    // cleanDirectory()
+    //cleanDirectory()
     // Check if directory exists
     await setupDirectory()
     const result = await onException(() =>
