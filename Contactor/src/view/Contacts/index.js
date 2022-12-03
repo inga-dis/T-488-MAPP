@@ -69,7 +69,6 @@ const Contacts = () => {
         (async () => {
             const contact = await fileService.getAllContacts()
             setContacts(contact)
-            console.log(await contact)
         })()
     }, [])
     return (
