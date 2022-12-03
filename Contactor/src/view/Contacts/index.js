@@ -26,6 +26,9 @@ const Contacts = () => {
             if (contactsFromUser.total > 0) {
                 const contactsLIST = contactsFromUser.data
                 contactsLIST.map(async (contact) => {
+                    if (!contact.firstName) {
+
+                    }
                     if (contact.imageAvailable) {
                         const contactInfo = {
                             name: contact.firstName + ' ' + contact.lastName,
