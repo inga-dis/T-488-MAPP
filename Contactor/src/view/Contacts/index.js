@@ -13,6 +13,21 @@ const Contacts = () => {
     // Controls if add modal is open
     const [isAddModalOpen, setIsAddModalOpen] = useState(false)
 
+    const getContactName = (contact) => {
+        // Checks information on contact name and returns correct name according to given information.
+        let contactName = ''
+        if (!contact.firstName && !contact.lastName) {
+            contactName = '# Contact name missing!'
+        }
+        if (contact.name && !contact.lastName) {
+            contactName = contact.firstName
+        }
+        if (contact.name && contact.lastName) {
+            contactName = contact.firstName + ' ' + contact.lastName
+        }
+        return contactName
+    }
+
     // Function to import contacts from device into user device.
     const ImportContacts = async () => {
         await ContactsService.requestPermissionsAsync()
@@ -26,16 +41,15 @@ const Contacts = () => {
             if (contactsFromUser.total > 0) {
                 const contactsLIST = contactsFromUser.data
                 contactsLIST.map(async (contact) => {
-                    if (!contact.firstName) {
-
-                    }
+                    // Checking if the name is in contacts and setting default if missing
+                    const contactName = getContactName(contact)
+                    console.log(contactName)
                     if (contact.imageAvailable) {
                         const contactInfo = {
-                            name: contact.firstName + ' ' + contact.lastName,
+                            name: contactName,
                             phoneNumber: contact.phoneNumbers[0].number,
                             image: contact.image.uri
                         }
-                        console.log(image)
                         return await fileService.addContact(contactInfo)
                     } else {
                         const contactInfo = {
