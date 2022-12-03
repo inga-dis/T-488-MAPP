@@ -8,15 +8,10 @@ import Contacts from '../view/Contacts'
 import Contact from '../view/Contact'
 
 const Stack = createStackNavigator()
-// testing view
-// import Test from "../view/Test";
 
 const Routes = () => (
     <NavigationContainer >
-        {/* <Stack.Navigator initialRouteName="Test" component={Test}>
-            <Stack.Screen name="Test" component={Test} options={{
-                    title: 'Test'
-                }} />  */}
+
         <Stack.Navigator initialRouteName="Main" component={Main}>
             <Stack.Screen name="main" component={Main} options={{
             }} />

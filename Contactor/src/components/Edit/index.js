@@ -11,7 +11,6 @@ const Edit = ({
     closeModal,
     contact
 }) => {
-    const [image, setImage] = useState([])
     const [newValue, setNewValue] = useState()
     const [selectedEditField, setSelectedEditField] = useState('Name')
 

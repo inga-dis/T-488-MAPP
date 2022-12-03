@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-// import { useNavigation } from '@react-navigation/native'
 import { Text, TouchableOpacity, View, Image } from 'react-native'
 import call from 'react-native-phone-call'
 import styles from './styles'
-import defaultStyles from '../../styles/styles'
 import Edit from '../Edit'
 
 const ContactProfile = ({ contact }) => {
@@ -19,10 +17,6 @@ const ContactProfile = ({ contact }) => {
 
     return (
         <View style={styles.container}>
-            {/* <Image style={styles.img}
-                // style={{width: 300, height: 300}}
-                resizeMode="cover"
-                source={{uri: contact.contact.image}} /> */}
             <Text style={styles.name}>{contact.contact.name}</Text>
             <Text style={styles.number}>{contact.contact.phoneNumber}</Text>
             <Image style={styles.img} resizeMode="cover" source={{ uri: contact.contact.image }}></Image>
