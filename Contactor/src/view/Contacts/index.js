@@ -34,6 +34,7 @@ const Contacts = () => {
                             phoneNumber: contact.phoneNumbers[0].number,
                             image: contact.image.uri
                         }
+                        console.log(image)
                         return await fileService.addContact(contactInfo)
                     } else {
                         const contactInfo = {
@@ -43,6 +44,7 @@ const Contacts = () => {
                         }
                         return await fileService.addContact(contactInfo)
                     }
+                    
                 })
             }
         }
