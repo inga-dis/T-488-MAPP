@@ -26,7 +26,7 @@ export const selectFromCameraRoll = async () => {
     const result = await ImagePicker.launchImageLibraryAsync(cameraOptions)
 
     if (result.canceled) { return '' }
-    return result.assets.uri
+    return result.assets[0].uri
 }
 
 export const takePhoto = async () => {
@@ -35,5 +35,5 @@ export const takePhoto = async () => {
 
     if (result.canceled) { return '' }
 
-    return result.assets.uri
+    return result.assets[0].uri
 }
