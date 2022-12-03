@@ -29,7 +29,7 @@ const ContactProfile = ({ contact }) => {
             <TouchableOpacity activeOpacity={0.7} style={[styles.buttonCall, styles.shadow]} onPress={triggerCall}>
                 <Text>Call</Text>
             </TouchableOpacity>
-            <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.shadow, defaultStyles.button]} onPress={() => setIsEditModalOpen(true)}>
+            <TouchableOpacity activeOpacity={0.7} style={[styles.button, styles.shadow]} onPress={() => setIsEditModalOpen(true)}>
 
                 <Text>Edit Contact</Text>
             </TouchableOpacity>
