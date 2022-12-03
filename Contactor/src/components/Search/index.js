@@ -78,18 +78,4 @@ const Search = ({ contacts }) => {
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: 'white'
-    },
-    textInputStyle: {
-        height: 40,
-        borderWidth: 1,
-        paddingLeft: 20,
-        margin: 5,
-        borderColor: '#009688',
-        backgroundColor: '#FFFFFF'
-    }
-})
-
 export default Search

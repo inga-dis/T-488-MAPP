@@ -9,7 +9,6 @@ const ContactsList = ({ contacts }) => {
     return (
         <View>
             <Search contacts={contacts}/>
-            <ImportContacts/>
         </View>
     )
 }
