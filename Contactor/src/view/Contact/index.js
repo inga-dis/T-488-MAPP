@@ -6,7 +6,6 @@ import { purple } from '../../styles/colors'
 import defaultstyles from '../Main/styles'
 
 const Contact = ({ route }) => {
-    // const conta = contact.params
     const contact = route.params
 
     return (
