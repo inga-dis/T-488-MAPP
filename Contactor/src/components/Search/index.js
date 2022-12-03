@@ -34,7 +34,7 @@ const Search = ({ contacts }) => {
     }, [])
 
     const strAscending = [...filteredDataSource].sort((a, b) =>
-        a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1
+        a.name > b.name ? 1 : -1
     )
 
     const searchFilterFunction = (text) => {
