@@ -52,16 +52,16 @@ const ContactProfile = ({ contact }) => {
 
         setNewValue('')
     }
-
+    console.log("mynd: ",contact.contact.image)
     return (
         <View>
             <Text>{contact.contact.name}</Text>
             <Text>{contact.contact.phoneNumber}</Text>
             <Text>{contact.contact.image}</Text>
-            {/* <Image
-                style={styles.image}
+            <Image
+                style={{width: 300, height: 300}}
                 resizeMode="cover"
-                source={{ uri: contact.contact.image}} /> */}
+                source={{uri: contact.contact.image}} />
 
             <Picker
                 selectedValue={selectedEditField}
