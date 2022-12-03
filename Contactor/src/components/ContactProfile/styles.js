@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native'
-import { lightPurple, purple, white, lightBlue, lightYellow } from '../../styles/colors'
+import { blue, purple, pink, lightBlue, lightYellow, black } from '../../styles/colors'
 const windowHeight = Dimensions.get('window').height
 const windowWidth = Dimensions.get('window').width
 
@@ -8,37 +8,42 @@ export default StyleSheet.create({
 
     container: {
         flex: 1,
-        // padding: 20,
         flexDirection: 'row',
         backgroundColor: purple,
-        alignItems: 'center'
-        // justifyContent: 'space-around'
-        // left: windowWidth 100,
-        // top: windowHeight - 400
+        left: 20
     },
     
     img: {
         width: 200,
-        height: 200
+        height: 200,
+        left: 230
+        // backgroundColor: 'transparent',
+        // opacity: 
     }, 
 
     name: {
         fontSize: 20,
-        height: -30,
-        left: 40,
-        height: 200, 
-        paddingTop: 5
+        fontWeight: 'bold',
+        left: 245,
+        top: 0,
+        flexDirection: 'row',
+        color: black
     }, 
 
     number: {
+        fontSize: 25,
+        left: 82,
+        top: 45,
+        color: black,
+        fontweight: 'bold'
+    },
+ 
+    button:{
+        fontSize: 20,
+        fontweight: 'bold',
+        right: 230,
+        top: 120
 
     },
-
-    button:{
-
-    }, 
-
-
-
 
 })
