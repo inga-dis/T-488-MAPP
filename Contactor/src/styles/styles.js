@@ -19,9 +19,7 @@ export default StyleSheet.create({
     button: {
         borderRadius: 3,
         backgroundColor: white,
-        padding: 10,
-        // position: 'absolute',
-        // top: 100
+        padding: 10
     },
 
     shadow: {

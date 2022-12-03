@@ -19,17 +19,18 @@ const ContactProfile = ({ contact }) => {
 
     return (
         <View style={styles.container}>
-            <Image style={styles.img}
+            {/* <Image style={styles.img}
                 // style={{width: 300, height: 300}}
                 resizeMode="cover"
-                source={{uri: contact.contact.image}} />
+                source={{uri: contact.contact.image}} /> */}
             <Text style={styles.name}>{contact.contact.name}</Text>
             <Text style={styles.number}>{contact.contact.phoneNumber}</Text>
             <Image style={styles.img} resizeMode="cover" source={{ uri: contact.contact.image }}></Image>
-            <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress={triggerCall}>
-                <Text style={styles.button}>Call</Text>
+            <TouchableOpacity activeOpacity={0.7} style={[styles.buttonCall, styles.shadow]} onPress={triggerCall}>
+                <Text>Call</Text>
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.shadow, defaultStyles.button]} onPress={() => setIsEditModalOpen(true)}>
+
                 <Text>Edit Contact</Text>
             </TouchableOpacity>
             <Edit isOpen={isEditModalOpen} closeModal={() => setIsEditModalOpen(false)} contact={contact.contact} >

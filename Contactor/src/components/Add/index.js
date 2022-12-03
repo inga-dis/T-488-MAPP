@@ -18,7 +18,12 @@ const Add = ({
         if ((!name) || (!phoneNumber)) {
             inputNeededAlert()
         } else {
-            await fileService.addContact({ name, phoneNumber, image })
+            if (!image) {
+                const defaultImage = 'https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png'
+                await fileService.addContact({ name, phoneNumber, defaultImage })
+            } else {
+                await fileService.addContact({ name, phoneNumber, image })
+            }
             setName('')
             setImage('')
             setPhoneNumber('')
