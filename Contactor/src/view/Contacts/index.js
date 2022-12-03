@@ -86,7 +86,6 @@ const Contacts = () => {
             </View>
             <ContactsList contacts={contacts} />
         </ScrollView>
-
     )
 }
 

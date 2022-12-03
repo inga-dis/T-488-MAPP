@@ -56,19 +56,24 @@ const Search = ({ contacts }) => {
             <ContactButton contact={item}></ContactButton>
         )
     }
+    const SearchInput = () => {
+        return (
+            <TextInput style={[defaultStyles.input, styles.input]}
+                onChangeText={(text) => searchFilterFunction(text)}
+                value={search}
+                underlineColorAndroid="transparent"
+                placeholder="Search Here"
+            />
+        )
+    }
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <View>
-                <TextInput style={[defaultStyles.input, styles.input]}
-                    onChangeText={(text) => searchFilterFunction(text)}
-                    value={search}
-                    underlineColorAndroid="transparent"
-                    placeholder="Search Here"
-                />
                 <FlatList
                     data={strAscending}
                     keyExtractor={(item, index) => index.toString()}
                     renderItem={ItemView}
+                    ListHeaderComponent={SearchInput}
                 />
             </View>
         </SafeAreaView>

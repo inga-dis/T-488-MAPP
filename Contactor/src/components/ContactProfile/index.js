@@ -6,15 +6,13 @@ import * as imageService from '../../services/imageService'
 import styles from './styles'
 import defaultStyles from '../../styles/styles'
 import { Picker } from '@react-native-picker/picker'
-import Edit from '../../components/Edit'
-
+import Edit from '../Edit'
 
 const ContactProfile = ({ contact }) => {
     const [images, setImages] = useState([])
     const [newValue, setNewValue] = useState()
     const [selectedEditField, setSelectedEditField] = useState()
-    const [isAddModalOpen, setIsAddModalOpen] = useState(false)
-    const [isEditModalOpen, setIsEditModalOpen] = useState(false) // Þarf fyrir edit
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false)
 
 
     const addImage = async image => {
@@ -66,18 +64,21 @@ const ContactProfile = ({ contact }) => {
             <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress={triggerCall}>
                 <Text style={styles.button}>Call</Text>
             </TouchableOpacity>
-            {/* <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]}
+            <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]}
                 onPress={() => { handleSubmit() }}>
                 <Text style={styles.option}>Upload image</Text>
-            </TouchableOpacity> */}
-            {/* <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress ={() => takePhoto()}>
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress ={() => takePhoto()}>
                 <Text style={styles.option}>Capture image</Text>
             </TouchableOpacity> */}
             <TouchableOpacity onPress={() => setIsEditModalOpen(true)}>
                 <Text>Edit contact information</Text>
             </TouchableOpacity>
-            <Edit isOpen={isEditModalOpen} // Þarf fyrir edit
-                closeModal={() => setIsEditModalOpen(false)}></Edit>
+            <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.shadow, defaultStyles.button]} onPress={() => setIsEditModalOpen(true)}>
+                <Text>Edit Contact</Text>
+            </TouchableOpacity>
+            <Edit isOpen={isEditModalOpen} closeModal={() => setIsEditModalOpen(false)} contact={contact.contact} >
+            </Edit>
         </View>
     )
 }
