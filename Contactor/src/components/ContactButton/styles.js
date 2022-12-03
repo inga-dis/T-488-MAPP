@@ -16,7 +16,7 @@ export default StyleSheet.create({
         color: lightYellow,
         textAlign: 'left',
         border: 20,
-        padding: 20
+        marginLeft: 70
     },
 
     button: {
@@ -25,5 +25,11 @@ export default StyleSheet.create({
 
     buttonText: {
 
+    },
+    photo: {
+        width: 50,
+        height: 50,
+        backgroundColor: 'blue',
+        top: 45
     }
 })

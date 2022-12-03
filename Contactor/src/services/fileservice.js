@@ -100,7 +100,7 @@ const getFileContent = async (filename) => {
 // Get all contacts in directory and return as jason object.
 export const getAllContacts = async () => {
     // Clean directory if needed. Comment out when using app normally
-    //cleanDirectory()
+    // cleanDirectory()
     // Check if directory exists
     await setupDirectory()
     const result = await onException(() =>
@@ -118,36 +118,3 @@ export const getAllContacts = async () => {
         })
     )
 }
-
-// Notes for usage:
-// access directory for the app:
-// FileSystem.documentDirectory
-// Access cache directory, cache can store files that are temporary
-// FileSystem.cacheDirectory
-// Can write each file with either UTF8 or Base64. Use UTF8 for
-// that need to be read.
-// FileSystem.EncodingType.UTF8
-// Use Base64 for images
-// FileSystem.EncodingType.Base64
-
-// Common functions:
-// readAsStringAsync(fileUri, options) - read entire contents as a string.
-// writeAsStringAsync(fileUri, options) - write entire contents as a string.
-// deleteAsync(fileUri, options) - delete file or directory.
-// moveAsync(options) - Move a file or directory to a new location (options contains 'from' and 'to')
-// copyAsync(options) - Create a copy of a file or directory (options contains 'from' and 'to')
-// makeDirecotyrAsync(fileUri, options) - create new empty directory
-
-// to use:
-// import * as fileService from '../../services/fileService';
-
-// const [images, setImages] = useState([]);
-// const [loadingContacts, setLoadingContacts] = useState(true);
-
-// const addContact = async contact => {
-//     setLoadingImages(true);
-//     const newContact = await fileService.addContact(contact);
-//     setContacts([...contacts, newContact]); // Þörf á þessu?
-//     setIsAddModalOpen(false);
-//     setLoadingContact(false);
-// };
