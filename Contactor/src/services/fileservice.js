@@ -106,7 +106,7 @@ const getFileContent = async (filename) => {
 // Get all contacts in directory and return as jason object.
 export const getAllContacts = async () => {
     // Clean directory if needed. Comment out when using app normally
-    //cleanDirectory()
+    // cleanDirectory()
     // Check if directory exists
     await setupDirectory()
     const result = await onException(() =>
@@ -115,6 +115,7 @@ export const getAllContacts = async () => {
     return Promise.all(
         result.map(async (fileName) => {
             const contact = await getFileContent(fileName)
+            console.log(contact)
             return {
                 key: fileName,
                 name: contact.name,

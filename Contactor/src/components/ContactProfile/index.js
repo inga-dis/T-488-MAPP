@@ -70,7 +70,7 @@ const ContactProfile = ({ contact }) => {
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress ={() => takePhoto()}>
                 <Text style={styles.option}>Capture image</Text>
-            </TouchableOpacity> */}
+            </TouchableOpacity>
             <TouchableOpacity onPress={() => setIsEditModalOpen(true)}>
                 <Text>Edit contact information</Text>
             </TouchableOpacity>
