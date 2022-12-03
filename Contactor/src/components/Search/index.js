@@ -13,6 +13,8 @@ import {
     TextInput
 } from 'react-native'
 import ContactButton from '../ContactButton'
+import defaultStyles from '../../styles/styles'
+import styles from './styles'
 
 const Search = ({ contacts }) => {
     const [search, setSearch] = useState('')
@@ -57,12 +59,10 @@ const Search = ({ contacts }) => {
             <ContactButton contact={item}></ContactButton>
         )
     }
-
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <View style={styles.container}>
-                <TextInput
-                    style={styles.textInputStyle}
+            <View>
+                <TextInput style={[defaultStyles.input, styles.input]}
                     onChangeText={(text) => searchFilterFunction(text)}
                     value={search}
                     underlineColorAndroid="transparent"

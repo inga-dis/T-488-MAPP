@@ -51,7 +51,6 @@ const Add = ({
                 <Text style={defaultStyles.ButtonText}>Submit</Text>
             </TouchableOpacity>
         </Modal>
-
     )
 }
 

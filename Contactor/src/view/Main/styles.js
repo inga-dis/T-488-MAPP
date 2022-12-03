@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native'
-import { lightPurple, lightBlue, lightYellow, white } from '../../styles/colors'
+import { purple, pink, blue, lightYellow, white, black } from '../../styles/colors'
 
 export default StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        backgroundColor: lightPurple,
+        backgroundColor: purple,
         alignItems: 'center',
         justifyContent: 'space-around'
     },
@@ -22,7 +22,7 @@ export default StyleSheet.create({
     },
     option: {
         fontSize: 20,
-        color: lightPurple,
+        color: purple,
         textAlign: 'center',
         backgroundcolor: white,
         borderColor: white,

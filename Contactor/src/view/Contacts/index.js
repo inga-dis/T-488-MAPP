@@ -4,9 +4,7 @@ import ContactsList from '../../components/ContactsList'
 import Add from '../../components/Add'
 import * as fileService from '../../services/fileservice'
 import defaultStyles from '../../styles/styles'
-import { lightPurple } from '../../styles/colors'
-import DefaultProfile from '../../resources/default_profile.png'
-
+import styles from './styles'
 import * as ContactsService from 'expo-contacts'
 
 const Contacts = () => {
@@ -44,7 +42,8 @@ const Contacts = () => {
                         }
                         return await fileService.addContact(contactInfo)
                     }
-                    
+                    console.log(contactInfo)
+                    return fileService.addContact(contactInfo)
                 })
             }
         }
@@ -58,18 +57,21 @@ const Contacts = () => {
         })()
     }, [])
     return (
-        <ScrollView style={defaultStyles.container}>
-            <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress={() => setIsAddModalOpen(true)}>
-                <Text>Add contact</Text>
-            </TouchableOpacity>
-            <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress={() => ImportContacts()}>
-                <Text>Import </Text>
-            </TouchableOpacity>
-            <Add isOpen={isAddModalOpen}
-                closeModal={() => setIsAddModalOpen(false)}>
-            </Add>
-            <ContactsList contacts={contacts} />
-        </ScrollView>
+            <ScrollView style={defaultStyles.container}>
+                <Add isOpen={isAddModalOpen}
+                    closeModal={() => setIsAddModalOpen(false)}>
+                </Add>
+                <ContactsList contacts={contacts} />
+            
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.shadow, defaultStyles.button]} onPress={() => setIsAddModalOpen(true)}>
+                    <Text>Add contact</Text>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.shadow, defaultStyles.button]} onPress={() => ImportContacts()}>
+                    <Text>Import </Text>
+                </TouchableOpacity>
+                </View>
+            </ScrollView>
 
     )
 }

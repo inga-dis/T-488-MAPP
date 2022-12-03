@@ -1,11 +1,11 @@
 import { StyleSheet, Dimensions } from 'react-native'
-import { lightPurple, white, lightBlue, lightYellow } from './colors'
+import { purple, white, pink, blue, lightYellow, black } from './colors'
 const windowWidth = Dimensions.get('window').width
 
 export default StyleSheet.create({
     // Container around all elements on page
     container: {
-        backgroundColor: lightPurple,
+        backgroundColor: purple,
         flex: 1
     },
     centeredView: {
@@ -13,7 +13,7 @@ export default StyleSheet.create({
         justifyContent: 'space-around'
     },
     input: {
-
+        backgroundColor: white
     },
 
     button: {
