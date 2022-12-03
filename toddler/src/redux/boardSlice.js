@@ -20,7 +20,6 @@ const boardsSlice = createSlice({
         },
 
         editBoard(state, action) {
-            console.log(action.payload);
             const board = state.find((board) => board.id === action.payload.id);
             if (action.payload.thumbnailImage) {
                 board.thumbnailImage = action.payload.thumbnailImage;

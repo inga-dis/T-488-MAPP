@@ -14,7 +14,7 @@ const BoardsList = ({}) => {
         {boards.map((board) => (
             <BoardsButton board={board} />
         ))}
-    </View>
+    </View> 
  );
 }
 export default BoardsList;

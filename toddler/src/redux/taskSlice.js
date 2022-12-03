@@ -25,7 +25,6 @@ const tasksSlice = createSlice({
         },
 
         editTask(state, action) {
-            console.log(action.payload)
             const task = state.find((task) => task.id === action.payload.id);
             if (action.payload.description) {
                 task.description = action.payload.description;
