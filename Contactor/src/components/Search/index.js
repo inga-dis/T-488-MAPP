@@ -4,10 +4,7 @@
 import React, { useState, useEffect } from 'react'
 // import all the components we are going to use
 import {
-    RefreshControl,
     SafeAreaView,
-    Text,
-    StyleSheet,
     View,
     FlatList,
     TextInput

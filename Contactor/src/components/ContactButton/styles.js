@@ -1,11 +1,11 @@
 import { StyleSheet, Dimensions } from 'react-native'
-import { lightPurple, white, lightBlue, lightYellow } from '../../styles/colors'
+import { purple, lightYellow } from '../../styles/colors'
 const windowWidth = Dimensions.get('window').width
 
 export default StyleSheet.create({
 
     option: {
-        backgroundcolor: lightPurple,
+        backgroundcolor: purple,
         width: windowWidth - 4,
         margin: 2
     },
