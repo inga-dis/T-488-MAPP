@@ -1,7 +1,6 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import Search from '../Search'
-
 
 // Hér koma allir contacts:
 

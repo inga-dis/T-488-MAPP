@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Modal from '../Modal'
-import { TouchableOpacity, TextInput, Text } from 'react-native'
+import { TouchableOpacity, TextInput, Text, Alert } from 'react-native'
 import * as fileService from '../../services/fileservice'
 
 import defaultStyles from '../../styles/styles'
@@ -14,10 +14,26 @@ const Add = ({
     const [phoneNumber, setPhoneNumber] = useState()
 
     const handleSubmit = async () => {
-        await fileService.addContact({ name, phoneNumber, image })
-        setName('')
-        setImage('')
-        setPhoneNumber('')
+        // If user has not set name or phoneNumber alert him to input name or value.
+        if ((!name) || (!phoneNumber)) {
+            inputNeededAlert()
+        } else {
+            await fileService.addContact({ name, phoneNumber, image })
+            setName('')
+            setImage('')
+            setPhoneNumber('')
+        }
+    }
+    const inputNeededAlert = () => {
+        Alert.alert(
+            'Input needed!',
+            'To add contact you must input name and phone number',
+            [
+                {
+                    text: 'Close'
+                }
+            ]
+        )
     }
 
     return (
