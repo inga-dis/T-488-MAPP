@@ -1,7 +1,6 @@
 # T-488MAPP
 
 
-* Search does not work unless it is refreshed in expo. So in file search in components, press ctrl + s.
 
 * (1) A user should see a list of all his saved contacts:
   To see all the contacts you need to click "My Contacts" on Main page -> go to components/Search in VSC and   press ctrl + s (save). Then all the contact appear. If you import from contact in you phone you need to go   back to Main page and to save in search again.
