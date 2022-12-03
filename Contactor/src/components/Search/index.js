@@ -43,7 +43,7 @@ const Search = ({ contacts }) => {
                 const textData = text.toUpperCase()
                 return itemData.indexOf(textData) > -1
             })
-            setFilteredDataSource(newData)
+            setFilteredDataSource([...filteredDataSource, newData])
             setSearch(text)
         } else {
             setFilteredDataSource(masterDataSource)
