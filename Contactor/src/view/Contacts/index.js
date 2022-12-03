@@ -16,7 +16,7 @@ const Contacts = () => {
     const getContactName = (contact) => {
         // Checks information on contact name and returns correct name according to given information.
         let contactName = ''
-        if (!contact.firstName && !contact.lastName) {
+        if ((!contact.firstName) && (!contact.lastName)) {
             contactName = '# Contact name missing!'
         }
         if (contact.name && !contact.lastName) {
@@ -53,7 +53,7 @@ const Contacts = () => {
                         return await fileService.addContact(contactInfo)
                     } else {
                         const contactInfo = {
-                            name: contact.firstName + ' ' + contact.lastName,
+                            name: contactName,
                             phoneNumber: contact.phoneNumbers[0].number,
                             image: 'https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png'
                         }

@@ -1,19 +1,20 @@
 
 import React from 'react'
-import { View, ScrollView, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import ContactProfile from '../../components/ContactProfile'
 import { purple } from '../../styles/colors'
+import defaultstyles from '../Main/styles'
 
 const Contact = ({ route }) => {
     // const conta = contact.params
     const contact = route.params
 
     return (
-        <ScrollView>
+        <View style={defaultstyles.container}>
             <View style={styles.container}>
                 <ContactProfile contact={contact}/>
             </View>
-        </ScrollView>
+        </View>
     )
 }
 export default Contact

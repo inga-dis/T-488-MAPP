@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Text, TouchableOpacity, View, Image } from 'react-native'
 import call from 'react-native-phone-call'
 import * as imageService from '../../services/imageService'
-import styles from '../../view/Main/styles'
+import styles from './styles'
 import defaultStyles from '../../styles/styles'
 import { Picker } from '@react-native-picker/picker'
 import Edit from '../Edit'
@@ -14,12 +14,6 @@ const ContactProfile = ({ contact }) => {
     const [selectedEditField, setSelectedEditField] = useState()
     const [isEditModalOpen, setIsEditModalOpen] = useState(false)
 
-    // All selected images
-    // const [selectedImages, setSelectedImages] = useState([]);
-    // A boolean flag to indicate whether the images are being loaded or not
-    // const [loadingImages, setLoadingImages] = useState(true);
-    // A boolean flag to indicate whether the modal to add an image is open or not
-    // const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
     const addImage = async image => {
         setLoadingImages(true)
@@ -54,30 +48,21 @@ const ContactProfile = ({ contact }) => {
 
         setNewValue('')
     }
-    console.log("mynd: ",contact.contact)
+
     return (
-        <View>
-            <Text>{contact.contact.name}</Text>
-            <Text>{contact.contact.phoneNumber}</Text>
-            <Text>{contact.contact.image}</Text>
-            <Image
-                style={{width: 300, height: 300}}
+        <View style={styles.container}>
+            <Image style={styles.img}
+                // style={{width: 300, height: 300}}
                 resizeMode="cover"
                 source={{uri: contact.contact.image}} />
+            <Text style={styles.name}>{contact.contact.name}</Text>
+            <Text style={styles.number}>{contact.contact.phoneNumber}</Text>
 
-            <Picker
-                selectedValue={selectedEditField}
-                onValueChange={(itemValue, itemIndex) =>
-                    setSelectedEditField(itemValue)
-                }>
-                {/* <Picker.Item label="Name" value="Name"/>
-                <Picker.Item label="Phone Number" value="phoneNumber"/> */}
-                <Picker.Item label="Photoooo" value="Photo"/>
-            </Picker>
 
-            <Image style={styles.image} resizeMode="cover" source={{ uri: contact.contact.image }}></Image>
+
+            <Image style={styles.img} resizeMode="cover" source={{ uri: contact.contact.image }}></Image>
             <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress={triggerCall}>
-                <Text style={styles.option}>Call</Text>
+                <Text style={styles.button}>Call</Text>
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]}
                 onPress={() => { handleSubmit() }}>
@@ -85,6 +70,9 @@ const ContactProfile = ({ contact }) => {
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.button, defaultStyles.shadow]} onPress ={() => takePhoto()}>
                 <Text style={styles.option}>Capture image</Text>
+            </TouchableOpacity> */}
+            <TouchableOpacity onPress={() => setIsEditModalOpen(true)}>
+                <Text>Edit contact information</Text>
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.7} style={[defaultStyles.shadow, defaultStyles.button]} onPress={() => setIsEditModalOpen(true)}>
                 <Text>Edit Contact</Text>
