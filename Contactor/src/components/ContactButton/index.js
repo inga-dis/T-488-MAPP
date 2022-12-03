@@ -11,10 +11,10 @@ const ContactButton = ({ contact }) => {
         <TouchableOpacity style={styles.option}
             onPress={() => navigate('Contact', { contact })}>
             <View style={styles.background}>
-                <Image
+                {/* <Image
                     style={{width: 50, height: 50}}
                     resizeMode="cover"
-                    source={{ uri: contact.image}} />
+                    source={{ uri: contact.image}} /> */}
                 <Text style={styles.text}>{contact.name} </Text>
             </View>
         </TouchableOpacity>
