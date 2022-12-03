@@ -50,7 +50,6 @@ const Edit = ({
     const selectFromCameraRoll = async () => {
         setNewValue(await imageService.selectFromCameraRoll())
     }
-
     const InputFields = () => {
         if (selectedEditField === 'Photo') {
             return (
@@ -65,7 +64,6 @@ const Edit = ({
                 </View>
             )
         } else {
-            console.log('here??')
             return (
                 <View>
                     <TextInput
@@ -77,7 +75,6 @@ const Edit = ({
             )
         }
     }
-    console.log(selectedEditField)
     return (
         <Modal
             isOpen={isOpen}
@@ -92,7 +89,7 @@ const Edit = ({
                 <Picker.Item label="Phone Number" value="phoneNumber"/>
                 <Picker.Item label="Photo" value="Photo"/>
             </Picker>
-            <View>{InputFields()}</View>
+            {InputFields()}
             <TouchableOpacity
                 activeOpacity={0.7}
                 style={[defaultStyles.button, defaultStyles.shadow]}

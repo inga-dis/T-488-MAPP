@@ -43,7 +43,6 @@ const Contacts = () => {
                 contactsLIST.map(async (contact) => {
                     // Checking if the name is in contacts and setting default if missing
                     const contactName = getContactName(contact)
-                    console.log(contactName)
                     if (contact.imageAvailable) {
                         const contactInfo = {
                             name: contactName,
