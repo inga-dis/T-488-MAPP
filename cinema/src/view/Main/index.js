@@ -8,6 +8,13 @@ const Main = () => (
     <View >
         <Text style={styles.container}>Dr. Cinema - Cinema healing</Text>
         <TouchableOpacity>
+        <Text>Í sýningu</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+        <Text>Á döfinni</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+        <Text>Bíóhús</Text>
         </TouchableOpacity>
     </View>
 )
