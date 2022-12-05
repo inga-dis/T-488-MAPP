@@ -1,16 +1,24 @@
-
 import React from 'react'
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, Text } from 'react-native'
+import CinemaProfile from '../../components/CinemaProfile'
+import { purple } from '../../styles/colors'
 
+const Cinema = () => {
 
-const Cinema = ({ navigation: { navigate } }) => (
-    <View >
-
-        <TouchableOpacity onPress ={() => navigate('Movie')}>
-        <Text >Veldu mynd</Text>
-       </TouchableOpacity>
-    </View>
-)
-
+    return (
+        <View>
+            <View style={styles.container}>
+                <CinemaProfile/>
+            </View>
+        </View>
+    )
+}
 export default Cinema
 
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: purple,
+        paddingBottom: 300
+    }
+
+})
