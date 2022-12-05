@@ -1,0 +1,6 @@
+export const maroon = '#760912'
+export const DarkSienna = '#380104'
+export const white = '#F9F9F9'
+export const orange = '#D66F10'
+export const gold = '#E9A13A'
+export const black = '#180908'

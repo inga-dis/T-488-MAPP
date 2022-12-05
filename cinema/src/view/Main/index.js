@@ -12,7 +12,7 @@ const Main = ({ navigation: { navigate } }) => (
         <Text>Á döfinni</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress ={() => navigate('Cinema')}>
-        <Text>Sambíó{'\n'}Smárabíó{'\n'}Háskólabíó{'\n'}Bíó Paradís</Text>
+        <Text style={styles.container}>Sambíó{'\n'}Smárabíó{'\n'}Háskólabíó{'\n'}Bíó Paradís</Text>
        </TouchableOpacity>
     </View>
 )
