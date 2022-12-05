@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
-import ContactsList from '../../components/ContactsList'
 import Add from '../../components/Add'
 import * as fileService from '../../services/fileservice'
 import defaultStyles from '../../styles/styles'
 import styles from './styles'
 import * as ContactsService from 'expo-contacts'
+import Search from '../../components/Search'
 
 const Contacts = () => {
     // All contacts within the application directory
@@ -83,7 +83,7 @@ const Contacts = () => {
                     <Text>Import </Text>
                 </TouchableOpacity>
             </View>
-            <ContactsList contacts={contacts} />
+            <Search contacts={contacts} />
         </ScrollView>
     )
 }
