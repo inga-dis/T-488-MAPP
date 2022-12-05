@@ -3,19 +3,17 @@ import React from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import styles from './styles'
 
-// const Main = ({ navigation: { navigate } }) => (
-const Main = () => (
+const Main = ({ navigation: { navigate } }) => (
     <View >
-        <Text style={styles.container}>Dr. Cinema - Cinema healing</Text>
         <TouchableOpacity>
         <Text>Í sýningu</Text>
         </TouchableOpacity>
         <TouchableOpacity>
         <Text>Á döfinni</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
-        <Text>Bíóhús</Text>
-        </TouchableOpacity>
+        <TouchableOpacity onPress ={() => navigate('Cinema')}>
+        <Text>Sambíó{'\n'}Smárabíó{'\n'}Háskólabíó{'\n'}Bíó Paradís</Text>
+       </TouchableOpacity>
     </View>
 )
 
