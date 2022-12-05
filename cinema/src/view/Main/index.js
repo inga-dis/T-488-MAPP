@@ -1,20 +1,29 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native'
 import styles from './styles'
 
 const Main = ({ navigation: { navigate } }) => (
-    <View >
-        <TouchableOpacity>
-        <Text>Í sýningu</Text>
+    <ScrollView style={styles.container}>
+        <TouchableOpacity style={styles.header}>
+            <Text >Í sýningu</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
-        <Text>Á döfinni</Text>
+        <TouchableOpacity style={styles.header}>
+            <Text>Á döfinni</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress ={() => navigate('Cinema')}>
-        <Text style={styles.container}>Sambíó{'\n'}Smárabíó{'\n'}Háskólabíó{'\n'}Bíó Paradís</Text>
-       </TouchableOpacity>
-    </View>
+        <TouchableOpacity style={styles.header}>
+            <Text >Bíóhús</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.theater} onPress ={() => navigate('Cinema')}>
+            <Text style={styles.theatertext}>Sambíó</Text>
+       </TouchableOpacity> 
+       <TouchableOpacity style={styles.theater} onPress ={() => navigate('Cinema')}>
+            <Text style={styles.theatertext}>Smárabíó</Text>
+        </TouchableOpacity> 
+        <TouchableOpacity style={styles.theater} onPress ={() => navigate('Cinema')}>
+            <Text style={styles.theatertext}>Háskólabíó</Text>
+        </TouchableOpacity> 
+    </ScrollView>
 )
 
 export default Main
