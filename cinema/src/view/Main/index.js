@@ -2,27 +2,22 @@
 import React from 'react'
 import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native'
 import styles from './styles'
+import CinemaButton from '../../components/CinemaButton'
 
 const Main = ({ navigation: { navigate } }) => (
     <ScrollView style={styles.container}>
-        <TouchableOpacity style={styles.header}>
-            <Text >Í sýningu</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.header}>
-            <Text>Á döfinni</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.header}>
-            <Text >Bíóhús</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.theater} onPress ={() => navigate('Cinema')}>
-            <Text style={styles.theatertext}>Sambíó</Text>
-       </TouchableOpacity> 
-       <TouchableOpacity style={styles.theater} onPress ={() => navigate('Cinema')}>
-            <Text style={styles.theatertext}>Smárabíó</Text>
-        </TouchableOpacity> 
-        <TouchableOpacity style={styles.theater} onPress ={() => navigate('Cinema')}>
-            <Text style={styles.theatertext}>Háskólabíó</Text>
-        </TouchableOpacity> 
+        <View style={styles.mainHeader}>
+            <TouchableOpacity style={styles.header}>
+                <Text style={styles.headerText}>Í sýningu</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.header, styles.middleHeader]}>
+                <Text style={styles.headerText}>Á döfinni</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.header}>
+                <Text style={styles.headerText}>Bíóhús</Text>
+            </TouchableOpacity>
+        </View>
+        <CinemaButton></CinemaButton>
     </ScrollView>
 )
 
