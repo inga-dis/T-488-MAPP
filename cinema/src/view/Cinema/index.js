@@ -1,24 +1,16 @@
 import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import { ScrollView, View, StyleSheet, Text } from 'react-native'
 import CinemaProfile from '../../components/CinemaProfile'
-import { purple } from '../../styles/colors'
+import styles from './styles'
 
 const Cinema = () => {
 
     return (
-        <View>
-            <View style={styles.container}>
+        <ScrollView style={styles.background}>
+            <View>
                 <CinemaProfile/>
             </View>
-        </View>
+        </ScrollView>
     )
 }
 export default Cinema
-
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: purple,
-        paddingBottom: 300
-    }
-
-})
