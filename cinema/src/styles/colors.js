@@ -9,7 +9,7 @@
 export const brown = '#32170D'
 export const cream = '#DAC572'
 export const darkBrown = '#28130A'
-export const red = '#C43D0C'
+export const red = '#AC390F'
 export const lightBlue = '#63A484'
 export const black = '#000000'
 export const gold = '#CF9128'
