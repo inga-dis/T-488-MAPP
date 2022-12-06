@@ -30,9 +30,9 @@ const Test = () => {
                     {movies.map((movie) => (
                         <Text> {movie.title} </Text>
                     ))}
-                    {moviesInCinema.map((movie) => (
+                    {/* {moviesInCinema.map((movie) => (
                         <Text> {movie.title} </Text>
-                    ))}
+                    ))} */}
                     </>
             }
 

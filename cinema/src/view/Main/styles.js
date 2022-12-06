@@ -9,19 +9,15 @@ export default StyleSheet.create({
     },
 
     header: {
-        // flex: 3,
-        backgroundColor: 'rgba(50, 23, 13, 0.9)',
+        backgroundColor: '#472E1F',
         fontSize: 20, 
-        // flexDirection: 'row'
-        paddingHorizontal: 34,
+        paddingHorizontal: 40,
         paddingVertical: 20,
         borderWidth: 1,
         borderColor: 'rgba(50, 23, 13, 0.5)'
     },
     mainHeader: {
         flex: 3,
-        // backgroundColor: orange,
-        // fontSize: 20, 
         flexDirection: 'row',
         justifyContent: 'center',
         marginHorizontal: -20
@@ -57,17 +53,6 @@ export default StyleSheet.create({
         color: 'rgba(40, 19, 10, 0.7)'
  
     },
-
-    // shadow: {
-    //     shadowColor: gold,
-    //     shadowOffset: {
-    //         width: 0,
-    //         height: 3
-    //     },
-    //     shadowOpacity: 1 ,
-    //     shadowRadius: 5,
-    //     elevation: 20
-    // },
 
     theatertext: {
         fontSize: 30,

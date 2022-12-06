@@ -12,12 +12,12 @@ const Stack = createStackNavigator()
 
 const Routes = () => (
     <NavigationContainer >
-        <Stack.Navigator initialRouteName="Test" component={Test}>
+        {/* <Stack.Navigator initialRouteName="Test" component={Test}>
             <Stack.Screen name="Test" component={Test} options={{
-            }} />
-        {/* <Stack.Navigator initialRouteName="Main" component={Main}>
-            <Stack.Screen name="main" component={Main} options={{
             }} /> */}
+        <Stack.Navigator initialRouteName="Main" component={Main}>
+            <Stack.Screen name="main" component={Main} options={{
+            }} />
             <Stack.Screen name="Cinema" component={Cinema} options={{
                 title: 'Cinema'
                 }} />
