@@ -8,10 +8,24 @@ export default StyleSheet.create({
     },
 
     header: {
+        // flex: 3,
+        // backgroundColor: 'pink',
+        fontSize: 20, 
+        // flexDirection: 'row'
+        paddingHorizontal: 30,
+        paddingVertical: 20
+    },
+    mainHeader: {
         flex: 3,
         backgroundColor: orange,
-        fontSize: 20, 
-        flexDirection: 'row'
+        // fontSize: 20, 
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+    middleHeader: {
+        borderRightWidth: 1,
+        borderLeftWidth: 1,
+        borderColor: 'rgba(0, 0, 0, 0.3)'
     },
 
     theater: {
