@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native'
-import { gold, maroon, DarkSienna, black, DarkBrown, orange } from '../../styles/colors'
+// import { gold, maroon, DarkSienna, black, DarkBrown, orange } from '../../styles/colors'
+import { gold, brown, cream, red, lightBlue, black, darkBrown, lightBrown } from '../../styles/colors'
 
 
 export default StyleSheet.create({
     container: {
-        backgroundColor: DarkBrown
+        backgroundColor: brown
     },
 
     header: {
@@ -17,7 +18,7 @@ export default StyleSheet.create({
     },
     mainHeader: {
         flex: 3,
-        backgroundColor: orange,
+        // backgroundColor: orange,
         // fontSize: 20, 
         flexDirection: 'row',
         justifyContent: 'center',
@@ -25,17 +26,33 @@ export default StyleSheet.create({
     middleHeader: {
         borderRightWidth: 1,
         borderLeftWidth: 1,
-        borderColor: 'rgba(0, 0, 0, 0.3)'
+        borderColor: 'rgba(0, 0, 0, 0.3)',
+        backgroundColor: red,
+        fontSize: 20, 
+        flexDirection: 'row'
     },
 
+    headerText: {
+        color: gold, 
+        fontSize: 15
+    }, 
+
     theater: {
-        backgroundColor: maroon, 
+        backgroundColor: lightBlue, 
         color: gold, 
         borderRadius: 50, 
         marginHorizontal: 50,
-        paddingVertical: 10,
-        marginTop: 50
+        paddingVertical: 20,
+        marginTop: 25
 
+    },
+
+    theaterUndertext: {
+        fontSize: 18,
+        textAlign: 'center', 
+        fontStyle: 'italic',
+        color: 'rgba(40, 19, 10, 0.7)'
+ 
     },
 
     // shadow: {
@@ -50,8 +67,8 @@ export default StyleSheet.create({
     // },
 
     theatertext: {
-        fontSize: 25,
+        fontSize: 30,
         textAlign: 'center', 
-        color: gold
+        color: darkBrown
     }
 })

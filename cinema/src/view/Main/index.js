@@ -7,24 +7,28 @@ const Main = ({ navigation: { navigate } }) => (
     <ScrollView style={styles.container}>
         <View style={styles.mainHeader}>
             <TouchableOpacity style={styles.header}>
-                <Text >Í sýningu</Text>
+                <Text style={styles.headerText}>Í sýningu</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.header, styles.middleHeader]}>
-                <Text>Á döfinni</Text>
+                <Text style={styles.headerText}>Á döfinni</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.header}>
-                <Text >Bíóhús</Text>
+                <Text style={styles.headerText}>Bíóhús</Text>
             </TouchableOpacity>
         </View>
        
         <TouchableOpacity style={styles.theater} onPress ={() => navigate('Cinema')}>
             <Text style={styles.theatertext}>Sambíó</Text>
+            <Text style={styles.theaterUndertext}>www.sambio.is</Text>
        </TouchableOpacity> 
        <TouchableOpacity style={styles.theater} onPress ={() => navigate('Cinema')}>
-            <Text style={styles.theatertext}>Smárabíó</Text>
+            <Text style={styles.theatertext}>Sambíó</Text>
+            <Text style={styles.theaterUndertext}>www.Smarabio.is</Text>
         </TouchableOpacity> 
         <TouchableOpacity style={styles.theater} onPress ={() => navigate('Cinema')}>
             <Text style={styles.theatertext}>Háskólabíó</Text>
+            <Text style={styles.theaterUndertext}>www.Haskolabio.is</Text>
+
         </TouchableOpacity> 
     </ScrollView>
 )
