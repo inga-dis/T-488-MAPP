@@ -28,7 +28,7 @@ const Search = ({ contacts }) => {
         fetchData()
         // make sure to catch any error
             .catch(console.error)
-    }, [])
+    }, [setFilteredDataSource, setMasterDataSource, contacts]) // Must put all variables that have to load in here
 
     const strAscending = [...filteredDataSource].sort((a, b) =>
         a.name > b.name ? 1 : -1
