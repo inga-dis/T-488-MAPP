@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import axios from 'axios'
-import { token } from './token'
-// First, define the reducer and action creators via `createSlice`
+
 
 const upcomingSlice = createSlice({
     name: "upcoming",
@@ -32,18 +30,6 @@ const upcomingSlice = createSlice({
 });
 
 
-export const fetchAll = () => async (dispatch) => {
-    try { 
-        const response = await axios.get('https://api.kvikmyndir.is/upcoming', {
-            headers:  {
-                'x-access-token' : token
-            }    
-        })
-        dispatch(getAllUpcoming(response.data))
-    } catch (err) {
-        console.log(err)
-    }
-}
 
 export const { getAllUpcoming, getAllUpcomingWithCId, getUpcomingWithUId } = upcomingSlice.actions;
 
