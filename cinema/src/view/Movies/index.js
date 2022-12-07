@@ -1,15 +1,14 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native'
+// import styles from './styles'
+import InTheaters from '../../components/InTheaters'
 import styles from './styles'
-import CinemaButton from '../../components/CinemaButton'
-import MainHeader from '../../components/MainHeader'
 
-const Main = () => (
+const Movies = () => (
     <ScrollView style={styles.container}>
-      <MainHeader></MainHeader>
-        <CinemaButton></CinemaButton>
+        <InTheaters></InTheaters>
     </ScrollView>
 )
 
-export default Main
+export default Movies

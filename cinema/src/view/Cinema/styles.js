@@ -23,12 +23,47 @@ export default StyleSheet.create({
         marginTop: 20, 
         marginBottom: 20
     },
+    cinemaInfoText: {
+        color: 'white',
+        textAlign: 'center',
+        marginHorizontal: 25
+    },
 
     movieList: {
-        fontSize: 25, 
-        color: lightBlue, 
-        marginTop: 20
-
+        fontSize: 20, 
+        color: darkBrown, 
+        // marginTop: 20,
+        marginRight: 40
+    },
+    image: {
+        width:60,
+        height:80,
+        
+    },
+    movie: {
+        flex: 2,
+        flexDirection: 'row',
+        // backgroundColor: 'pink',
+        // paddingTop: 20,
+        // paddingBottom: 25,
+        borderWidth: 2,
+        // borderColor: 'white',
+        marginHorizontal: 20,
+        borderRadius: 10,
+        marginVertical: 10,
+        padding: 10,
+        backgroundColor: lightBlue
+    },
+    movieGenre: {
+        // position: 'absolute',
+        // top: 70,
+        color: darkBrown,
+        // paddingLeft: 70
+    },
+    movieText: {
+        paddingLeft: 10,
+        // marginTop:-6,
+        marginRight: 10
     }
 })
 
