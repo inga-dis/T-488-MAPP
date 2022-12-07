@@ -5,7 +5,7 @@ import { gold, brown, cream, red, lightBlue, black, darkBrown, lightBrown } from
 
 export default StyleSheet.create({
     showtime: {
-        backgroundColor: brown
+        backgroundColor: 'black'
     },
     image: {
         width: 200,
@@ -16,13 +16,12 @@ export default StyleSheet.create({
     container: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: brown
     },
     movieShowtime: {
         fontSize: 20,
         marginTop: 20,
         alignSelf: 'center',
-        color: gold
+        color: 'white'
     },
     movieShowtimeView: {
         flexDirection: 'row',
@@ -33,6 +32,6 @@ export default StyleSheet.create({
         borderWidth: 1,
         borderRadius: 20,
         margin: 10,
-        color: gold
+        color: 'white'
     }
 })
