@@ -6,7 +6,9 @@ import Spinner from '../../components/Spinner';
 
 const Test = () => {
     const dispatch = useDispatch()
-    const { movies, loading } = useSelector((state) => state.movies)
+    const { movies, loading } = useSelector((state) => state.movies);
+
+    // const { cinemas, loading } = useSelector((state) => state.cinemas)
     const [loadingData, setLoadingData] = useState(true);
 
   
@@ -28,7 +30,7 @@ const Test = () => {
                     <TouchableOpacity ><Text> Testing síða </Text></TouchableOpacity>
                     <Text> Testing síða </Text>
                     {movies.map((movie) => (
-                        <Text> {movie.title} </Text>
+                        <Text> {movie.title} {movie.year} </Text>
                     ))}
                     {/* {moviesInCinema.map((movie) => (
                         <Text> {movie.title} </Text>

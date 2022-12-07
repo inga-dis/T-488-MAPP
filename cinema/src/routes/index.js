@@ -7,6 +7,7 @@ import Main from '../view/Main'
 import Cinema from '../view/Cinema'
 import Movie from '../view/Movie'
 import Test from '../view/Test'
+import Movies from '../view/Movies'
 
 const Stack = createStackNavigator()
 
@@ -23,6 +24,9 @@ const Routes = () => (
                 }} />
             <Stack.Screen name="Movie" component={Movie} options={{
                 title: 'Movie'
+                }} />
+            <Stack.Screen name="Movies" component={Movies} options={{
+                title: 'In theaters'
                 }} />
         </Stack.Navigator>
     </NavigationContainer>
