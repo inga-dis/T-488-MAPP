@@ -5,7 +5,7 @@ import { gold, brown, cream, red, lightBlue, black, darkBrown, lightBrown } from
 
 export default StyleSheet.create({
     movie: {
-        backgroundColor: brown
+        backgroundColor: 'black'
     },
     image: {
         width: 200,
@@ -21,7 +21,7 @@ export default StyleSheet.create({
         fontSize: 30,
         paddingLeft: 20,
         // backgroundColor: 'pink'
-        color: lightBrown
+        color: 'white'
     },
     movieText: {
         flexDirection: 'row',
@@ -32,22 +32,22 @@ export default StyleSheet.create({
         paddingLeft:10,
         fontSize: 30,
         fontWeight: 'bold',
-        color: red
+        color: 'red'
     },
     movieGerne: {
         paddingLeft: 20,
         paddingBottom: 10,
-        color: lightBrown
+        color: 'white'
     },
     moviePlot: {
         paddingHorizontal: 20,
         fontStyle: 'italic',
         paddingBottom: 10,
-        color: lightBrown
+        color: 'white'
     },
     movieDuration: {
         paddingLeft: 20,
-        color: lightBrown
+        color: 'white'
     },
     movieShowtime: {
         fontSize: 20,
