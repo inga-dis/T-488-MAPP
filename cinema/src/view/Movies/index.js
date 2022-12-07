@@ -7,7 +7,7 @@ import styles from './styles'
 
 const Movies = () => (
     <ScrollView style={styles.container}>
-        <InTheaters style={styles.text}></InTheaters>
+        <InTheaters></InTheaters>
     </ScrollView>
 )
 
