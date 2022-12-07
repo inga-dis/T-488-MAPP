@@ -28,14 +28,25 @@ export default StyleSheet.create({
         alignSelf: 'center',
         borderWidth: 1,
         borderRadius: 20,
-        borderColor: 'white',
-        marginVertical: 10
+        // borderColor: 'white',
+        marginVertical: 10,
+        width: 310,
+        backgroundColor: lightBlue
     },
     movieShowtimeText: {
-        padding: 20,
+        padding: 10,
         // borderWidth: 1,
         // borderRadius: 20,
         margin: 10,
-        color: 'white'
+        fontSize: 18,
+        color: darkBrown
+    },
+    movieShowtimeTextBuy: {
+        alignSelf: 'center',
+        marginLeft: 'auto',
+        fontSize: 18,
+        paddingRight: 20,
+        fontWeight: 'bold'
+        
     }
 })

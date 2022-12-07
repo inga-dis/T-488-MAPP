@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { View, TouchableOpacity, Text } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
-import { getMovies, selectAllMovies, selectAllMoviesInCinema } from '../../redux/moviesSlice'
+import { getMovies, selectAllMovies, selectAllMoviesInCinema } from '../../store/moviesSlice'
 import Spinner from '../../components/Spinner';
 import { lightBlue } from '../../styles/colors';
 

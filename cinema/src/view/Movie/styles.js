@@ -5,10 +5,12 @@ import { gold, brown, cream, red, lightBlue, black, darkBrown, lightBrown } from
 
 export default StyleSheet.create({
     cinema: {
-        backgroundColor: lightBlue,
+        backgroundColor: darkBrown,
+        color: lightBlue,
         textAlign: 'center',
-        fontSize: 20,
-        fontStyle: 'italic'
+        fontSize: 30,
+        fontStyle: 'italic',
+        paddingBottom: 10
     },
 
 
