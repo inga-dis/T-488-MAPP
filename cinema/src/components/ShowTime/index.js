@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text } from 'react-native'
 import { A } from '@expo/html-elements';
 
 const ShowTime = ({ showtime }) => {
