@@ -7,7 +7,6 @@ const upcomingSlice = createSlice({
     reducers: {
         getAllUpcoming(state, action) {
             state.data = [action.payload]
-            console.log(state.data)
         },
         getUpcomingWithUId(state, action) {
             const UId = action.payload.UId

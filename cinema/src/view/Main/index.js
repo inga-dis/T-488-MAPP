@@ -1,15 +1,48 @@
 /* eslint-disable react/prop-types */
-import React from 'react'
-import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native'
-import styles from './styles'
-import CinemaButton from '../../components/CinemaButton'
-import MainHeader from '../../components/MainHeader'
+import React, { useEffect, useState } from "react";
+import * as SplashScreen from "expo-splash-screen";
+import { useDispatch } from "react-redux";
 
-const Main = () => (
-    <ScrollView style={styles.container}>
-      <MainHeader></MainHeader>
-        <CinemaButton></CinemaButton>
-    </ScrollView>
-)
+import { ScrollView } from "react-native";
 
-export default Main
+// import the data into the states
+import { getCinemas } from "../../store/cinemasSlice";
+import { getMovies } from "../../store/moviesSlice";
+
+import styles from "./styles";
+import CinemasList from "../../components/CinemasList";
+import MainHeader from "../../components/MainHeader";
+
+const Main = () => {
+    const [appIsReady, setAppIsReady] = useState(false);
+    const dispatch = useDispatch();
+
+    // Set's the splashscreen on then loads all data and turns it off.
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                SplashScreen.preventAutoHideAsync();
+                dispatch(getCinemas());
+                dispatch(getMovies());
+            } catch (e) {
+                console.warn(e);
+            } finally {
+                setAppIsReady(true);
+                SplashScreen.hideAsync();
+            }
+        };
+        getData();
+    }, []);
+
+    if (!appIsReady) {
+        return null;
+    }
+
+    return (
+        <ScrollView style={styles.container}>
+            <MainHeader></MainHeader>
+            <CinemasList></CinemasList>
+        </ScrollView>
+    );
+};
+export default Main;
