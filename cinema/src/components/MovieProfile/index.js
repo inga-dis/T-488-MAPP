@@ -1,27 +1,34 @@
 import React from 'react'
 import { View, Text, Image, ScrollView} from 'react-native'
 import styles from './styles'
+import defaultStyles from '../../styles/styles'
 
 
 const MovieProfile = ({movie}) => (
-    <ScrollView style={styles.movie}>
+    <View>
         {/* Allar upplýsingar um myndina: */}
-        <View style={styles.container}>
+        {/* <View style={defaultStyles.image}> */}
             <Image
-                style={styles.image}
+                style={defaultStyles.image}
                 resizeMode="cover"
                 source={{ uri: movie.poster }} />
+        {/* </View> */}
+        <View style={defaultStyles.movieText}>
+            <Text style={defaultStyles.movieName}>
+                {movie.title} <Text style={defaultStyles.movieYear}>({movie.year})</Text>
+            </Text>
+            
         </View>
-        <View style={styles.movieText}>
-            <Text style={styles.movieName}>{movie.title}</Text>
-            <Text style={styles.movieYear}>{movie.year}</Text>
+        <View style={defaultStyles.movieGerne}>
             {movie.genres.map((genre) => (
-                <Text style={styles.movieGerne}>{genre.Name}</Text>
+                <Text style={defaultStyles.movieGerneText}>{genre.Name}</Text>
             ))}
         </View>
-        <Text style={styles.moviePlot}>{movie.plot}</Text>
-        <Text style={styles.movieDuration}>{movie.durationMinutes}</Text>
-    </ScrollView>
+            
+        
+        <Text style={defaultStyles.moviePlot}>{movie.plot}</Text>
+        <Text style={defaultStyles.movieDuration}>{movie.durationMinutes} mín</Text>
+    </View>
 );  
 
 export default MovieProfile

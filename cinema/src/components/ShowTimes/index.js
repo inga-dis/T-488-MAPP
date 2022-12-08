@@ -7,7 +7,7 @@ const ShowTimes = ({movie, CId}) => {
     const showtimes = movie.showtimes.filter((showtime) => showtime.cinema.id === CId) 
 
     return (
-        <View style={styles.showtime}>
+        <View>
             <Text style={styles.movieShowtime}>Sýningar tímar</Text>
             {showtimes.map((showtime) =>
                 <ShowTime showtime={showtime.schedule}></ShowTime>

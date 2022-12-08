@@ -9,7 +9,7 @@ import { ScrollView } from "react-native";
 import { getCinemas } from "../../store/cinemasSlice";
 import { getMovies } from "../../store/moviesSlice";
 
-import styles from "./styles";
+import defaultStyles from '../../styles/styles'
 import CinemasList from "../../components/CinemasList";
 import MainHeader from "../../components/MainHeader";
 
@@ -39,7 +39,7 @@ const Main = () => {
     }
 
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={defaultStyles.container}>
             <MainHeader></MainHeader>
             <CinemasList></CinemasList>
         </ScrollView>
