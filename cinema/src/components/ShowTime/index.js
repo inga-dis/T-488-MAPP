@@ -4,7 +4,7 @@ import defaultStyles from '../../styles/styles'
 import { View, Text } from 'react-native'
 import { A } from '@expo/html-elements';
 
-const ShowTime = ({ showtime }) => {
+const ShowTime = ({ showtime, key }) => {
     return (
         <View>
             {showtime.map((schedule) => 

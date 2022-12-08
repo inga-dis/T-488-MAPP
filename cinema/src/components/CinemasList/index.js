@@ -13,7 +13,7 @@ const CinemasList = () => {
     return (
         <View>
             {cinemas.map((cinema) => (
-                <CinemaButton cinema={cinema} />
+                <CinemaButton cinema={cinema} key={cinema.id} />
             ))}
         </View>
     )

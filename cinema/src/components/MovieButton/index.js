@@ -4,7 +4,7 @@ import { Text, TouchableOpacity, Image, View } from "react-native";
 import styles from './styles'
 import defaultStyles from '../../styles/styles'
 
-const MovieButton = ({ movie, cinema }) => {
+const MovieButton = ({ movie, cinema, key}) => {
     const { navigate } = useNavigation();
 
     return (

@@ -26,7 +26,6 @@ export default StyleSheet.create({
         borderRightWidth: 1,
         borderLeftWidth: 1,
         borderColor: 'rgba(0, 0, 0, 0.3)',
-        backgroundColor: red,
         fontSize: 20, 
         flexDirection: 'row'
     },

@@ -12,7 +12,12 @@ const Movie = ({ route }) => {
         <ScrollView style={defaultStyles.container}>
             <Text style={styles.cinema}>{cinema.name}</Text> 
             <MovieScreen movie={movie}/>
-            <ShowTimes movie={movie} CId={cinema.id}/>
+            {cinema ? (
+                <ShowTimes movie={movie} CId={cinema.id}/>
+            ) : (
+                null
+            )}
+            
         </ScrollView>
     )
 }
