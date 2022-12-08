@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './styles'
+import defaultStyles from '../../styles/styles'
 import { View, Text } from 'react-native'
 import { A } from '@expo/html-elements';
 
@@ -7,9 +8,9 @@ const ShowTime = ({ showtime, key }) => {
     return (
         <View>
             {showtime.map((schedule) => 
-                <View>
-                    <Text style={styles.movieShowtimeText}>{schedule.time}</Text>
-                    <Text><A href={schedule.purchase_url} style={styles.movieShowtimeText}> Kaupa Miða </A></Text>
+                <View style={[defaultStyles.showtime, defaultStyles.button]}>
+                    <Text style={defaultStyles.showtimeText}>{schedule.time}</Text>
+                    <Text><A href={schedule.purchase_url} style={defaultStyles.showtimeTextBuy}> Kaupa Miða </A></Text>
                 </View>
             )}
         </View>

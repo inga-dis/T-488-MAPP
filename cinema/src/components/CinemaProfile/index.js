@@ -1,7 +1,8 @@
 import React from 'react'
 import { View, StyleSheet, Text, TouchableOpacity, Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import styles from '../../view/Cinema/styles'
+import styles from './styles'
+import defaultStyles from '../../styles/styles'
 
 const Cinema = ({cinema}) => {
     const { navigate } = useNavigation()

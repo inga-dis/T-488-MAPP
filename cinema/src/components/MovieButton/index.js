@@ -1,32 +1,33 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Text, TouchableOpacity, Image, View } from "react-native";
-import styles from "../../view/Cinema/styles";
+import styles from './styles'
+import defaultStyles from '../../styles/styles'
 
 const MovieButton = ({ movie, cinema, key}) => {
     const { navigate } = useNavigation();
 
     return (
         <TouchableOpacity
-            style={styles.movie}
+            style={[styles.movies, defaultStyles.button]}
             onPress={() => navigate("Movie", {
                 movie: movie, 
                 cinema: cinema
                 })}
         >
             <Image
-                style={styles.image}
+                style={styles.moviesImage}
                 resizeMode="cover"
                 source={{
                     uri: movie.poster,
                 }}
             />
-            <View style={styles.movieText}>
-                <Text style={styles.movieList}>{movie.title}</Text>
-                <Text style={styles.movieList}>{movie.year}</Text>
-                <View>
+            <View style={[styles.moviesText]}>
+                <Text style={styles.moviesList}>{movie.title} <Text style={styles.moviesYear}>{movie.year}</Text></Text>
+                
+                <View style={styles.moviesGenre}>
                     {movie.genres.map((genre) => (
-                        <Text style={styles.movieGenre}>{genre.Name}</Text>
+                        <Text>{genre.Name}   </Text>
                     ))}
                 
                 </View>

@@ -2,15 +2,16 @@ import React from "react";
 import { useNavigation } from '@react-navigation/native';
 import { Text, TouchableOpacity} from "react-native";
 import styles from "../../view/Main/styles";
+import defaultStyles from '../../styles/styles'
 
 const CinemaButton = ({cinema, id}) => {
     const { navigate } = useNavigation();
 
     return (
-        <TouchableOpacity style={styles.theater}
+        <TouchableOpacity style={defaultStyles.button}
             onPress={() => navigate('Cinema', cinema)}>       
-            <Text style={styles.theatertext}>{cinema.name}</Text>
-            <Text style={styles.theaterUndertext}>{cinema.website}</Text>
+            <Text style={defaultStyles.buttonText}>{cinema.name}</Text>
+            <Text style={defaultStyles.buttonUnderText}>{cinema.website}</Text>
         </TouchableOpacity>
     );
 };
