@@ -8,14 +8,14 @@ import MovieButton from '../MovieButton'
 
 const UpcomingList = () => {
     const upcomingMovies = useSelector(state => selectAllUpcoming(state))
-
+    
     return (
         <View>
             {upcomingMovies.map((movie) => (
-                <MovieButton movie={movie} cinema={false}></MovieButton>
+                <MovieButton movie={movie} cinema={false} key={movie.id}></MovieButton>
             ))}
         </View>
     )
 }
 
-export default MoviesList
+export default UpcomingList
