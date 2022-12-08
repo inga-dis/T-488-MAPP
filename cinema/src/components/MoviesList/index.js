@@ -26,7 +26,7 @@ const MoviesList = ({cinema}) => {
     return (
         <View>
             {moviesInCinema.map((movie) => (
-                <MovieButton movie={movie} cinema={cinema}></MovieButton>
+                <MovieButton movie={movie} cinema={cinema} key={movie.id}></MovieButton>
             ))}
         </View>
     )

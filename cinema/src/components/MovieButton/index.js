@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Text, TouchableOpacity, Image, View } from "react-native";
 import styles from "../../view/Cinema/styles";
 
-const MovieButton = ({ movie, cinema }) => {
+const MovieButton = ({ movie, cinema, key}) => {
     const { navigate } = useNavigation();
 
     return (

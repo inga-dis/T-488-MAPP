@@ -8,22 +8,32 @@ import { ScrollView } from "react-native";
 // import the data into the states
 import { getCinemas } from "../../store/cinemasSlice";
 import { getMovies } from "../../store/moviesSlice";
+import { getUpcoming } from "../../store/upcomingSlice";
 
 import styles from "./styles";
 import CinemasList from "../../components/CinemasList";
+import UpcomingList from '../../components/UpcomingList'
 import MainHeader from "../../components/MainHeader";
 
 const Main = () => {
     const [appIsReady, setAppIsReady] = useState(false);
     const dispatch = useDispatch();
 
-    // Set's the splashscreen on then loads all data and turns it off.
+    const [currentPage, setCurrentPage] = useState('cinema');
+
+    const updatePage = (list) => {
+        setCurrentPage(list)
+     }
+
+
+    // Keeps the splashscreen on then loads all data and turns it off.
     useEffect(() => {
         const getData = async () => {
             try {
                 SplashScreen.preventAutoHideAsync();
                 dispatch(getCinemas());
                 dispatch(getMovies());
+                dispatch(getUpcoming());
             } catch (e) {
                 console.warn(e);
             } finally {
@@ -40,8 +50,12 @@ const Main = () => {
 
     return (
         <ScrollView style={styles.container}>
-            <MainHeader></MainHeader>
-            <CinemasList></CinemasList>
+            <MainHeader updatePage={updatePage} ></MainHeader>
+            {currentPage === 'cinema' 
+            ? <CinemasList></CinemasList>
+            : <UpcomingList></UpcomingList>
+            }
+
         </ScrollView>
     );
 };
