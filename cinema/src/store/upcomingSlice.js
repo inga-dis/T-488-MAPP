@@ -1,5 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSelector, createSlice } from "@reduxjs/toolkit";
+import axios from 'axios'
+import { token } from './token'
+// First, define the reducer and action creators via `createSlice`
 
+
+
+export const getUpcoming = createAsyncThunk('movies/get', 
+    async () => {
+        try {
+        const response = await axios.get('https://api.kvikmyndir.is/upcoming', 
+            {
+                headers:  {
+                    'x-access-token' : token
+                }    
+            })
+        return response.data
+    } catch (error) {
+        console.error(error);
+    }
+})
 
 const upcomingSlice = createSlice({
     name: "upcoming",
