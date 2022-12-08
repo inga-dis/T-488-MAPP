@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSelector, createSlice } from "@reduxjs/toolkit";
 import axios from 'axios'
 import { token } from './token'
-// First, define the reducer and action creators via `createSlice`
-
 
 
 export const getUpcoming = createAsyncThunk('movies/get', 
@@ -22,34 +20,34 @@ export const getUpcoming = createAsyncThunk('movies/get',
 
 const upcomingSlice = createSlice({
     name: "upcoming",
-    initialState: {},
-    reducers: {
-        getAllUpcoming(state, action) {
-            state.data = [action.payload]
-        },
-        getUpcomingWithUId(state, action) {
-            const UId = action.payload.UId
-            const upcoming = state.find((upcoming) => upcoming.id === UId)
-            return upcoming
-        }, 
-        // get upcoming trailer
-        getUpcomingTrailer(state, action) {
-            const UId = action.payload.UId
-            const upcoming = state.find((upcoming) => upcoming.id === UId)
-            if (upcoming.trailers.results[0]) {
-                return upcoming.trailers.results[0]
-                
-            } else { 
-                // return -1 if there is no trailer associated 
-                return -1
-            }
-        }
+    initialState: {
+        upcoming: [],
+        loading: false,
     },
+    reducers: {
+    },
+    extraReducers(builder) {
+        builder
+          .addCase(getUpcoming.pending, (state) => {
+            state.loading = true
+          })
+          .addCase(getUpcoming.fulfilled, (state, action) => {
+            state.loading = false
+            // Add any fetched movies to the array
+            state.upcoming = action.payload
+          })
+          .addCase(getUpcoming.rejected, (state) => {
+            state.loading = false
+          })
+      }
 });
 
 
 
-export const { getAllUpcoming, getAllUpcomingWithCId, getUpcomingWithUId } = upcomingSlice.actions;
+export const { } = upcomingSlice.actions;
+
+export const selectAllUpcoming = state => state.upcoming.upcoming
+
 
 export default upcomingSlice.reducer;
 
