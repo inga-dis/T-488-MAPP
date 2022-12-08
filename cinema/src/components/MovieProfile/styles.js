@@ -5,7 +5,7 @@ import { gold, brown, cream, red, lightBlue, black, darkBrown, lightBrown } from
 
 export default StyleSheet.create({
     movie: {
-        backgroundColor: 'black'
+        backgroundColor: darkBrown
     },
     image: {
         width: 200,
