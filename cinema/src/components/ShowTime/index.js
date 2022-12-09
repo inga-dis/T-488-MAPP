@@ -10,7 +10,7 @@ const ShowTime = ({ showtime }) => {
             {showtime.map((schedule, i) => 
                 <View key={i} style={[styles.showtime, defaultStyles.button]}>
                     <Text style={styles.showtimeText}>{schedule.time}</Text>
-                    <Text style={styles.showtimeTextBuy}><A> Kaupa Miða </A></Text>
+                    <Text style={styles.showtimeTextBuy}><A href={schedule.purchase_url}> Kaupa Miða </A></Text>
                 </View>
             )}
         </View>

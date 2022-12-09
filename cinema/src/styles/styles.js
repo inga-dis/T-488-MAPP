@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { getTheme } from './colors'
 import { gold, brown, cream, red, lightBlue, black, darkBrown, lightBrown } from './colors'
 
 

@@ -1,15 +1,15 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Text, TouchableOpacity, Image, View } from "react-native";
-import { getGenres } from "../../services/dataservice";
 import styles from './styles'
 import defaultStyles from '../../styles/styles'
+import { getGenresInMovie } from '../../services/dataservice'
 
 
-const MovieButton = ({ movie, cinema, key}) => {
+const MovieButton = ({ movie, cinema }) => {
     const { navigate } = useNavigation();
 
-    const genre = getGenres(movie)
+    const genreList = getGenresInMovie(movie)
 
 
     return (
@@ -29,14 +29,18 @@ const MovieButton = ({ movie, cinema, key}) => {
             />
             <View style={styles.moviesText}>
                 <Text style={styles.moviesList}>{movie.title}</Text>
-                <Text style={styles.moviesList}>{movie.year}</Text>
                 <View>
-                {!cinema 
-                ? <Text>{movie['release-dateIS']}</Text>
-                
-                : <Text style={styles.moviesGenre}>{genre}</Text>
-                }
-                
+
+                    {!cinema 
+                    ?   <Text>{movie['release-dateIS']}</Text>
+                    
+                    :   <View>
+                            <Text style={[styles.moviesList]}>({movie.year})</Text>
+                        </View>
+                    }
+                    {genreList.map((genre, i) => (
+                        <Text key={i}>{genre}</Text>
+                    ))}
                 </View>
             </View>
         </TouchableOpacity>
