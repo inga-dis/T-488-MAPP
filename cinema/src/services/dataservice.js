@@ -1,10 +1,18 @@
-export const getGenres = (movie) => {
-    let genreString = ""
-    for (let i = 0 ; i < movie.genres.length; i++ ) {
-        genreString += movie.genres[i].Name
-        if (!(i === (movie.genres.length - 1))) {
-            genreString+= ", "
+import { useSelector } from "react-redux";
+import { selectAllGenres } from "../store/genresSlice";
+
+
+export const getGenresInMovie = (movie) => {
+    const genres = useSelector(state => selectAllGenres(state))
+    const genresNames = []
+    for (let i = 0; i < movie.genres.length; i++) {
+        let genreToAdd = null
+        if (movie.genres[i].ID) {
+            genreToAdd = genres.find(genre => genre.ID === movie.genres[i].ID)
+        } else {
+            genreToAdd = genres.find(genre => genre.ID == movie.genres[i])
         }
+        genresNames.push(genreToAdd.Name)
     }
-    return genreString
+    return genresNames
 }

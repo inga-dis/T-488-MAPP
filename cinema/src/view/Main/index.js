@@ -9,6 +9,7 @@ import { ScrollView } from "react-native";
 import { getCinemas } from "../../store/cinemasSlice";
 import { getMovies } from "../../store/moviesSlice";
 import { getUpcoming } from "../../store/upcomingSlice";
+import { getGenres } from "../../store/genresSlice"
 
 import defaultStyles from '../../styles/styles'
 import CinemasList from "../../components/CinemasList";
@@ -34,6 +35,7 @@ const Main = () => {
                 dispatch(getCinemas());
                 dispatch(getMovies());
                 dispatch(getUpcoming());
+                dispatch(getGenres());
             } catch (e) {
                 console.warn(e);
             } finally {
