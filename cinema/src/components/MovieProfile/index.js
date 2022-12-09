@@ -6,27 +6,24 @@ import defaultStyles from '../../styles/styles'
 
 
 const MovieProfile = ({movie}) => (
-    <View>
+    <View style={styles.container}>
         {/* Allar upplýsingar um myndina: */}
-        {/* <View style={defaultStyles.image}> */}
-            <Image
-                style={styles.image}
-                resizeMode="cover"
-                source={{ uri: movie.poster }} />
-        {/* </View> */}
+        <Image
+            style={styles.image}
+            resizeMode="cover"
+            source={{ uri: movie.poster }} />
         <View style={styles.movieText}>
             <Text style={styles.movieName}>
                 {movie.title} <Text style={styles.movieYear}>({movie.year})</Text>
             </Text>
-            
+
         </View>
         <View style={styles.movieGerne}>
-            {movie.genres.map((genre) => (
-                <Text style={styles.movieGerneText}>{genre.Name}</Text>
+            {movie.genres.map((genre, i) => (
+                <Text key={i} style={styles.movieGerneText}>{genre.Name}</Text>
             ))}
         </View>
-            
-        
+
         <Text style={styles.moviePlot}>{movie.plot}</Text>
         <Text style={styles.movieDuration}>{movie.durationMinutes} mín</Text>
     </View>
