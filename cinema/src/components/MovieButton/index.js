@@ -11,6 +11,7 @@ const MovieButton = ({ movie, cinema, key}) => {
 
     const genre = getGenres(movie)
 
+
     return (
         <TouchableOpacity
             style={[styles.movies, defaultStyles.button]}
@@ -43,5 +44,4 @@ const MovieButton = ({ movie, cinema, key}) => {
 };
 
 
-export default MovieButton
-
+export default MovieButton;
