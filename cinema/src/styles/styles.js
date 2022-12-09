@@ -18,7 +18,7 @@ export default StyleSheet.create({
     },
     header: {
         backgroundColor: '#472E1F',
-        fontSize: 20, 
+        // fontSize: 20, 
         paddingHorizontal: 40,
         paddingVertical: 20,
         borderWidth: 1,
@@ -35,6 +35,19 @@ export default StyleSheet.create({
         // backgroundColor: red,
         // fontSize: 20, 
         // flexDirection: 'row'
+    },
+    cinemaheader: {
+        backgroundColor: '#472E1F',
+        borderColor: 'rgba(50, 23, 13, 0.5)',
+        paddingVertical: 10,
+    },
+    cinemaName: {
+        fontSize: 30,
+        // paddingVertical: -30, 
+        fontWeight: 'bold', 
+        color: lightBlue, 
+        textAlign: 'center',
+        // padding: 5
     },
 
 //Buttons:
@@ -58,63 +71,6 @@ export default StyleSheet.create({
         opacity: 0.7
         // color: 'rgba(40, 19, 10, 0.7)'
     },
-
-// Um bíóhusið
-    // cinemaName: {
-    //     fontSize: 34, 
-    //     fontWeight: 'bold', 
-    //     color: lightBlue, 
-    //     textAlign: 'center',
-    //     padding: 5
-    // },
-    // cinemaInfo: {
-    //     textAlign: 'center', 
-    //     fontSize: 20,
-    //     color: 'white',
-    //     marginTop: 20, 
-    //     marginBottom: 20
-    // },
-    // cinemaInfoText: {
-    //     color: 'white',
-    //     textAlign: 'center',
-    //     marginHorizontal: 25
-    // },
-
-// Bíómyndir í hverju bíóhúsi
-    // movies: {
-    //     flex: 2,
-    //     flexDirection: 'row',
-    //     marginHorizontal: 20,
-    //     borderRadius: 10,
-    //     marginVertical: 10,
-    //     padding: 10,
-    //     backgroundColor: lightBlue
-    // },
-    // moviesImage: {
-    //     width:52,
-    //     height:86,
-    //     marginLeft: 5,
-    //     marginRight: 2,
-    //     borderRadius: 2
-        
-    // },
-    // moviesText: {
-    //     paddingLeft: 10,
-    //     marginRight: 10
-    // },
-    // moviesList: {
-    //     fontSize: 20, 
-    //     color: darkBrown, 
-    //     marginRight: 40,
-    // },
-    // moviesYear: {
-    //     fontSize: 15,
-    // },
-    // moviesGenre: {
-    //     flexWrap:'wrap',
-    //     flexDirection: 'row',
-    //     marginRight: 50
-    // },
 
 //Fyrir hverja staka mynd
     image: {
@@ -157,27 +113,6 @@ export default StyleSheet.create({
     movieDuration: {
         paddingLeft: 20,
         color: 'white'
-    },
-
-//Sýningartímar
-    showtime: {
-        flexDirection: 'row',
-        alignSelf: 'center',
-        borderWidth: 1,
-        borderRadius: 20,
-        width: 310,
-        backgroundColor: lightBlue
-    },
-    showtimeText: {
-        fontSize: 15,
-        color: darkBrown
-    },
-    showtimeTextBuy: {
-        alignSelf: 'center',
-        marginLeft: 'auto',
-        fontSize: 18,
-        paddingRight: 20,
-        fontWeight: 'bold'
     },
 
 })

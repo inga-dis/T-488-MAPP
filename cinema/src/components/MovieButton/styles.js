@@ -31,7 +31,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         marginHorizontal: 20,
         borderRadius: 10,
-        marginVertical: 10,
+        // marginVertical: 10,
         padding: 10,
         backgroundColor: lightBlue
     },
@@ -45,7 +45,7 @@ export default StyleSheet.create({
     },
     moviesText: {
         paddingLeft: 10,
-        marginRight: 10
+        marginRight: 10,
     },
     moviesList: {
         fontSize: 20, 

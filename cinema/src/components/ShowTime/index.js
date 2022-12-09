@@ -8,9 +8,9 @@ const ShowTime = ({ showtime }) => {
     return (
         <View>
             {showtime.map((schedule, i) => 
-                <View key={i} style={[defaultStyles.showtime, defaultStyles.button]}>
-                    <Text style={defaultStyles.showtimeText}>{schedule.time}</Text>
-                    <Text><A href={schedule.purchase_url} style={defaultStyles.showtimeTextBuy}> Kaupa Miða </A></Text>
+                <View key={i} style={[styles.showtime, defaultStyles.button]}>
+                    <Text style={styles.showtimeText}>{schedule.time}</Text>
+                    <Text style={styles.showtimeTextBuy}><A> Kaupa Miða </A></Text>
                 </View>
             )}
         </View>

@@ -5,8 +5,6 @@ import { getGenres } from "../../services/dataservice";
 import styles from './styles'
 import defaultStyles from '../../styles/styles'
 
-const MovieButton = ({ movie, cinema }) => {
-    
 
 const MovieButton = ({ movie, cinema, key}) => {
     const { navigate } = useNavigation();
@@ -29,14 +27,14 @@ const MovieButton = ({ movie, cinema, key}) => {
                     uri: movie.poster,
                 }}
             />
-            <View style={styles.movieText}>
-                <Text style={styles.movieList}>{movie.title}</Text>
-                <Text style={styles.movieList}>{movie.year}</Text>
+            <View style={styles.moviesText}>
+                <Text style={styles.moviesList}>{movie.title}</Text>
+                <Text style={styles.moviesList}>{movie.year}</Text>
                 <View>
                 {!cinema 
                 ? <Text>{movie['release-dateIS']}</Text>
                 
-                : <Text style={styles.movieGenre}>{genre}</Text>
+                : <Text style={styles.moviesGenre}>{genre}</Text>
                 }
                 
                 </View>
@@ -44,5 +42,6 @@ const MovieButton = ({ movie, cinema, key}) => {
         </TouchableOpacity>
     );
 };
+
 
 export default MovieButton;

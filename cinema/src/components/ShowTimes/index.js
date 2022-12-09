@@ -9,9 +9,12 @@ const ShowTimes = ({movie, CId}) => {
     return (
         <View>
             <Text style={styles.movieShowtime}>Sýningar tímar</Text>
-            {showtimes.map((showtime, i) =>
+            <View style={styles.showtime}>
+                {showtimes.map((showtime, i) =>
                 <ShowTime showtime={showtime.schedule} key={i}></ShowTime>
             )}
+            </View>
+            
             
         </View> 
     )
