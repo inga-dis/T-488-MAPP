@@ -4,6 +4,9 @@ import { gold, brown, cream, red, lightBlue, black, darkBrown, lightBrown } from
 
 
 export default StyleSheet.create({
+    container: {
+        marginBottom: 20
+    },
     header: {
         backgroundColor: '#472E1F',
         borderColor: 'rgba(50, 23, 13, 0.5)',
