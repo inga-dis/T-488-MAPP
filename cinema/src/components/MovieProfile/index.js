@@ -21,8 +21,8 @@ const MovieProfile = ({movie}) => (
             
         </View>
         <View style={defaultStyles.movieGerne}>
-            {movie.genres.map((genre) => (
-                <Text style={defaultStyles.movieGerneText}>{genre.Name}</Text>
+            {movie.genres.map((genre, i) => (
+                <Text key={i} style={defaultStyles.movieGerneText}>{genre.Name}</Text>
             ))}
         </View>
             

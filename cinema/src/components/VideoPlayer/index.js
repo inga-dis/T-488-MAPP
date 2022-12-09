@@ -9,7 +9,6 @@ const VideoPlayer = ({ youtubeId }) => {
     const onStateChange = useCallback((state) => {
         if (state === "ended") {
             setPlaying(false);
-            Alert.alert("video has finished playing!");
         }
     }, []);
 
@@ -17,6 +16,7 @@ const VideoPlayer = ({ youtubeId }) => {
     return (
         <View style={{flex: 1}}>
             <YoutubePlayer
+                webViewStyle={ {opacity:0.99} }
                 height={220}
                 play={playing}
                 videoId={youtubeId}

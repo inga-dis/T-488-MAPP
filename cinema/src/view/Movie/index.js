@@ -4,6 +4,8 @@ import MovieScreen from "../../components/MovieProfile";
 import ShowTimes from "../../components/ShowTimes";
 import VideoPlayer from "../../components/VideoPlayer";
 import styles from "./styles";
+import defaultStyles from '../../styles/styles'
+
 
 const Movie = ({ route }) => {
     const { movie, cinema } = route.params;

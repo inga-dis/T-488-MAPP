@@ -5,14 +5,13 @@ import { getGenres } from "../../services/dataservice";
 import styles from './styles'
 import defaultStyles from '../../styles/styles'
 
-const MovieButton = ({ movie, cinema }) => {
+
     
 
-const MovieButton = ({ movie, cinema, key}) => {
+const MovieButton = ({ movie, cinema }) => {
     const { navigate } = useNavigation();
 
     const genre = getGenres(movie)
-
 
     return (
         <TouchableOpacity
@@ -45,4 +44,5 @@ const MovieButton = ({ movie, cinema, key}) => {
     );
 };
 
-export default MovieButton;
+export default MovieButton
+
