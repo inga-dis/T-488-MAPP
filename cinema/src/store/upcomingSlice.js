@@ -3,7 +3,7 @@ import axios from 'axios'
 import { token } from './token'
 
 
-export const getUpcoming = createAsyncThunk('movies/get', 
+export const getUpcoming = createAsyncThunk('upcoming/get', 
     async () => {
         try {
         const response = await axios.get('https://api.kvikmyndir.is/upcoming', 

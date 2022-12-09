@@ -2,9 +2,15 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Text, TouchableOpacity, Image, View } from "react-native";
 import styles from "../../view/Cinema/styles";
+import { getGenres } from "../../services/dataservice";
 
-const MovieButton = ({ movie, cinema, key}) => {
+
+const MovieButton = ({ movie, cinema }) => {
+    
     const { navigate } = useNavigation();
+
+    const genre = getGenres(movie)
+
 
     return (
         <TouchableOpacity
@@ -25,9 +31,11 @@ const MovieButton = ({ movie, cinema, key}) => {
                 <Text style={styles.movieList}>{movie.title}</Text>
                 <Text style={styles.movieList}>{movie.year}</Text>
                 <View>
-                    {movie.genres.map((genre) => (
-                        <Text style={styles.movieGenre}>{genre.Name}</Text>
-                    ))}
+                {!cinema 
+                ? <Text>{movie['release-dateIS']}</Text>
+                
+                : <Text style={styles.movieGenre}>{genre}</Text>
+                }
                 
                 </View>
             </View>

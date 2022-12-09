@@ -27,7 +27,7 @@ const Main = () => {
 
 
     // Keeps the splashscreen on then loads all data and turns it off.
-    useEffect(() => {
+    useEffect(() => { 
         const getData = async () => {
             try {
                 SplashScreen.preventAutoHideAsync();
