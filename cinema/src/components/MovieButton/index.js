@@ -1,12 +1,14 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Text, TouchableOpacity, Image, View } from "react-native";
-import styles from "../../view/Cinema/styles";
 import { getGenres } from "../../services/dataservice";
-
+import styles from './styles'
+import defaultStyles from '../../styles/styles'
 
 const MovieButton = ({ movie, cinema }) => {
     
+
+const MovieButton = ({ movie, cinema, key}) => {
     const { navigate } = useNavigation();
 
     const genre = getGenres(movie)
@@ -14,14 +16,14 @@ const MovieButton = ({ movie, cinema }) => {
 
     return (
         <TouchableOpacity
-            style={styles.movie}
+            style={[styles.movies, defaultStyles.button]}
             onPress={() => navigate("Movie", {
                 movie: movie, 
                 cinema: cinema
                 })}
         >
             <Image
-                style={styles.image}
+                style={styles.moviesImage}
                 resizeMode="cover"
                 source={{
                     uri: movie.poster,

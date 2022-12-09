@@ -14,7 +14,7 @@ const Movie = ({ route }) => {
     };
     trailer();
     return (
-        <ScrollView>
+        <ScrollView style={defaultStyles.container}>
             <Text style={styles.cinema}>{cinema.name}</Text>
             <MovieScreen movie={movie} />
 
