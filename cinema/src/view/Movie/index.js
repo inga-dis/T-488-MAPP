@@ -1,11 +1,10 @@
 import React from "react";
-import { Text, ScrollView } from "react-native";
+import { Text, ScrollView, View } from "react-native";
 import MovieScreen from "../../components/MovieProfile";
 import ShowTimes from "../../components/ShowTimes";
 import VideoPlayer from "../../components/VideoPlayer";
 import styles from "./styles";
 import defaultStyles from '../../styles/styles'
-
 
 const Movie = ({ route }) => {
     const { movie, cinema } = route.params;
@@ -17,7 +16,9 @@ const Movie = ({ route }) => {
     trailer();
     return (
         <ScrollView style={defaultStyles.container}>
-            <Text style={styles.cinema}>{cinema.name}</Text>
+            <View style={defaultStyles.cinemaheader}>
+                <Text style={defaultStyles.cinemaName}>{cinema.name}</Text>
+            </View>
             <MovieScreen movie={movie} />
 
             {trailer() ? (

@@ -19,7 +19,9 @@ const Cinema = ({cinema}) => {
 
     return (
         <View>
-            <Text style={styles.cinemaName}>{cinema.name}</Text>
+            <View style={[styles.header, defaultStyles.headerX]}>
+                <Text style={styles.cinemaName}>{cinema.name}</Text>
+            </View>
             <View style={styles.cinemaInfo}>
                 <Text style={styles.cinemaInfoText}>{description()}</Text>
                 <Text style={styles.cinemaInfoText}>{cinema['address\t']}, {cinema.city} </Text>
