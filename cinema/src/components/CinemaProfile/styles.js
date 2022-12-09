@@ -6,11 +6,12 @@ export default StyleSheet.create({
 
 //Um bíóhusið
     cinemaName: {
-        fontSize: 34, 
+        fontSize: 30,
+        // paddingVertical: -30, 
         fontWeight: 'bold', 
         color: lightBlue, 
         textAlign: 'center',
-        padding: 5
+        // padding: 5
     },
     cinemaInfo: {
         textAlign: 'center', 
@@ -24,4 +25,9 @@ export default StyleSheet.create({
         textAlign: 'center',
         marginHorizontal: 25
     },
+    header: {
+        backgroundColor: '#472E1F',
+        borderColor: 'rgba(50, 23, 13, 0.5)',
+        paddingVertical: 10,
+    }
 })

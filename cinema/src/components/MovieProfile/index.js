@@ -10,25 +10,25 @@ const MovieProfile = ({movie}) => (
         {/* Allar upplýsingar um myndina: */}
         {/* <View style={defaultStyles.image}> */}
             <Image
-                style={defaultStyles.image}
+                style={styles.image}
                 resizeMode="cover"
                 source={{ uri: movie.poster }} />
         {/* </View> */}
-        <View style={defaultStyles.movieText}>
-            <Text style={defaultStyles.movieName}>
-                {movie.title} <Text style={defaultStyles.movieYear}>({movie.year})</Text>
+        <View style={styles.movieText}>
+            <Text style={styles.movieName}>
+                {movie.title} <Text style={styles.movieYear}>({movie.year})</Text>
             </Text>
             
         </View>
-        <View style={defaultStyles.movieGerne}>
+        <View style={styles.movieGerne}>
             {movie.genres.map((genre) => (
-                <Text style={defaultStyles.movieGerneText}>{genre.Name}</Text>
+                <Text style={styles.movieGerneText}>{genre.Name}</Text>
             ))}
         </View>
             
         
-        <Text style={defaultStyles.moviePlot}>{movie.plot}</Text>
-        <Text style={defaultStyles.movieDuration}>{movie.durationMinutes} mín</Text>
+        <Text style={styles.moviePlot}>{movie.plot}</Text>
+        <Text style={styles.movieDuration}>{movie.durationMinutes} mín</Text>
     </View>
 );  
 
