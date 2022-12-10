@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native'
-import { accenttwo, darkText } from '../../styles/colors'
+import { accenttwo, darktext } from '../../styles/colors'
 
 export default StyleSheet.create({
 
-//Bíómyndir í hverju bíóhúsi
+    // Bíómyndir í hverju bíóhúsi
     movies: {
         flex: 2,
         flexDirection: 'row',
@@ -13,31 +13,31 @@ export default StyleSheet.create({
         backgroundColor: accenttwo
     },
     moviesImage: {
-        width:52,
-        height:86,
+        width: 52,
+        height: 86,
         marginLeft: 5,
         marginRight: 2,
         borderRadius: 2
     },
     moviesText: {
         paddingLeft: 10,
-        marginRight: 10,
+        marginRight: 10
     },
     moviesList: {
-        fontSize: 20, 
-        color: darkText,
-        marginRight: 40,
+        fontSize: 20,
+        color: darktext,
+        marginRight: 40
     },
     moviesYear: {
-        fontSize: 15,
+        fontSize: 15
     },
     moviesGenre: {
         flex: 1,
-        flexWrap:'wrap',
+        flexWrap: 'wrap',
         flexDirection: 'row',
-        marginRight: 60,
-    }, 
+        marginRight: 60
+    },
     movieGerneText: {
-        paddingRight: 15,
+        paddingRight: 15
     }
 })

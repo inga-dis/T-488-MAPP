@@ -1,11 +1,10 @@
 import React from 'react'
-import { View, Text} from 'react-native'
+import { View, Text } from 'react-native'
 import styles from './styles'
 import defaultStyles from '../../styles/styles'
 import ShowTime from '../ShowTime'
-import defaultStyles from '../../styles/styles'
 
-const ShowTimes = ({movie, CId}) => {
+const ShowTimes = ({ movie, CId }) => {
     const showtimes = movie.showtimes.filter((showtime) => showtime.cinema.id === CId)
 
     return (
@@ -13,8 +12,8 @@ const ShowTimes = ({movie, CId}) => {
             <Text style={[styles.movieShowtime, defaultStyles.font]}>Sýningar tímar</Text>
             <View style={styles.showtime}>
                 {showtimes.map((showtime, i) =>
-                <ShowTime showtime={showtime.schedule} key={i}></ShowTime>
-            )}
+                    <ShowTime showtime={showtime.schedule} key={i}></ShowTime>
+                )}
             </View>
         </View>
     )
