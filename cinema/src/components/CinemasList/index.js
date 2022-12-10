@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import {View } from 'react-native';
 import { selectAllCinemas } from '../../store/cinemasSlice'
+import defaultStyles from '../../styles/styles'
 
 
 import CinemaButton from '../CinemaButton'
@@ -17,7 +18,7 @@ const CinemasList = () => {
     }
     
     return (
-        <View>
+        <View  style={defaultStyles.bottom}>
             {sortCinemas(cinemas.slice()).map((cinema) => (
                 <CinemaButton cinema={cinema} key={cinema.id} />
             ))}
