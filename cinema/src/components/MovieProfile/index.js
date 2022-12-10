@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, Image } from 'react-native'
 import styles from './styles'
+import defaultStyles from '../../styles/styles'
 
 const MovieProfile = ({movie}) => (
     <View style={styles.container}>

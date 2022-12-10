@@ -21,7 +21,8 @@ export default StyleSheet.create({
     cinemaInfoText: {
         color: 'white',
         textAlign: 'center',
-        marginHorizontal: 25
+        marginHorizontal: 25,
+        fontSize: 15
     },
     header: {
         backgroundColor: '#472E1F',
