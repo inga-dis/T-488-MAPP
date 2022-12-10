@@ -32,10 +32,10 @@ const MovieButton = ({ movie, cinema }) => {
                 <View>
 
                     {!cinema 
-                    ?   <Text>{movie['release-dateIS']}</Text>
+                    ?   <Text style={defaultStyles.font}>{movie['release-dateIS']}</Text>
                     
                     :   <View>
-                            <Text style={[styles.moviesList]}>({movie.year})</Text>
+                            <Text style={[styles.moviesList, defaultStyles.font]}>({movie.year})</Text>
                         </View>
                     }
                     {genreList.map((genre, i) => (

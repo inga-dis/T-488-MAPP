@@ -2,8 +2,9 @@
 import React, { useEffect, useState } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import { useDispatch } from "react-redux";
-
-import { ScrollView } from "react-native";
+import * as Font from 'expo-font';
+import { PlayfairDisplay_500Medium } from '@expo-google-fonts/playfair-display';
+import { ScrollView, Text } from "react-native";
 
 // import the data into the states
 import { getCinemas } from "../../store/cinemasSlice";
@@ -17,9 +18,10 @@ import UpcomingList from '../../components/UpcomingList'
 import MainHeader from "../../components/MainHeader";
 
 const Main = () => {
+    // load fonts
+    const [fontsLoaded, setFontsLoaded] = useState(false);
     const [appIsReady, setAppIsReady] = useState(false);
     const dispatch = useDispatch();
-
     const [currentPage, setCurrentPage] = useState('cinema');
 
     const updatePage = (list) => {
@@ -29,6 +31,7 @@ const Main = () => {
 
     // Keeps the splashscreen on then loads all data and turns it off.
     useEffect(() => { 
+        console.log()
         const getData = async () => {
             try {
                 SplashScreen.preventAutoHideAsync();
@@ -36,9 +39,13 @@ const Main = () => {
                 dispatch(getMovies());
                 dispatch(getUpcoming());
                 dispatch(getGenres());
+                await Font.loadAsync({
+                    PlayfairDisplay_500Medium,
+                })
             } catch (e) {
                 console.warn(e);
             } finally {
+                setFontsLoaded(true)
                 setAppIsReady(true);
                 SplashScreen.hideAsync();
             }
@@ -46,7 +53,7 @@ const Main = () => {
         getData();
     }, []);
 
-    if (!appIsReady) {
+    if (!appIsReady && !fontsLoaded) {
         return null;
     }
 

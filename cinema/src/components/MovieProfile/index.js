@@ -13,19 +13,19 @@ const MovieProfile = ({movie}) => (
             resizeMode="cover"
             source={{ uri: movie.poster }} />
         <View style={styles.movieText}>
-            <Text style={styles.movieName}>
-                {movie.title} <Text style={styles.movieYear}>({movie.year})</Text>
+            <Text style={[styles.movieName, , defaultStyles.font]}>
+                {movie.title} <Text style={[styles.movieYear, , defaultStyles.font]}>({movie.year})</Text>
             </Text>
 
         </View>
         <View style={styles.movieGerne}>
             {movie.genres.map((genre, i) => (
-                <Text key={i} style={styles.movieGerneText}>{genre.Name}</Text>
+                <Text key={i} style={[styles.movieGerneText, defaultStyles.font]}>{genre.Name}</Text>
             ))}
         </View>
 
-        <Text style={styles.moviePlot}>{movie.plot}</Text>
-        <Text style={styles.movieDuration}>{movie.durationMinutes} mín</Text>
+        <Text style={[styles.moviePlot, defaultStyles.font]}>{movie.plot}</Text>
+        <Text style={[styles.movieDuration, defaultStyles.font]}>{movie.durationMinutes} mín</Text>
     </View>
 );  
 

@@ -3,7 +3,6 @@ import { Text, ScrollView, View } from "react-native";
 import MovieScreen from "../../components/MovieProfile";
 import ShowTimes from "../../components/ShowTimes";
 import VideoPlayer from "../../components/VideoPlayer";
-import styles from "./styles";
 import defaultStyles from '../../styles/styles'
 
 const Movie = ({ route }) => {
@@ -17,7 +16,7 @@ const Movie = ({ route }) => {
     return (
         <ScrollView style={defaultStyles.container}>
             <View style={defaultStyles.cinemaheader}>
-                <Text style={defaultStyles.cinemaName}>{cinema.name}</Text>
+                <Text style={[defaultStyles.cinemaName, defaultStyles.font]}>{cinema.name}</Text>
             </View>
             <MovieScreen movie={movie} />
 
