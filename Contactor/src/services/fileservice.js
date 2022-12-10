@@ -115,7 +115,6 @@ export const getAllContacts = async () => {
     return Promise.all(
         result.map(async (fileName) => {
             const contact = await getFileContent(fileName)
-            console.log(fileName)
             return {
                 key: fileName,
                 name: contact.name,

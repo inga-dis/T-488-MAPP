@@ -8,7 +8,7 @@ const ShowTimes = ({movie, CId}) => {
 
     return (
         <View>
-            <Text style={styles.movieShowtime}>Sýningar tímar</Text>
+            <Text style={[styles.movieShowtime, defaultStyles.font]}>Sýningar tímar</Text>
             <View style={styles.showtime}>
                 {showtimes.map((showtime, i) =>
                 <ShowTime showtime={showtime.schedule} key={i}></ShowTime>

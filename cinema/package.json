@@ -9,6 +9,8 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo-google-fonts/inter": "^0.2.2",
+    "@expo-google-fonts/playfair-display": "^0.2.2",
     "@expo/html-elements": "^0.2.2",
     "@react-navigation/native": "^6.0.16",
     "@react-navigation/native-stack": "^6.9.4",
@@ -17,6 +19,7 @@
     "axios": "^1.2.1",
     "expo": "~47.0.8",
     "expo-av": "~13.0.2",
+    "expo-font": "~11.0.1",
     "expo-splash-screen": "~0.17.5",
     "expo-status-bar": "~1.4.2",
     "native": "^0.2.0",

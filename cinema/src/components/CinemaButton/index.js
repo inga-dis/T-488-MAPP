@@ -8,9 +8,9 @@ const CinemaButton = ({cinema}) => {
 
     return (
         <TouchableOpacity style={defaultStyles.button}
-            onPress={() => navigate('Cinema', cinema)}>
-            <Text style={defaultStyles.buttonText}>{cinema.name}</Text>
-            <Text style={defaultStyles.buttonUnderText}>{cinema.website}</Text>
+            onPress={() => navigate('Cinema', cinema)}>       
+            <Text style={[defaultStyles.buttonText, defaultStyles.font]}>{cinema.name}</Text>
+            <Text style={[defaultStyles.buttonUnderText, defaultStyles.font]}>{cinema.website}</Text>
         </TouchableOpacity>
     );
 };
