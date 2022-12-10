@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './styles'
 import defaultStyles from '../../styles/styles'
 import { View, Text } from 'react-native'
-import { A } from '@expo/html-elements';
+import { A } from '@expo/html-elements'
 
 const ShowTime = ({ showtime }) => {
     return (

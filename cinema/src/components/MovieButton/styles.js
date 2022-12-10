@@ -1,29 +1,7 @@
 import { StyleSheet } from 'react-native'
-import { gold, brown, cream, red, lightBlue, black, darkBrown, lightBrown } from '../../styles/colors'
-
+import { lightBlue, darkBrown } from '../../styles/colors'
 
 export default StyleSheet.create({
-
-//Um bíóhusið
-    cinemaName: {
-        fontSize: 34, 
-        fontWeight: 'bold', 
-        color: lightBlue, 
-        textAlign: 'center',
-        padding: 5
-    },
-    cinemaInfo: {
-        textAlign: 'center', 
-        fontSize: 20,
-        color: 'white',
-        marginTop: 20, 
-        marginBottom: 20
-    },
-    cinemaInfoText: {
-        color: 'white',
-        textAlign: 'center',
-        marginHorizontal: 25
-    },
 
 //Bíómyndir í hverju bíóhúsi
     movies: {
@@ -31,7 +9,6 @@ export default StyleSheet.create({
         flexDirection: 'row',
         marginHorizontal: 20,
         borderRadius: 10,
-        // marginVertical: 10,
         padding: 10,
         backgroundColor: lightBlue
     },
@@ -41,7 +18,6 @@ export default StyleSheet.create({
         marginLeft: 5,
         marginRight: 2,
         borderRadius: 2
-        
     },
     moviesText: {
         paddingLeft: 10,
@@ -49,15 +25,19 @@ export default StyleSheet.create({
     },
     moviesList: {
         fontSize: 20, 
-        color: darkBrown, 
+        color: darkBrown,
         marginRight: 40,
     },
     moviesYear: {
         fontSize: 15,
     },
     moviesGenre: {
+        flex: 1,
         flexWrap:'wrap',
         flexDirection: 'row',
-        marginRight: 50
-    },
+        marginRight: 60,
+    }, 
+    movieGerneText: {
+        paddingRight: 15,
+    }
 })

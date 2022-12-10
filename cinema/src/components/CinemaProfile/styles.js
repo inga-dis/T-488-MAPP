@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { gold, brown, cream, red, lightBlue, black, darkBrown, lightBrown } from '../../styles/colors'
+import { lightBlue } from '../../styles/colors'
 
 
 export default StyleSheet.create({
@@ -7,11 +7,9 @@ export default StyleSheet.create({
 //Um bíóhusið
     cinemaName: {
         fontSize: 30,
-        // paddingVertical: -30, 
         fontWeight: 'bold', 
         color: lightBlue, 
         textAlign: 'center',
-        // padding: 5
     },
     cinemaInfo: {
         textAlign: 'center', 

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { View } from 'react-native';
 import { selectAllUpcoming } from '../../store/upcomingSlice'
-
-
 import MovieButton from '../MovieButton'
 
 const UpcomingList = () => {

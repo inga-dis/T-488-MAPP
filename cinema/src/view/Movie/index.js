@@ -30,4 +30,5 @@ const Movie = ({ route }) => {
         </ScrollView>
     );
 };
+
 export default Movie;

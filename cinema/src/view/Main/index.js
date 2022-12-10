@@ -7,15 +7,15 @@ import { PlayfairDisplay_500Medium } from '@expo-google-fonts/playfair-display';
 import { ScrollView, Text } from "react-native";
 
 // import the data into the states
-import { getCinemas } from "../../store/cinemasSlice";
-import { getMovies } from "../../store/moviesSlice";
-import { getUpcoming } from "../../store/upcomingSlice";
-import { getGenres } from "../../store/genresSlice"
+import { getCinemas } from '../../store/cinemasSlice'
+import { getMovies } from '../../store/moviesSlice'
+import { getUpcoming } from '../../store/upcomingSlice'
+import { getGenres } from '../../store/genresSlice'
 
 import defaultStyles from '../../styles/styles'
-import CinemasList from "../../components/CinemasList";
+import CinemasList from '../../components/CinemasList'
 import UpcomingList from '../../components/UpcomingList'
-import MainHeader from "../../components/MainHeader";
+import MainHeader from '../../components/MainHeader'
 
 const Main = () => {
     // load fonts
@@ -27,7 +27,6 @@ const Main = () => {
     const updatePage = (list) => {
         setCurrentPage(list)
      }
-
 
     // Keeps the splashscreen on then loads all data and turns it off.
     useEffect(() => { 
@@ -43,15 +42,15 @@ const Main = () => {
                     PlayfairDisplay_500Medium,
                 })
             } catch (e) {
-                console.warn(e);
+                console.warn(e)
             } finally {
                 setFontsLoaded(true)
                 setAppIsReady(true);
                 SplashScreen.hideAsync();
             }
-        };
-        getData();
-    }, []);
+        }
+        getData()
+    }, [])
 
     if (!appIsReady && !fontsLoaded) {
         return null;
@@ -65,8 +64,7 @@ const Main = () => {
             ? <CinemasList></CinemasList>
             : <UpcomingList></UpcomingList>
             }
-
         </ScrollView>
-    );
-};
-export default Main;
+    )
+}
+export default Main

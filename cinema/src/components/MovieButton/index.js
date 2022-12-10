@@ -38,9 +38,12 @@ const MovieButton = ({ movie, cinema }) => {
                             <Text style={[styles.moviesList, defaultStyles.font]}>({movie.year})</Text>
                         </View>
                     }
-                    {genreList.map((genre, i) => (
-                        <Text key={i}>{genre}</Text>
+                    <View style={styles.moviesGenre}>
+                        {genreList.map((genre, i) => (
+                        <Text style={styles.movieGerneText} key={i}>{genre}</Text>
                     ))}
+                    </View>
+                    
                 </View>
             </View>
         </TouchableOpacity>

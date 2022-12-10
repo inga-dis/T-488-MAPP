@@ -13,9 +13,6 @@ const Stack = createStackNavigator()
 
 const Routes = () => (
     <NavigationContainer >
-        {/* <Stack.Navigator initialRouteName="Test" component={Test}>
-            <Stack.Screen name="Test" component={Test} options={{
-            }} /> */}
         <Stack.Navigator initialRouteName="Main" component={Main}>
             <Stack.Screen name="main" component={Main} options={{
                 title: 'Dr. Cinema',
