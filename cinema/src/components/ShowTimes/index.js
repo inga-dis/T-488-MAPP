@@ -4,7 +4,7 @@ import styles from './styles'
 import ShowTime from '../ShowTime'
 
 const ShowTimes = ({movie, CId}) => {
-    const showtimes = movie.showtimes.filter((showtime) => showtime.cinema.id === CId) 
+    const showtimes = movie.showtimes.filter((showtime) => showtime.cinema.id === CId)
 
     return (
         <View>
@@ -14,9 +14,8 @@ const ShowTimes = ({movie, CId}) => {
                 <ShowTime showtime={showtime.schedule} key={i}></ShowTime>
             )}
             </View>
-            
-            
-        </View> 
+        </View>
     )
 }
+
 export default ShowTimes
