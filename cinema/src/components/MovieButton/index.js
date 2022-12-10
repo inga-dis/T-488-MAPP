@@ -35,12 +35,15 @@ const MovieButton = ({ movie, cinema }) => {
                     ?   <Text>{movie['release-dateIS']}</Text>
                     
                     :   <View>
-                            <Text style={[styles.moviesList]}>({movie.year})</Text>
+                            <Text style={styles.moviesList}>({movie.year})</Text>
                         </View>
                     }
-                    {genreList.map((genre, i) => (
-                        <Text key={i}>{genre}</Text>
+                    <View style={styles.moviesGenre}>
+                        {genreList.map((genre, i) => (
+                        <Text style={styles.movieGerneText} key={i}>{genre}</Text>
                     ))}
+                    </View>
+                    
                 </View>
             </View>
         </TouchableOpacity>

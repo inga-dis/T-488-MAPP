@@ -6,15 +6,11 @@ import { createStackNavigator } from '@react-navigation/stack'
 import Main from '../view/Main'
 import Cinema from '../view/Cinema'
 import Movie from '../view/Movie'
-import Test from '../view/Test'
 
 const Stack = createStackNavigator()
 
 const Routes = () => (
     <NavigationContainer >
-        {/* <Stack.Navigator initialRouteName="Test" component={Test}>
-            <Stack.Screen name="Test" component={Test} options={{
-            }} /> */}
         <Stack.Navigator initialRouteName="Main" component={Main}>
             <Stack.Screen name="main" component={Main} options={{
             }} />

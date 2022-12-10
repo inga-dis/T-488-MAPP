@@ -1,15 +1,15 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from 'axios'
 import { token } from './token'
 
-export const getCinemas = createAsyncThunk('cinemas/get', 
+export const getCinemas = createAsyncThunk('cinemas/get',
     async () => {
         try {
-        const response = await axios.get('https://api.kvikmyndir.is/theaters', 
+        const response = await axios.get('https://api.kvikmyndir.is/theaters',
             {
-                headers:  {
+                headers: {
                     'x-access-token' : token
-                }    
+                }
             })
         return response.data
     } catch (error) {
@@ -41,12 +41,8 @@ const cinemasSlice = createSlice({
       }
 });
 
-
-
 export const { } = cinemasSlice.actions;
 
 export const selectAllCinemas = state => state.cinemas.cinemas
 
 export default cinemasSlice.reducer;
-
-

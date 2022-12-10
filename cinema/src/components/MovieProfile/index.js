@@ -1,13 +1,9 @@
 import React from 'react'
 import { View, Text, Image } from 'react-native'
 import styles from './styles'
-import defaultStyles from '../../styles/styles'
-
-
 
 const MovieProfile = ({movie}) => (
     <View style={styles.container}>
-        {/* Allar upplýsingar um myndina: */}
         <Image
             style={styles.image}
             resizeMode="cover"

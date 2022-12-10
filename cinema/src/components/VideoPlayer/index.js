@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useRef } from "react";
-import { Button, View, Alert } from "react-native";
+import { View } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
-import styles from "./styles";
 
 const VideoPlayer = ({ youtubeId }) => {
     const [playing, setPlaying] = useState(false);
@@ -11,7 +10,6 @@ const VideoPlayer = ({ youtubeId }) => {
             setPlaying(false);
         }
     }, []);
-
 
     return (
         <View style={{flex: 1}}>
