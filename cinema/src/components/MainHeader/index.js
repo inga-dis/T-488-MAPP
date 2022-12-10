@@ -1,11 +1,10 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import defaultStyles from '../../styles/styles'
-import { accent } from '../../styles/colors'
+import { accent, lighterbackground } from '../../styles/colors'
 
-const MainHeader = ({updatePage}) => {
-    const [isCinema, setCinema] = useState(true);
+const MainHeader = ({ updatePage }) => {
+    const [isCinema, setCinema] = useState(true)
 
     const handlePress = (list) => {
         updatePage(list)
@@ -18,23 +17,20 @@ const MainHeader = ({updatePage}) => {
 
     return (
         <View style={defaultStyles.mainHeader}>
-            <TouchableOpacity style={defaultStyles.header}>
-                <Text style={defaultStyles.headerText}>...</Text>
-            </TouchableOpacity>
             <TouchableOpacity style={[defaultStyles.header, {
-                backgroundColor: isCinema ? '#472E1F' : accent
+                backgroundColor: isCinema ? lighterbackground : accent
 
             }]}
-                onPress={() => handlePress('upcoming')}
-                >
-                <Text style={defaultStyles.headerText}>Á döfinni</Text>
+            onPress={() => handlePress('upcoming')}
+            >
+                <Text style={[defaultStyles.headerText, defaultStyles.font]}>Á döfinni</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={[defaultStyles.header,  {
-                backgroundColor: isCinema ? accent : '#472E1F'
+            <TouchableOpacity style={[defaultStyles.header, defaultStyles.font, {
+                backgroundColor: isCinema ? accent : lighterbackground
 
             }]}
-                onPress={() => handlePress('cinema') }>
-                <Text style={defaultStyles.headerText}>Bíóhús</Text>
+            onPress={() => handlePress('cinema') }>
+                <Text style={[defaultStyles.headerText, defaultStyles.font]}>Bíóhús</Text>
             </TouchableOpacity>
         </View>
     )

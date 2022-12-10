@@ -1,11 +1,11 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { View } from 'react-native';
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { View } from 'react-native'
 import { selectAllMovies } from '../../store/moviesSlice'
 import defaultStyles from '../../styles/styles'
 import MovieButton from '../MovieButton'
 
-const MoviesList = ({cinema}) => {
+const MoviesList = ({ cinema }) => {
     const CId = cinema.id
 
     // Function to get all movies in chosen cinema
@@ -32,10 +32,12 @@ const MoviesList = ({cinema}) => {
             }
         }
         return moviesInCinema
-    } 
+    }
     const moviesInCinema = getMoviesInCinema()
-    moviesInCinema.sort((a,b) => (
-        a.title.toUpperCase() > b.title.toUpperCase()) ? 1 : ((b.title.toUpperCase() > a.title.toUpperCase()) ? -1 : 0))
+    moviesInCinema.sort((a, b) => (
+        a.title.toUpperCase() > b.title.toUpperCase())
+        ? 1
+        : ((b.title.toUpperCase() > a.title.toUpperCase()) ? -1 : 0))
 
     return (
         <View style={defaultStyles.bottom}>

@@ -3,12 +3,10 @@ import { View, Text } from 'react-native'
 import styles from './styles'
 import defaultStyles from '../../styles/styles'
 
-const Cinema = ({cinema}) => {
-
+const Cinema = ({ cinema }) => {
     const description = () => {
         if (cinema.description == null) {
-            
-            return "Bíóhúsið " + cinema.name
+            return 'Bíóhúsið ' + cinema.name
         } else {
             return cinema.description.replace(/(<br>)/g, '').replace(/(<b>)/g, '')
         }
@@ -17,7 +15,7 @@ const Cinema = ({cinema}) => {
     return (
         <View>
             <View style={styles.header}>
-                <Text style={[styles.cinemaName, defaultStyles.boldFont]}>{cinema.name}</Text>
+                <Text style={[defaultStyles.cinemaName, defaultStyles.boldFont]}>{cinema.name}</Text>
             </View>
             <View style={styles.cinemaInfo}>
                 <Text style={[styles.cinemaInfoText, defaultStyles.font]}>{description()}</Text>

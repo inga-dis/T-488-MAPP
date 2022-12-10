@@ -1,25 +1,24 @@
 import { StyleSheet } from 'react-native'
-import { darkText, lighterBrown } from '../../styles/colors'
+import { darktext, lighterbackground } from '../../styles/colors'
 
 export default StyleSheet.create({
     showtime: {
         flexDirection: 'row',
         alignSelf: 'center',
-        width: 310,
+        width: 310
     },
     showtimeText: {
         fontSize: 15,
-        color: darkText,
+        color: darktext,
         paddingLeft: 15
     },
     showtimeTextBuy: {
-        color: lighterBrown,
+        color: lighterbackground,
         textDecorationLine: 'underline',
         fontSize: 20,
         paddingRight: 15,
         position: 'absolute',
         right: 0,
-        alignSelf: 'center',
-    },
+        alignSelf: 'center'
+    }
 })
- 

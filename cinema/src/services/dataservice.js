@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux";
-import { selectAllGenres } from "../store/genresSlice";
+import { useSelector } from 'react-redux'
+import { selectAllGenres } from '../store/genresSlice'
 
 export const getGenresInMovie = (movie) => {
     const genres = useSelector(state => selectAllGenres(state))

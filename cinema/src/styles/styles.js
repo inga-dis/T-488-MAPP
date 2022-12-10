@@ -1,68 +1,72 @@
-import { StyleSheet } from 'react-native'
-import { logoColor, backgroundcolor, accenttwo, darkText, accent, lightText } from './colors'
+import { StyleSheet, Dimensions } from 'react-native'
+import { logocolor, backgroundcolor, accenttwo, darktext, lighterbackground } from './colors'
+
+const windowWidth = Dimensions.get('window').width
 
 export default StyleSheet.create({
 
-//backgroundColor for all views
+    // Fonts
     boldFont: {
-        fontFamily: 'PlayfairDisplay_700Bold',
+        fontFamily: 'PlayfairDisplay_700Bold'
     },
     font: {
-        fontFamily: 'PlayfairDisplay_500Medium',
+        fontFamily: 'PlayfairDisplay_500Medium'
     },
+    // backgroundColor for all views
     container: {
         backgroundColor: backgroundcolor
     },
     bottom: {
         marginBottom: 20
     },
-//Header:
+    // Header:
     mainHeader: {
-        flex: 3,
+        flex: 1,
+        width: windowWidth,
         flexDirection: 'row',
         justifyContent: 'center'
     },
     header: {
-        backgroundColor: '#472E1F',
-        paddingHorizontal: 40,
-        paddingVertical: 20,
+        backgroundColor: lighterbackground,
+        width: windowWidth / 2,
+        paddingVertical: 18,
         borderWidth: 1,
         borderColor: 'rgba(50, 23, 13, 0.5)'
     },
     headerText: {
-        color: logoColor, 
-        fontSize: 15
-    }, 
+        textAlign: 'center',
+        color: logocolor,
+        fontSize: 19
+    },
     cinemaheader: {
-        backgroundColor: '#472E1F',
+        backgroundColor: lighterbackground,
         borderColor: 'rgba(50, 23, 13, 0.5)',
         paddingVertical: 10
     },
     cinemaName: {
         fontSize: 30,
-        fontWeight: 'bold', 
-        color: accenttwo, 
+        color: accenttwo,
         textAlign: 'center'
     },
 
-//Buttons:
+    // Buttons:
     button: {
-        backgroundColor: accenttwo, 
-        borderRadius: 30, 
+        backgroundColor: accenttwo,
+        borderRadius: 30,
         marginHorizontal: 30,
         paddingVertical: 15,
         marginTop: 25
     },
     buttonText: {
         fontSize: 30,
-        textAlign: 'center', 
-        color: darkText
+        textAlign: 'center',
+        color: darktext
     },
     buttonUnderText: {
         fontSize: 18,
-        textAlign: 'center', 
+        textAlign: 'center',
         fontStyle: 'italic',
-        color: darkText,
+        color: darktext,
         opacity: 0.7
     }
 })

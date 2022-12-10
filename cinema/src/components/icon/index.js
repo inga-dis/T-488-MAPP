@@ -1,8 +1,7 @@
-import React from "react";
+import React from 'react'
 import { Image } from 'react-native'
 
-
-const Icon = ({size}) => {
+const Icon = ({ size }) => {
     return (
         <Image
             style={{
@@ -10,9 +9,9 @@ const Icon = ({size}) => {
                 width: size
             }}
             source={require('../../../assets/icon-background-free.png')}
-            >
+        >
         </Image>
     )
-} 
+}
 
 export default Icon
