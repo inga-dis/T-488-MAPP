@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import styles from './styles'
+import defaultStyles from '../../styles/styles'
 
 const Cinema = ({cinema}) => {
 
@@ -15,7 +16,7 @@ const Cinema = ({cinema}) => {
 
     return (
         <View>
-            <View style={[styles.header, defaultStyles.headerX]}>
+            <View style={styles.header}>
                 <Text style={[styles.cinemaName, defaultStyles.font]}>{cinema.name}</Text>
             </View>
             <View style={styles.cinemaInfo}>
