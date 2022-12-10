@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from 'react'
-import * as SplashScreen from 'expo-splash-screen'
-import { useDispatch } from 'react-redux'
-import { ScrollView } from 'react-native'
+import React, { useEffect, useState } from "react";
+import * as SplashScreen from "expo-splash-screen";
+import { useDispatch } from "react-redux";
+import * as Font from 'expo-font';
+import { PlayfairDisplay_500Medium } from '@expo-google-fonts/playfair-display';
+import { ScrollView, Text } from "react-native";
 
 // import the data into the states
 import { getCinemas } from '../../store/cinemasSlice'
@@ -16,10 +18,11 @@ import UpcomingList from '../../components/UpcomingList'
 import MainHeader from '../../components/MainHeader'
 
 const Main = () => {
-    const [appIsReady, setAppIsReady] = useState(false)
-    const dispatch = useDispatch()
-
-    const [currentPage, setCurrentPage] = useState('cinema')
+    // load fonts
+    const [fontsLoaded, setFontsLoaded] = useState(false);
+    const [appIsReady, setAppIsReady] = useState(false);
+    const dispatch = useDispatch();
+    const [currentPage, setCurrentPage] = useState('cinema');
 
     const updatePage = (list) => {
         setCurrentPage(list)
@@ -27,25 +30,30 @@ const Main = () => {
 
     // Keeps the splashscreen on then loads all data and turns it off.
     useEffect(() => { 
+        console.log()
         const getData = async () => {
             try {
-                SplashScreen.preventAutoHideAsync()
-                dispatch(getCinemas())
-                dispatch(getMovies())
-                dispatch(getUpcoming())
-                dispatch(getGenres())
+                SplashScreen.preventAutoHideAsync();
+                dispatch(getCinemas());
+                dispatch(getMovies());
+                dispatch(getUpcoming());
+                dispatch(getGenres());
+                await Font.loadAsync({
+                    PlayfairDisplay_500Medium,
+                })
             } catch (e) {
                 console.warn(e)
             } finally {
-                setAppIsReady(true)
-                SplashScreen.hideAsync()
+                setFontsLoaded(true)
+                setAppIsReady(true);
+                SplashScreen.hideAsync();
             }
         }
         getData()
     }, [])
 
-    if (!appIsReady) {
-        return null
+    if (!appIsReady && !fontsLoaded) {
+        return null;
     }
 
     return (

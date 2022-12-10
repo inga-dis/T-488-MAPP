@@ -4,6 +4,9 @@ import { gold, brown, lightBlue, darkBrown } from './colors'
 export default StyleSheet.create({
 
 //backgroundColor for all views
+    font: {
+        fontFamily: 'PlayfairDisplay_500Medium',
+    },
     container: {
         backgroundColor: brown
     },
