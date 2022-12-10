@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
-import styles from './styles'
+import defaultStyles from '../../styles/styles'
+// import styles from './styles'
 import { red } from '../../styles/colors'
 
 const MainHeader = ({updatePage}) => {
@@ -17,24 +18,24 @@ const MainHeader = ({updatePage}) => {
     }
 
     return (
-        <View style={styles.mainHeader}>
-            <TouchableOpacity style={styles.header}>
-                <Text style={styles.headerText}>...</Text>
+        <View style={defaultStyles.mainHeader}>
+            <TouchableOpacity style={defaultStyles.header}>
+                <Text style={defaultStyles.headerText}>...</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={[styles.header, {
+            <TouchableOpacity style={[defaultStyles.header, {
                 backgroundColor: isCinema ? '#472E1F' : red
 
             }]}
                 onPress={() => handlePress('upcoming')}
                 >
-                <Text style={styles.headerText}>Á döfinni</Text>
+                <Text style={defaultStyles.headerText}>Á döfinni</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={[styles.header,  {
+            <TouchableOpacity style={[defaultStyles.header,  {
                 backgroundColor: isCinema ? red : '#472E1F'
 
             }]}
                 onPress={() => handlePress('cinema') }>
-                <Text style={styles.headerText}>Bíóhús</Text>
+                <Text style={defaultStyles.headerText}>Bíóhús</Text>
             </TouchableOpacity>
         </View>
     )
