@@ -56,8 +56,13 @@ export default StyleSheet.create({
         fontSize: 15,
     },
     moviesGenre: {
+        flex: 1,
         flexWrap:'wrap',
         flexDirection: 'row',
-        marginRight: 50
-    },
+        marginRight: 60,
+    }, 
+    movieGerneText: {
+        paddingRight: 15,
+
+    }
 })

@@ -9,7 +9,9 @@ export default StyleSheet.create({
     container: {
         backgroundColor: brown,
     },
-    
+    bottom: {
+        marginBottom: 20
+    },
 //Header:
     mainHeader: {
         flex: 3,

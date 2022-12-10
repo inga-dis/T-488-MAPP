@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { View } from 'react-native';
 import { selectAllMovies } from '../../store/moviesSlice'
+import defaultStyles from '../../styles/styles'
 
 
 import MovieButton from '../MovieButton'
@@ -33,7 +34,7 @@ const MoviesList = ({cinema}) => {
         a.title.toUpperCase() > b.title.toUpperCase()) ? 1 : ((b.title.toUpperCase() > a.title.toUpperCase()) ? -1 : 0))
 
     return (
-        <View>
+        <View style={defaultStyles.bottom}>
             {moviesInCinema.map((movie) => (
                 <MovieButton movie={movie} cinema={cinema} key={movie.id}></MovieButton>
             ))}
