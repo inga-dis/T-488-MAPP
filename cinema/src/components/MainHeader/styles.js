@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { gold } from '../../styles/colors'
+import { logoColor } from '../../styles/colors'
 
 export default StyleSheet.create({
     header: {
@@ -17,7 +17,7 @@ export default StyleSheet.create({
         marginHorizontal: -20
     },
     headerText: {
-        color: gold, 
+        color: logoColor, 
         fontSize: 15
     }, 
 })

@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { lightText } from '../../styles/colors'
 
 export default StyleSheet.create({
 
@@ -6,7 +7,7 @@ export default StyleSheet.create({
         fontSize: 20,
         marginTop: 20,
         alignSelf: 'center',
-        color: 'white'
+        color: lightText
     },
     showtime: {
         marginBottom: 20
