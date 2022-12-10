@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { lightBlue, darkBrown } from '../../styles/colors'
+import { accenttwo, darkText } from '../../styles/colors'
 
 export default StyleSheet.create({
 
@@ -10,7 +10,7 @@ export default StyleSheet.create({
         marginHorizontal: 20,
         borderRadius: 10,
         padding: 10,
-        backgroundColor: lightBlue
+        backgroundColor: accenttwo
     },
     moviesImage: {
         width:52,
@@ -25,7 +25,7 @@ export default StyleSheet.create({
     },
     moviesList: {
         fontSize: 20, 
-        color: darkBrown,
+        color: darkText,
         marginRight: 40,
     },
     moviesYear: {

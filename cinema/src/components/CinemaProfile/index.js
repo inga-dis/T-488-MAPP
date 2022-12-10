@@ -17,7 +17,7 @@ const Cinema = ({cinema}) => {
     return (
         <View>
             <View style={styles.header}>
-                <Text style={[styles.cinemaName, defaultStyles.font]}>{cinema.name}</Text>
+                <Text style={[styles.cinemaName, defaultStyles.boldFont]}>{cinema.name}</Text>
             </View>
             <View style={styles.cinemaInfo}>
                 <Text style={[styles.cinemaInfoText, defaultStyles.font]}>{description()}</Text>

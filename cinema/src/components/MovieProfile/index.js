@@ -10,8 +10,8 @@ const MovieProfile = ({movie}) => (
             resizeMode="cover"
             source={{ uri: movie.poster }} />
         <View style={styles.movieText}>
-            <Text style={[styles.movieName, , defaultStyles.font]}>
-                {movie.title} <Text style={[styles.movieYear, , defaultStyles.font]}>({movie.year})</Text>
+            <Text style={[styles.movieName, , defaultStyles.boldFont]}>
+                {movie.title} <Text style={[styles.movieYear, defaultStyles.boldFont]}>({movie.year})</Text>
             </Text>
 
         </View>
@@ -22,7 +22,10 @@ const MovieProfile = ({movie}) => (
         </View>
 
         <Text style={[styles.moviePlot, defaultStyles.font]}>{movie.plot}</Text>
-        <Text style={[styles.movieDuration, defaultStyles.font]}>{movie.durationMinutes} mín</Text>
+        {movie.durationMinutes 
+            ? <Text style={[styles.movieDuration, defaultStyles.font]}>{movie.durationMinutes} mín</Text>
+            : null        
+        }
     </View>
 );  
 

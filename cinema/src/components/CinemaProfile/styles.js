@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { lightBlue } from '../../styles/colors'
+import { accenttwo, lightText, lighterBrown } from '../../styles/colors'
 
 
 export default StyleSheet.create({
@@ -7,25 +7,24 @@ export default StyleSheet.create({
 //Um bíóhusið
     cinemaName: {
         fontSize: 30,
-        fontWeight: 'bold', 
-        color: lightBlue, 
+        color: accenttwo, 
         textAlign: 'center',
     },
     cinemaInfo: {
         textAlign: 'center', 
         fontSize: 20,
-        color: 'white',
+        color: lightText,
         marginTop: 20, 
         marginBottom: 20
     },
     cinemaInfoText: {
-        color: 'white',
+        color: lightText,
         textAlign: 'center',
         marginHorizontal: 25,
         fontSize: 15
     },
     header: {
-        backgroundColor: '#472E1F',
+        backgroundColor: lighterBrown,
         borderColor: 'rgba(50, 23, 13, 0.5)',
         paddingVertical: 10,
     }

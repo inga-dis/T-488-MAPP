@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import { useDispatch } from "react-redux";
 import * as Font from 'expo-font';
-import { PlayfairDisplay_500Medium } from '@expo-google-fonts/playfair-display';
+import { PlayfairDisplay_500Medium, PlayfairDisplay_700Bold } from '@expo-google-fonts/playfair-display';
 import { ScrollView, Text } from "react-native";
 
 // import the data into the states
@@ -40,6 +40,7 @@ const Main = () => {
                 dispatch(getGenres());
                 await Font.loadAsync({
                     PlayfairDisplay_500Medium,
+                    PlayfairDisplay_700Bold
                 })
             } catch (e) {
                 console.warn(e)

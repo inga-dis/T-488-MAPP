@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { lightBlue, darkBrown } from '../../styles/colors'
+import { accenttwo, darkText, accent, lightText } from '../../styles/colors'
 
 export default StyleSheet.create({
     container: {
@@ -13,7 +13,7 @@ export default StyleSheet.create({
     cinemaName: {
         fontSize: 30,
         fontWeight: 'bold', 
-        color: lightBlue, 
+        color: accenttwo, 
         textAlign: 'center',
     },
     image: {
@@ -26,13 +26,12 @@ export default StyleSheet.create({
         fontSize: 30,
         paddingLeft: 20,
         paddingBottom: 10,
-        color: 'white',
+        color: lightText,
     },
     movieYear: {
         paddingLeft:10,
         fontSize: 20,
-        fontWeight: 'bold',
-        color: 'red'
+        color: accent
     },
     movieGerne: {
         paddingLeft: 20,
@@ -42,21 +41,20 @@ export default StyleSheet.create({
         
     },
     movieGerneText: {
-        color: darkBrown,
+        color: darkText,
         paddingHorizontal: 10,
         marginRight:5,
-        backgroundColor: lightBlue,
+        backgroundColor: accenttwo,
         borderRadius: 10,
         marginTop: 10
     },
     moviePlot: {
         paddingHorizontal: 20,
-        fontStyle: 'italic',
         paddingBottom: 10,
-        color: 'white'
+        color: lightText
     },
     movieDuration: {
         paddingLeft: 20,
-        color: 'white'
+        color: lightText
     },
 })

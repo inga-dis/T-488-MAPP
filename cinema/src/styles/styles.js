@@ -1,14 +1,17 @@
 import { StyleSheet } from 'react-native'
-import { gold, brown, lightBlue, darkBrown } from './colors'
+import { logoColor, backgroundcolor, accenttwo, darkText, accent, lightText } from './colors'
 
 export default StyleSheet.create({
 
-//Views:
+//backgroundColor for all views
+    boldFont: {
+        fontFamily: 'PlayfairDisplay_700Bold',
+    },
     font: {
         fontFamily: 'PlayfairDisplay_500Medium',
     },
     container: {
-        backgroundColor: brown
+        backgroundColor: backgroundcolor
     },
     bottom: {
         marginBottom: 20
@@ -27,7 +30,7 @@ export default StyleSheet.create({
         borderColor: 'rgba(50, 23, 13, 0.5)'
     },
     headerText: {
-        color: gold, 
+        color: logoColor, 
         fontSize: 15
     }, 
     cinemaheader: {
@@ -38,13 +41,13 @@ export default StyleSheet.create({
     cinemaName: {
         fontSize: 30,
         fontWeight: 'bold', 
-        color: lightBlue, 
+        color: accenttwo, 
         textAlign: 'center'
     },
 
 //Buttons:
     button: {
-        backgroundColor: lightBlue, 
+        backgroundColor: accenttwo, 
         borderRadius: 30, 
         marginHorizontal: 30,
         paddingVertical: 15,
@@ -53,13 +56,13 @@ export default StyleSheet.create({
     buttonText: {
         fontSize: 30,
         textAlign: 'center', 
-        color: darkBrown
+        color: darkText
     },
     buttonUnderText: {
         fontSize: 18,
         textAlign: 'center', 
         fontStyle: 'italic',
-        color: darkBrown,
+        color: darkText,
         opacity: 0.7
     }
 })

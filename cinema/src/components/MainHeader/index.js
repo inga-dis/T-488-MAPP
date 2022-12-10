@@ -2,8 +2,7 @@
 import React, { useState } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import defaultStyles from '../../styles/styles'
-// import styles from './styles'
-import { red } from '../../styles/colors'
+import { accent } from '../../styles/colors'
 
 const MainHeader = ({updatePage}) => {
     const [isCinema, setCinema] = useState(true);
@@ -23,7 +22,7 @@ const MainHeader = ({updatePage}) => {
                 <Text style={defaultStyles.headerText}>...</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[defaultStyles.header, {
-                backgroundColor: isCinema ? '#472E1F' : red
+                backgroundColor: isCinema ? '#472E1F' : accent
 
             }]}
                 onPress={() => handlePress('upcoming')}
@@ -31,7 +30,7 @@ const MainHeader = ({updatePage}) => {
                 <Text style={defaultStyles.headerText}>Á döfinni</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[defaultStyles.header,  {
-                backgroundColor: isCinema ? red : '#472E1F'
+                backgroundColor: isCinema ? accent : '#472E1F'
 
             }]}
                 onPress={() => handlePress('cinema') }>

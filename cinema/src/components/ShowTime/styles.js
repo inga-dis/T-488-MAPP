@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { darkBrown, lightBrown } from '../../styles/colors'
+import { darkText, lighterBrown } from '../../styles/colors'
 
 export default StyleSheet.create({
     showtime: {
@@ -9,14 +9,14 @@ export default StyleSheet.create({
     },
     showtimeText: {
         fontSize: 15,
-        color: darkBrown,
+        color: darkText,
         paddingLeft: 15
     },
     showtimeTextBuy: {
-        color: lightBrown,
-        fontSize: 18,
+        color: lighterBrown,
+        textDecorationLine: 'underline',
+        fontSize: 20,
         paddingRight: 15,
-        fontWeight: 'bold',
         position: 'absolute',
         right: 0,
         alignSelf: 'center',
