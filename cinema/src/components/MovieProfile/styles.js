@@ -1,7 +1,5 @@
 import { StyleSheet } from 'react-native'
-// import { gold, maroon, DarkSienna, black, DarkBrown, orange } from '../../styles/colors'
-import { gold, brown, cream, red, lightBlue, black, darkBrown, lightBrown } from '../../styles/colors'
-
+import { lightBlue, darkBrown } from '../../styles/colors'
 
 export default StyleSheet.create({
     container: {
@@ -14,11 +12,9 @@ export default StyleSheet.create({
     },
     cinemaName: {
         fontSize: 30,
-        // paddingVertical: -30, 
         fontWeight: 'bold', 
         color: lightBlue, 
         textAlign: 'center',
-        // padding: 5
     },
     image: {
         width: 200,
@@ -31,8 +27,6 @@ export default StyleSheet.create({
         paddingLeft: 20,
         paddingBottom: 10,
         color: 'white',
-        // textAlign: 'center',
-
     },
     movieYear: {
         paddingLeft:10,

@@ -1,10 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
-import styles from '../../view/Main/styles'
-import { brown, red } from '../../styles/colors'
-
-
+import styles from './styles'
+import { red } from '../../styles/colors'
 
 const MainHeader = ({updatePage}) => {
     const [isCinema, setCinema] = useState(true);
@@ -17,7 +15,6 @@ const MainHeader = ({updatePage}) => {
             setCinema(false)
         }
     }
-
 
     return (
         <View style={styles.mainHeader}>

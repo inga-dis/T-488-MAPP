@@ -35,7 +35,7 @@ const MovieButton = ({ movie, cinema }) => {
                     ?   <Text>{movie['release-dateIS']}</Text>
                     
                     :   <View>
-                            <Text style={[styles.moviesList]}>({movie.year})</Text>
+                            <Text style={styles.moviesList}>({movie.year})</Text>
                         </View>
                     }
                     <View style={styles.moviesGenre}>

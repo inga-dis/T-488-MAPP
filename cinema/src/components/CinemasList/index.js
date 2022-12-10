@@ -3,18 +3,13 @@ import { useSelector } from "react-redux";
 import {View } from 'react-native';
 import { selectAllCinemas } from '../../store/cinemasSlice'
 import defaultStyles from '../../styles/styles'
-
-
 import CinemaButton from '../CinemaButton'
 
 const CinemasList = () => {
-
     const cinemas = useSelector((state) => selectAllCinemas(state))
-    
     const sortCinemas = (cinemasToSort) => {
         return cinemasToSort.sort((a,b) => (
             a.name.toUpperCase() > b.name.toUpperCase()) ? 1 : ((b.name.toUpperCase() > a.name.toUpperCase()) ? -1 : 0))
-
     }
     
     return (
