@@ -20,7 +20,8 @@ export default StyleSheet.create({
     cinemaInfoText: {
         color: lightText,
         textAlign: 'center',
-        marginHorizontal: 25
+        marginHorizontal: 25,
+        fontSize: 15
     },
     header: {
         backgroundColor: lighterBrown,
