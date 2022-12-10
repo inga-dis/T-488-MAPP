@@ -9,7 +9,6 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@expo-google-fonts/inter": "^0.2.2",
     "@expo-google-fonts/playfair-display": "^0.2.2",
     "@expo/html-elements": "^0.2.2",
     "@react-navigation/native": "^6.0.16",
